@@ -5,6 +5,7 @@ categories: [부스트캠프 AI Tech 3기, 일일 학습 기록]
 tags: [부스트캠프AITech, daily-log, week00]     # TAG names should always be lowercase
 image: 
   src: /assets/img/posts/Boostcamp-AI-Tech/boostcamp_ai_tech_title.png
+math: true
 ---
 ## **📝 오늘 한 일**
 
