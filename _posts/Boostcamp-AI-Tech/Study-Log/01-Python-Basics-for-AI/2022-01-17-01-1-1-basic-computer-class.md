@@ -29,6 +29,7 @@ image:
 - **file** - 컴퓨터 등의 기기에서 의미 있는 정보를 담는 논리적인 단위
   ⇒ 모든 프로그램은 파일로 구성되어 있고, 파일을 사용한다.
 
+<br>
 
 ## **파일과 디렉토리**
 - **디렉토리 (directory)**
@@ -40,6 +41,7 @@ image:
     - 실행, 쓰기, 읽기 등을 할 수 있음
 - 파일 시스템 root 디렉토리로부터 시작하는 트리구조로 되어 있음 (`Windows key + E`)
     
+<br>
 
 ## **절대 경로와 상대 경로**
 - **경로** - 컴퓨터 파일의 고유한 위치, 트리 구조 상 노드의 연결
@@ -57,6 +59,8 @@ image:
 - GUI (Graphical User Interface)
 - CLI (Command Line Interface)
 
+<br>
+
 ## **Command Line Interface**
 - text를 사용하여 컴퓨터에 명령을 입력하는 인터페이스 체계
 - **Windows** - CMD window, Windows Terminal  
@@ -69,11 +73,15 @@ image:
     - 어원) 디스플레이와 키보드가 조합된 장치
     - 현재) CLI로 입력하는 화면
 
+<br>
+
 ## **Terminal 시작하기**
 - **Windows** - 윈도우 키 + terminal 또는 윈도우 키 + R → CMD 입력
     > Ubuntu도 설치해보는 것을 권장한다.
     {: .prompt-note }
 - **Mac** - 빠른 실행 terminal 입력
+
+<br>
 
 ## **기본 명령어**
 - 각 터미널에서는 프로그램을 작동하는 shell이 존재
