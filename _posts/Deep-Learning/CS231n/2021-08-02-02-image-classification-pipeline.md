@@ -155,11 +155,10 @@ mermaid: true
 
 ## **Parametric Approach**
 - linear classifier = parametric model의 가장 단순한 형태
-
-> **K-NN**은 parameter가 아님. 모든 training set을 test time에 이용함.
-> 
-> **parametric approach**에서는 training data의 정보를 요약 → W에 모음 → test time에 더이상 training data가 필요하지 X → W만 있으면 되므로, 작은 device에서 모델 동작시킬 때 efficient
-{: .prompt-note}
+  > **K-NN**은 parameter가 아님. 모든 training set을 test time에 이용함.
+  > 
+  > **parametric approach**에서는 training data의 정보를 요약 → W에 모음 → test time에 더이상 training data가 필요하지 X → W만 있으면 되므로, 작은 device에서 모델 동작시킬 때 efficient
+  {: .prompt-note}
 
 
 ![](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/495e315c-484e-4fc1-ab5b-805b58a5edca/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220206%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220206T093222Z&X-Amz-Expires=86400&X-Amz-Signature=abb3c65fb792d054b152d87e8eba1fc67da04cc40814fbe1759dc85a25f35b9f&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22&x-id=GetObject){: width="70%" height="70%"}
