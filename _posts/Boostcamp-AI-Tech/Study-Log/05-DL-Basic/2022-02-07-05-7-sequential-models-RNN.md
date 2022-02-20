@@ -1,5 +1,5 @@
 ---
-title: ":: 부스트캠프 AI Tech :: 7. Sequential Models - RNN"
+title: "[DL Basic] 07. Sequential Models - RNN"
 date: 2022-02-07 19:50:00 +0900
 categories: [부스트캠프 AI Tech 3기, 05 - Deep Learning Basic]
 tags: [부스트캠프AITech, study-log, week04, deep-learning]     # TAG names should always be lowercase

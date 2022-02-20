@@ -1,5 +1,5 @@
 ---
-title: ":: 부스트캠프 AI Tech :: 9. Hyperparameter Tuning"
+title: "[PyTorch] 09. Hyperparameter Tuning"
 date: 2022-01-27 18:50:00 +0900
 categories: [부스트캠프 AI Tech 3기, 03 - PyTorch Basics for AI]
 tags: [부스트캠프AITech, study-log, week02, pytorch]     # TAG names should always be lowercase

@@ -1,5 +1,5 @@
 ---
-title: ":: 부스트캠프 AI Tech :: 4-2. Seaborn 기초"
+title: "[Data Viz] 4-2. Seaborn 기초"
 date: 2022-02-04 18:50:00 +0900
 categories: [부스트캠프 AI Tech 3기, 04 - Data Visualization]
 tags: [부스트캠프AITech, study-log, week03, visualization, seaborn]     # TAG names should always be lowercase

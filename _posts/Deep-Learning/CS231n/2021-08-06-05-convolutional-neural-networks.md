@@ -1,5 +1,5 @@
 ---
-title: ":: CS231n :: 5. Convolutional Neural Networks"
+title: "[CS231n] 05. Convolutional Neural Networks"
 date: 2021-08-06 19:50:00 +0900
 categories: [Deep Learning, CS231n]
 tags: [cs231n, deep-learning]     # TAG names should always be lowercase

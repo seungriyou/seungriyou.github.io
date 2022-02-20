@@ -1,5 +1,5 @@
 ---
-title: ":: CS231n :: 11. Detection and Segmentation"
+title: "[CS231n] 11. Detection and Segmentation"
 date: 2021-08-19 19:50:00 +0900
 categories: [Deep Learning, CS231n]
 tags: [cs231n, deep-learning]     # TAG names should always be lowercase

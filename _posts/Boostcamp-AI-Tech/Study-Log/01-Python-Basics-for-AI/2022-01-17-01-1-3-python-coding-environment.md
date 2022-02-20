@@ -1,5 +1,5 @@
 ---
-title: ":: 부스트캠프 AI Tech :: 1-3. 파이썬 코딩 환경"
+title: "[Python] 1-3. 파이썬 코딩 환경"
 date: 2022-01-17 18:50:00 +0900
 categories: [부스트캠프 AI Tech 3기, 01 - Python Basics for AI]
 tags: [부스트캠프AITech, study-log, week01, python, jupyter, colab]     # TAG names should always be lowercase
@@ -9,8 +9,6 @@ image:
   src: /assets/img/posts/Boostcamp-AI-Tech/boostcamp_ai_tech_title.png
 ---
 > 본문은 네이버 부스트캠프 AI Tech 3기의 강의와 자료를 바탕으로 작성된 글입니다.
-
-<br>
 
 ## **for Windows**
 1. “python miniconda” 검색하여 python 3.8 버전 다운로드

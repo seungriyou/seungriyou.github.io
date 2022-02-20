@@ -1,5 +1,5 @@
 ---
-title: ":: 부스트캠프 AI Tech :: 1-3. Python과 Matplotlib"
+title: "[Data Viz] 1-3. Python과 Matplotlib"
 date: 2022-02-03 18:50:00 +0900
 categories: [부스트캠프 AI Tech 3기, 04 - Data Visualization]
 tags: [부스트캠프AITech, study-log, week03, visualization, matplotlib]     # TAG names should always be lowercase

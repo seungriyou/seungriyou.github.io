@@ -1,5 +1,5 @@
 ---
-title: ":: CS231n :: 2. Image Classification Pipeline"
+title: "[CS231n] 02. Image Classification Pipeline"
 date: 2021-08-02 19:50:00 +0900
 categories: [Deep Learning, CS231n]
 tags: [cs231n, deep-learning]     # TAG names should always be lowercase

@@ -1,5 +1,5 @@
 ---
-title: ":: 부스트캠프 AI Tech :: 2-3. Conditionals and Loops"
+title: "[Python] 2-3. Conditionals and Loops"
 date: 2022-01-18 18:50:00 +0900
 categories: [부스트캠프 AI Tech 3기, 01 - Python Basics for AI]
 tags: [부스트캠프AITech, study-log, week01, python]     # TAG names should always be lowercase

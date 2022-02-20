@@ -1,5 +1,5 @@
 ---
-title: ":: 부스트캠프 AI Tech :: 9. Generative Models (1)"
+title: "[DL Basic] 09. Generative Models (1)"
 date: 2022-02-08 17:37:00 +0900
 categories: [부스트캠프 AI Tech 3기, 05 - Deep Learning Basic]
 tags: [부스트캠프AITech, study-log, week04, deep-learning]     # TAG names should always be lowercase

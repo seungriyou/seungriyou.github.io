@@ -1,5 +1,5 @@
 ---
-title: ":: 부스트캠프 AI Tech :: 4. 경사하강법 - 매운맛"
+title: "[AI Math] 04. 경사하강법 - 매운맛"
 date: 2022-01-20 18:50:00 +0900
 categories: [부스트캠프 AI Tech 3기, 02 - AI Math]
 tags: [부스트캠프AITech, study-log, week01, math]     # TAG names should always be lowercase

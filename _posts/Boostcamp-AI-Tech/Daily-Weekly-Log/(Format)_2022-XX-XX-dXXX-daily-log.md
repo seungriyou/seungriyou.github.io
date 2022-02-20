@@ -1,5 +1,5 @@
 ---
-title: ":: 부스트캠프 AI Tech :: [Day 000] 학습 기록"
+title: "[Week 00 / Day 000] 학습 기록"
 date: 2022-01-16 19:50:00 +0900
 categories: [부스트캠프 AI Tech 3기, Daily & Weekly Log]
 tags: [부스트캠프AITech, daily-log, week00]     # TAG names should always be lowercase

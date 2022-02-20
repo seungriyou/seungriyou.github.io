@@ -1,5 +1,5 @@
 ---
-title: ":: 부스트캠프 AI Tech :: 4. CNN - Convolution은 무엇인가?"
+title: "[DL Basic] 04. CNN - Convolution은 무엇인가?"
 date: 2022-02-07 19:50:00 +0900
 categories: [부스트캠프 AI Tech 3기, 05 - Deep Learning Basic]
 tags: [부스트캠프AITech, study-log, week04, deep-learning]     # TAG names should always be lowercase

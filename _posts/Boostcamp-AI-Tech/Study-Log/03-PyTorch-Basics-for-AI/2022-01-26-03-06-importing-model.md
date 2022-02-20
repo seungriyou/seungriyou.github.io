@@ -1,5 +1,5 @@
 ---
-title: ":: 부스트캠프 AI Tech :: 6. 모델 불러오기"
+title: "[PyTorch] 06. 모델 불러오기"
 date: 2022-01-26 18:50:00 +0900
 categories: [부스트캠프 AI Tech 3기, 03 - PyTorch Basics for AI]
 tags: [부스트캠프AITech, study-log, week02, pytorch]     # TAG names should always be lowercase

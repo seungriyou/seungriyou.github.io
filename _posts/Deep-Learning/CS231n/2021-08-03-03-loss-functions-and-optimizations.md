@@ -1,5 +1,5 @@
 ---
-title: ":: CS231n :: 3. Loss Functions and Optimization"
+title: "[CS231n] 03. Loss Functions and Optimization"
 date: 2021-08-03 19:50:00 +0900
 categories: [Deep Learning, CS231n]
 tags: [cs231n, deep-learning]     # TAG names should always be lowercase

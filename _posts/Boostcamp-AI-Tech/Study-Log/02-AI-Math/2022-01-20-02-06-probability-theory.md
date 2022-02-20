@@ -1,5 +1,5 @@
 ---
-title: ":: 부스트캠프 AI Tech :: 6. 확률론 맛보기"
+title: "[AI Math] 06. 확률론 맛보기"
 date: 2022-01-20 18:50:00 +0900
 categories: [부스트캠프 AI Tech 3기, 02 - AI Math]
 tags: [부스트캠프AITech, study-log, week01, math]     # TAG names should always be lowercase

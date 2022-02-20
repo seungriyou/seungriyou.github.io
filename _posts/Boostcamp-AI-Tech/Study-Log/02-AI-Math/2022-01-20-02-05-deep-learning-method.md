@@ -1,5 +1,5 @@
 ---
-title: ":: 부스트캠프 AI Tech :: 5. 딥러닝 학습방법 이해하기"
+title: "[AI Math] 05. 딥러닝 학습방법 이해하기"
 date: 2022-01-20 18:50:00 +0900
 categories: [부스트캠프 AI Tech 3기, 02 - AI Math]
 tags: [부스트캠프AITech, study-log, week01, math]     # TAG names should always be lowercase

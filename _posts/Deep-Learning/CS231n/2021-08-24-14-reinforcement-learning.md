@@ -1,5 +1,5 @@
 ---
-title: ":: CS231n :: 14. Reinforcement Learning"
+title: "[CS231n] 14. Reinforcement Learning"
 date: 2021-08-24 19:50:00 +0900
 categories: [Deep Learning, CS231n]
 tags: [cs231n, deep-learning]     # TAG names should always be lowercase

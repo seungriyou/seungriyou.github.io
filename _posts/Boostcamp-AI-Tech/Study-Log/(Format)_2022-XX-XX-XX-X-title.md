@@ -1,5 +1,5 @@
 ---
-title: ":: 부스트캠프 AI Tech :: 0. Title"
+title: "[Subject] 0. Title"
 date: 2022-01-16 19:50:00 +0900
 categories: [부스트캠프 AI Tech 3기, 00 - Subject]
 tags: [부스트캠프AITech, study-log, week00]     # TAG names should always be lowercase
