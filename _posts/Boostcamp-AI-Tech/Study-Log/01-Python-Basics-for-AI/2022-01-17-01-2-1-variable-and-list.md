@@ -27,6 +27,7 @@ image:
 
 ## **변수와 메모리 주소**
 ![DRAM](/assets/img/posts/Boostcamp-AI-Tech/Study-Log/01-Python-Basics-for-AI/2-1-02.png){: width="50%" height="50%"}
+_DRAM_
 
 ## **메모리와 변수**
 - **변수** - 프로그램에서 사용하기 위한 특정한 값을 저장하는 공간

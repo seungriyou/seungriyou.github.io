@@ -34,7 +34,7 @@ image:
 
   > **python formatting:**  
   > 함수와 함수 사이에 **두 줄** 띄워주기
-  {: .prompt-warning}
+  {: .prompt-info}
 
 ## **parameter vs. argument**
 - **parameter** - 함수의 입력 값 인터페이스 (ex. `x`)
@@ -60,7 +60,7 @@ image:
 > >>> print(c)
 > None
 > ```
-> `c = f(10)` 했는데 왜 `c`가 `None`으로 출력될까? - return 값이 없기 때문임
+> _`c = f(10)` 했는데 왜 `c`가 `None`으로 출력될까? - return 값이 없기 때문임_
 >
 > ```shell
 > >>> def f(x):
@@ -72,7 +72,7 @@ image:
 > >>> f(10)
 > 20
 > ```
-> 함수 내에서 `return`하는 경우에만 값으로 치환됨
+> _함수 내에서 `return`하는 경우에만 값으로 치환됨_
 >
 > **ex) 리스트 정렬 함수**
 > ```shell
