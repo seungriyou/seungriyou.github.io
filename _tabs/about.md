@@ -4,6 +4,9 @@ icon: fas fa-info-circle
 order: 4
 ---
 
+> 안녕하세요! 제 블로그를 방문해주셔서 감사합니다.  
+
+
 ## 📌 **About Me**
 **이름** / 유승리 (Seungri You)
 
@@ -23,11 +26,11 @@ order: 4
 <br>
 
 ## ✏️ **Certification**
-**영어** /  TOEIC 960  /  2021.01.24
+**영어** /  TOEIC (960)  /  2021.01
 
-**기사**  / 정보처리기사  /  2021.06.02
+**기사**  / 정보처리기사  /  2021.06
 
-**영어**  / TOEIC Speaking Level 7  /  2022.01.09
+**영어**  / TOEIC Speaking (Level 7)  /  2022.01
 
 <br>
 
@@ -44,11 +47,11 @@ order: 4
 <br>
 
 ## 🗂 **Archive**
-**GitHub**  /   [https://github.com/seungriyou](https://github.com/seungriyou)
+GitHub  /   [https://github.com/seungriyou](https://github.com/seungriyou)
 
-**Tistory**  /  [https://keep-on-seungriing.tistory.com/](https://keep-on-seungriing.tistory.com/)
+Tistory  /  [https://keep-on-seungriing.tistory.com/](https://keep-on-seungriing.tistory.com/)
 
-**Portfolio** / [https://seungri-you.notion.site/Seungri-You-58d8dc1a947548e0b30f474fe35303b1](https://seungri-you.notion.site/Seungri-You-58d8dc1a947548e0b30f474fe35303b1)
+Portfolio / [https://seungri-you.notion.site/Seungri-You-58d8dc1a947548e0b30f474fe35303b1](https://seungri-you.notion.site/Seungri-You-58d8dc1a947548e0b30f474fe35303b1)
 
 <br>
 
