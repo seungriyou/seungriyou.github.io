@@ -6,8 +6,10 @@
 
 %heading {
   color: var(--heading-color);
-  font-weight: 400;
-  font-family: 'Lato', 'Microsoft Yahei', sans-serif;
+  // font-weight: 400;
+  // font-family: 'Lato', 'Microsoft Yahei', sans-serif;
+  font-weight: 500;
+  font-family: 'Noto Sans KR', sans-serif;
 }
 
 %section {
@@ -60,8 +62,10 @@
 }
 
 %link-hover {
-  color: #d2603a !important;
-  border-bottom: 1px solid #d2603a;
+  color: #3a90d2 !important;
+  border-bottom: 1px solid #3a90d2;
+  // color: #d2603a !important;
+  // border-bottom: 1px solid #d2603a;
   text-decoration: none;
 }
 

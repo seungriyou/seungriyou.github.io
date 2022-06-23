@@ -2,6 +2,8 @@
   The common styles
 */
 @import url('https://fonts.googleapis.com/css2?family=Lato&family=Source+Sans+Pro:wght@400;600;900&display=swap');
+// @import url('https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@1.0/nanumsquare.css');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
 
 @mixin mode-toggle($dark-mode: false) {
   @if $dark-mode {
@@ -32,7 +34,9 @@ html[data-mode=dark] {
 }
 
 :root {
-  font-size: 16px;
+  // font-size: 16px;
+  font-size: 15px;
+  // font-weight: 500;
 }
 
 body {
@@ -40,7 +44,10 @@ body {
   background: var(--body-bg);
   color: var(--text-color);
   -webkit-font-smoothing: antialiased;
-  font-family: 'Source Sans Pro', 'Microsoft Yahei', sans-serif;
+  // font-family: 'Source Sans Pro', 'Microsoft Yahei', sans-serif;
+  font-family: 'Noto Sans KR', 나눔스퀘어, 'NanumSquare', sans-serif;
+  font-weight: 400;
+  letter-spacing: -0.2px;
 }
 
 /* --- Typography --- */
@@ -248,7 +255,7 @@ img[data-src] {
   }
 
   .post-content {
-    font-size: 0.9rem;
+    font-size: 0.95rem;
   }
 
 }
@@ -454,7 +461,7 @@ img[data-src] {
 }
 
 .post-content {
-  font-size: 1.08rem;
+  font-size: 1.0rem;
   line-height: 1.8;
   margin-top: 2rem;
   overflow-wrap: break-word;
@@ -548,7 +555,8 @@ img[data-src] {
 
     border-bottom: none;
     text-decoration: none;
-    color: #d2603a;
+    // color: #d2603a;
+    color: #3a90d2;
   }
 }
 
@@ -710,7 +718,8 @@ $sidebar-display: "sidebar-display";
       @extend %clickable-transition;
 
       font-weight: 900;
-      font-size: 1.5rem;
+      font-size: 1.45rem;
+      line-height: 2.5rem;
       letter-spacing: 0.5px;
       color: rgba(134, 133, 133, 99%);
     }
@@ -728,7 +737,7 @@ $sidebar-display: "sidebar-display";
 
   .nav-link {
     border-radius: 0;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     font-weight: 600;
     letter-spacing: 1px;
     display: table-cell;
@@ -1524,7 +1533,7 @@ $sidebar-display: "sidebar-display";
   }
 
   .post-content {
-    font-size: 1.03rem;
+    font-size: 1.0rem;
   }
 
   footer > div.d-felx {

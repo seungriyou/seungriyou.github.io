@@ -5,6 +5,10 @@
 @import "colors/light-syntax";
 @import "colors/dark-syntax";
 
+@import url("https://cdnjs.cloudflare.com/ajax/libs/firacode/6.2.0/fira_code.min.css");
+
+$code-font-size: 0.93rem;
+
 html:not([data-mode]),
 html[data-mode=light] {
   @include light-syntax;
@@ -64,9 +68,10 @@ $code-radius: 6px;
   padding-bottom: 1rem;
 
   pre {
+    font-family: 'Fira Code', 'Noto Sans KR';
     margin-bottom: 0;
     font-size: $code-font-size;
-    line-height: 1.4rem;
+    line-height: 1.5rem;
     word-wrap: normal; /* Fixed Safari overflow-x */
   }
 
@@ -79,6 +84,7 @@ $code-radius: 6px;
 
   .lineno {
     padding-right: 0.5rem;
+    margin-left: 0.4rem;
     min-width: 2.2rem;
     text-align: right;
     color: var(--highlight-lineno-color);
