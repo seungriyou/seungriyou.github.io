@@ -14,8 +14,8 @@ mermaid: true
 
 <br>
 
-![](/assets/img/posts/Dev-Notes/Tips/2022-04-07-github-01.png)
-![](/assets/img/posts/Dev-Notes/Tips/2022-04-07-github-03.png)
+![](/assets/img/posts/Dev-Note/Tips/2022-04-07-github-01.png)
+![](/assets/img/posts/Dev-Note/Tips/2022-04-07-github-03.png)
 _시작 전에 보고 가면 유익한(?) 나의 부끄러운 과거... 😅 커밋 메시지를 이렇게 쓰면 절대 안 된다!_
 
 <br>
@@ -107,16 +107,16 @@ git branch develop  # main 혹은 master 브랜치에서 수행
 git push -u origin develop
 ```
 
-![git-flow](/assets/img/posts/Dev-Notes/Tips/2022-04-07-github-05.png){: width="50%" height="50%"}
+![git-flow](/assets/img/posts/Dev-Note/Tips/2022-04-07-github-05.png){: width="50%" height="50%"}
 _Git Flow를 설명하는 유명한 그림_
 
 ### 기타 작업 (Issue / PR Message Template)
 그 외에 **Issue Template**이나 **Pull Request Template**을 작성한다. 우리 팀의 경우에는 이 또한 모두 `.github` 폴더 밑에 넣어 관리했다.
 
-![.github](/assets/img/posts/Dev-Notes/Tips/2022-04-07-github-04.png){: width="70%" height="70%"}
+![.github](/assets/img/posts/Dev-Note/Tips/2022-04-07-github-04.png){: width="70%" height="70%"}
 _`.github` 폴더 안의 파일들 (예시)_
 
-![issue-template](/assets/img/posts/Dev-Notes/Tips/2022-04-07-github-06.png){: width="70%" height="70%"}
+![issue-template](/assets/img/posts/Dev-Note/Tips/2022-04-07-github-06.png){: width="70%" height="70%"}
 _`.github/ISSUE_TEMPLATE` 폴더 안의 파일들 (예시)_
 
 <br>
