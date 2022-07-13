@@ -15,7 +15,7 @@ mermaid: true
 <br>
 
 #### 1. VSCode에 `Remote-SSH` Extension 설치하기
-![remote-ssh](/assets/img/posts/Dev-Notes/Tips/2022-04-16-ssh-vscode-1.png)
+![remote-ssh](/assets/img/posts/Dev-Note/Tips/2022-04-16-ssh-vscode.png)
 
 #### 2. ssh `config` 파일에 host 등록하기
 > [**이전 포스팅**](https://seungriyou.github.io/posts/ssh-terminal/)을 따라서 등록해도 되고, 다음과 같이 VSCode 상에서 `config` 파일을 수정하여 `key` 파일을 등록할 수도 있다. 개인적으로는 이전 포스팅의 방법을 사용하는 편이 더 편리한 것 같다.
