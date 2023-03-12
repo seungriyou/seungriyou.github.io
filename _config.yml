@@ -41,11 +41,11 @@ social:
   email: seungri0826@gmail.com # change to your email address
   links:
     # The first element serves as the copyright owner's link
-    # - https://twitter.com/username # change to your twitter homepage
     - https://github.com/seungriyou # change to your github homepage
     - https://www.linkedin.com/in/seungri-you
     - https://keep-on-seungriing.tistory.com
     # Uncomment below to add more social links
+    # - https://twitter.com/username # change to your twitter homepage
     # - https://www.facebook.com/username
     # - https://www.linkedin.com/in/username
 
