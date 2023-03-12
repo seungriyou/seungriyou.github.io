@@ -57,3 +57,15 @@ This work is published under [MIT][mit] License.
 
 ## How to Upgrade
 [https://chirpy.cotes.page/posts/getting-started/#upgrading](https://chirpy.cotes.page/posts/getting-started/#upgrading)
+
+## jekyll, gem 관련 에러
+다음과 같은 에러가 발생할 때는 
+
+```
+... `materialize': Could not find sass-embedded-1.58.3 in any of the sources (Bundler::GemNotFound)
+```
+
+다음의 명령어로 `gem`을 정리한다.
+```shell
+bundler
+```
