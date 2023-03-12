@@ -53,7 +53,7 @@ This work is published under [MIT][mit] License.
 ## TODO - Troubleshooting
 - [ ] `a` tag area가 `img`를 벗어나는 문제
 - [ ] `.left` / `.right` / `.normal` 등이 먹지 않는 문제
-- [ ] `_config.yml` - `google_site_verification`, `google_analytics`, `giscus`
+- [ ] `_config.yml` - `google_site_verification`, `google_analytics`, `giscus` 정보 추가하기
 
 ## How to Upgrade
 [https://chirpy.cotes.page/posts/getting-started/#upgrading](https://chirpy.cotes.page/posts/getting-started/#upgrading)
