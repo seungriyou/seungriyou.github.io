@@ -1,0 +1,59 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/firacode/6.2.0/fira_code.min.css");
+
+// 다음과 같이 "custom" 폴더에서 가져와서 사용하면 override 되어 기존 스타일이 반영되게 된다.
+// 현재처럼 "_sass/colors" 밑에 넣어두면 @import 할 필요 없이, override 되지 않고 스타일이 그대로 반영된다.
+
+/*
+@import 
+    "custom/colors/light-syntax",
+    "custom/colors/dark-syntax";
+
+html {
+    @media (prefers-color-scheme: light) {
+
+        &:not([data-mode]),
+        &[data-mode="light"] {
+            @include light-syntax;
+        }
+
+        &[data-mode="dark"] {
+            @include dark-syntax;
+        }
+    }
+
+    @media (prefers-color-scheme: dark) {
+
+        &:not([data-mode]),
+        &[data-mode="dark"] {
+            @include dark-syntax;
+        }
+
+        &[data-mode="light"] {
+            @include light-syntax;
+        }
+    }
+}
+*/
+
+$code-font-size: 0.93rem;
+
+.highlight {
+    pre {
+        font-family: 'Fira Code', 'Noto Sans KR';
+        line-height: 1.5rem;
+        font-size: $code-font-size;
+    }
+
+    .lineno {
+        margin-left: 0.4rem;
+    }
+}
+
+code {
+    &.highlighter-rouge {
+        font-family: 'Fira Code', 'Noto Sans KR';
+        font-size: 0.9em;
+        padding: 3px 5px;
+        border-radius: 4px;
+    }
+}

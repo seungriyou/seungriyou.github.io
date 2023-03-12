@@ -1,0 +1,23 @@
+%section {
+    #core-wrapper & {
+        margin-bottom: 2rem;
+    }
+}
+
+/* ---------- scss placeholder --------- */
+
+%heading {
+    font-weight: 500;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+%link-hover {
+    color: #3a90d2 !important;
+    border-bottom: 1px solid #3a90d2;
+}
+
+%img-caption {
+    +em {
+        font-size: 85%;
+    }
+}
