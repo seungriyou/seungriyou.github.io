@@ -18,4 +18,5 @@ $tab-count: {{ site.tabs | size | plus: 1 }}; // plus 1 for home tab
 
     "custom/layout/archives.scss",
     "custom/layout/category-tag.scss",
-    "custom/layout/post.scss";
+    "custom/layout/post.scss",
+    "custom/layout/home.scss";
