@@ -120,34 +120,34 @@ Click the hook will locate the footnote[^footnote], and here is another footnote
 
 - Default (with caption)
 
-![Desktop View](){: width="972" height="589" }
+![Desktop View](/assets/img/favicons/android-chrome-512x512.png){: width="972" height="589" }
 _Full screen width and center alignment_
 
 <br>
 
 - Shadow
 
-![Window shadow](){: .shadow width="1548" height="864" style="max-width: 90%" }
+![Window shadow](/assets/img/favicons/android-chrome-512x512.png){: .shadow width="1548" height="864" style="max-width: 90%" }
 _shadow effect (visible in light mode)_
 
 <br>
 
 - Left aligned
 
-![Desktop View](){: width="972" height="589" style="max-width: 70%" .normal}
+![Desktop View](/assets/img/favicons/android-chrome-512x512.png){: width="972" height="589" style="max-width: 70%" .normal}
 
 <br>
 
 - Float to left
 
-  ![Desktop View](){: width="972" height="589" style="max-width: 200px" .left}
+  ![Desktop View](/assets/img/favicons/android-chrome-512x512.png){: width="972" height="589" style="max-width: 200px" .left}
   "A repetitive and meaningless text is used to fill the space. A repetitive and meaningless text is used to fill the space. A repetitive and meaningless text is used to fill the space. A repetitive and meaningless text is used to fill the space. A repetitive and meaningless text is used to fill the space. A repetitive and meaningless text is used to fill the space. A repetitive and meaningless text is used to fill the space. A repetitive and meaningless text is used to fill the space. A repetitive and meaningless text is used to fill the space. A repetitive and meaningless text is used to fill the space. A repetitive and meaningless text is used to fill the space. A repetitive and meaningless text is used to fill the space."
 
 <br>
 
 - Float to right
 
-  ![Desktop View](){: width="972" height="589" style="max-width: 200px" .right}
+  ![Desktop View](/assets/img/favicons/android-chrome-512x512.png){: width="972" height="589" style="max-width: 200px" .right}
   "A repetitive and meaningless text is used to fill the space. A repetitive and meaningless text is used to fill the space. A repetitive and meaningless text is used to fill the space. A repetitive and meaningless text is used to fill the space. A repetitive and meaningless text is used to fill the space. A repetitive and meaningless text is used to fill the space. A repetitive and meaningless text is used to fill the space. A repetitive and meaningless text is used to fill the space. A repetitive and meaningless text is used to fill the space. A repetitive and meaningless text is used to fill the space. A repetitive and meaningless text is used to fill the space. A repetitive and meaningless text is used to fill the space."
 
 <br>
