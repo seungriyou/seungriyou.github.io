@@ -98,14 +98,14 @@ comments:
     issue_term: # < url | pathname | title | ...>
   # Giscus options › https://giscus.app
   giscus:
-    repo: # <gh-username>/<repo>
-    repo_id:
-    category:
-    category_id:
-    mapping: # optional, default to 'pathname'
-    input_position: # optional, default to 'bottom'
+    repo: seungriyou/seungriyou.github.io # <gh-username>/<repo>
+    repo_id: R_kgDOJIS8Qw
+    category: Announcements
+    category_id: DIC_kwDOJIS8Q84CU0WA
+    mapping: pathname # optional, default to 'pathname'
+    input_position: top # optional, default to 'bottom'
     lang: # optional, default to the value of `site.lang`
-    reactions_enabled: # optional, default to the value of `1`
+    reactions_enabled: 1 # optional, default to the value of `1`
 
 # Self-hosted static assets, optional › https://github.com/cotes2020/chirpy-static-assets
 assets:
