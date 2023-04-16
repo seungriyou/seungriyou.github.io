@@ -1,15 +1,15 @@
 @mixin light-scheme {
     --blockquote-text-color: #8f8f8f;
-    --checkbox-checked-color: #132d44; //#07a8f7;
+    --checkbox-checked-color: #132d44;
 
     --sidebar-bg: #eaeef1;
     --sidebar-muted-color: #929292;
 
     /* links */
     --link-color: #193e69;
-    --link-underline-color: #c2cbd3;// #dee2e6;
+    --link-underline-color: #c2cbd3;
     --link-hover-bcolor: #eef7ffd6;
-    --link-hover-lcolor: #59a0d7; //#68b3ed;
+    --link-hover-lcolor: #4589be; 
 
     --prompt-note-icon-color: #03b303;
     --prompt-tip-bg: rgb(123 247 144 / 20%);

@@ -107,6 +107,13 @@ body {
     }
 }
 
+.post-content {
+    a.tag {
+        &:hover {
+            background: rgba(136, 136, 136, 0.106) !important;
+        }
+    }
+}
 
 /* --- desktop mode, both sidebar and panel are visible --- */
 

@@ -3,3 +3,14 @@
             font-size: 1.05rem;
     }
 }
+
+#page-category,
+#page-tag,
+#access-lastmod {
+    a:hover {
+        @extend %link-hover;
+
+        margin-bottom: -2px;
+        /* Avoid jumping */
+    }
+}
