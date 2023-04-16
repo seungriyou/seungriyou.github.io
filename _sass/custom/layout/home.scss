@@ -2,6 +2,11 @@
     .post-preview {
         h1 {
             font-size: 1.35rem;
+
+            /* clip too long titles */
+            overflow-x: clip;
+            white-space: nowrap;
+            text-overflow: ellipsis;
         }
     }
 }

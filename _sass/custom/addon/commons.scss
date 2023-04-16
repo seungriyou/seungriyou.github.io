@@ -46,6 +46,7 @@ body {
 
 .post-content {
     font-size: 1.0rem;
+    line-height: 1.9;
 }
 
 .post-tag {
@@ -95,6 +96,14 @@ body {
                 justify-content: center; // fix a problem that image doesn't locate in the middle
             }
         }
+    }
+
+    /* add highlighter w/ underline */
+    highlight {
+        font-weight: bolder;
+        border-bottom: 2px solid var(--highlight-lcolor);
+        padding: 0 0.2em;
+        background: linear-gradient(180deg, #ffffff00 60%, var(--highlight-bcolor) 40%);
     }
 }
 
