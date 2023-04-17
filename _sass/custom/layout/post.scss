@@ -3,3 +3,13 @@
         aspect-ratio: unset;
     }
 }
+
+/* older / newer post navigate button */
+.post-navigation {
+    .btn {
+        &:hover {
+            background: var(--button-hover-color);
+            border-color: var(--button-hover-color);
+        }
+    }
+}

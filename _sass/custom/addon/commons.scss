@@ -99,7 +99,7 @@ body {
     }
 
     /* add highlighter w/ underline */
-    highlight {
+    hl {
         font-weight: bolder;
         border-bottom: 2px solid var(--highlight-lcolor);
         padding: 0 0.2em;
@@ -107,10 +107,21 @@ body {
     }
 }
 
+/* tags page */
 .post-content {
     a.tag {
         &:hover {
             background: rgba(136, 136, 136, 0.106) !important;
+        }
+    }
+}
+
+/* tag button */
+#panel-wrapper {
+    .post-tag {
+        &:hover {
+            background-color: var(--button-hover-color);
+            border-color: var(--button-hover-color);
         }
     }
 }
