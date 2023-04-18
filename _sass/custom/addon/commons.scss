@@ -99,11 +99,16 @@ body {
     }
 
     /* add highlighter w/ underline */
-    hl {
+    .hlo {
+        border-bottom: 2px solid var(--highlight-lcolor);
+        padding: 0 0.2em;
+        background: linear-gradient(180deg, #ffffff00 65%, var(--highlight-bcolor) 35%);
+    }
+    .hl {
         font-weight: bolder;
         border-bottom: 2px solid var(--highlight-lcolor);
         padding: 0 0.2em;
-        background: linear-gradient(180deg, #ffffff00 60%, var(--highlight-bcolor) 40%);
+        background: linear-gradient(180deg, #ffffff00 65%, var(--highlight-bcolor) 35%);
     }
 }
 
