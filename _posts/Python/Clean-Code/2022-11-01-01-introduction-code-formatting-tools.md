@@ -9,13 +9,15 @@ tags: [python, clean code, book]     # TAG names should always be lowercase
 
 <br>
 
-# 클린 코드
+## 클린 코드
 
 클린 코드란 품질 좋은 소프트웨어를 개발하고, 견고하고 유지보수가 쉬운 시스템을 만들고, 기술 부채를 회피하는 것을 뜻한다. 이를 통해 **민첩한 개발**과 **예측 가능한 속도로 지속적인 배포**가 가능하다.
 
 클린 코드인지 아닌지는 **다른 엔지니어가 코드를 읽고 유지 관리할 수 있는지 여부**에 달려있다.
 
-## 프로젝트 코딩 스타일 가이드 준수
+<br>
+
+### 프로젝트 코딩 스타일 가이드 준수
 
 품질 표준을 지키기 위해 프로젝트에서 따라야만 하는 최소한의 요구사항을 **코딩 가이드라인**이라 한다.
 
@@ -43,9 +45,9 @@ tags: [python, clean code, book]     # TAG names should always be lowercase
 
 ---
 
-# Docstring과 Annotation
+## Docstring과 Annotation
 
-## Docstring
+### Docstring
 
 코드에 **주석(comment)**을 다는 것은 외부 라이브러리에 오류가 있는 경우 정도를 제외하면 **지양**해야 한다. 그 이유는 다음과 같다.
 
@@ -54,17 +56,19 @@ tags: [python, clean code, book]     # TAG names should always be lowercase
 
 **docstring**은 **소스코드에 포함된 문서**로, 특정 컴포넌트(ex. 모듈, 클래스, 메서드, 함수 등)에 대한 문서화이다.
 
-docstring이 필요한 이유 중 하나는 **파이썬이 동적 타이핑**을 하기 때문인데, 예상되는 함수의 입력과 출력을 문서화하면 사용자가 사용할 때 함수가 어떻게 동작하는지 이해하기 쉬워진다.
+docstring이 필요한 이유 중 하나는 <span class="hl">파이썬이 동적 타이핑</span>을 하기 때문인데, 예상되는 함수의 입력과 출력을 문서화하면 사용자가 사용할 때 함수가 어떻게 동작하는지 이해하기 쉬워진다.
 
 IPython 대화형 인터프리터에서는 함수 뒤에 물음표 두 개 `??`를 사용하여 함수의 docstring을 가져올 수 있다.
 
 객체에 docstring이 정의되어 있으면 `__doc__` 속성을 통해 접근이 가능하다.
 
-docstring의 단점으로는 **지속적으로 수작업**을 해야한다는 점과 상세하게 작성해야 한다는 점이 있다. 코드를 변경한 경우, 위키, 사용자 매뉴얼, README, docstring 등 관련된 모든 내용을 업데이트하는 것이 중요하다.
+docstring의 단점으로는 **지속적으로 수작업**을 해야한다는 점과 **상세하게 작성**해야 한다는 점이 있다. 코드를 변경한 경우, 위키, 사용자 매뉴얼, README, docstring 등 관련된 모든 내용을 업데이트하는 것이 중요하다.
 
-## Annotation
+<br>
 
-**annotation**은 코드 사용자에게 **함수 인자로 어떤 값이 와야 하는지 힌트를 주는 것**이다. 하지만 이를 통해 파이썬이 타입을 검사하거나 강제하지는 않는다.
+### Annotation
+
+**annotation**은 코드 사용자에게 <span class="hl">함수 인자로 어떤 값이 와야 하는지 힌트를 주는 것</span>이다. 하지만 이를 통해 파이썬이 타입을 검사하거나 강제하지는 않는다.
 
 **annotation으로 지정할 수 있는 것**에는 다음의 것들이 있다.
 
@@ -74,7 +78,9 @@ docstring의 단점으로는 **지속적으로 수작업**을 해야한다는 �
 
 annotation을 사용하면 `__annotations__`라는 속성이 생성되는데, 이는 annotation의 이름과 값을 매핑한 dictionary 타입의 값이다. 이를 통해 **문서 생성**, **유효성 검증** 또는 **타입 체크**를 할 수 있다.
 
-**타입 힌팅(type hinting)**은 코드 전체에 올바른 타입이 사용되었는지 확인하고 호환되지 않는 타입이 발견되었을 때 사용자에게 힌트를 주는 것이다.
+<br>
+
+<span class="hl">타입 힌팅(type hinting)</span>은 코드 전체에 올바른 타입이 사용되었는지 확인하고 호환되지 않는 타입이 발견되었을 때 사용자에게 힌트를 주는 것이다.
 
 타입 힌팅을 통해 **타입 체크** 뿐만 아니라 **meaningful names**와 **abstractions**를 사용할 수 있다. 
 
@@ -107,7 +113,11 @@ def process_clients(clients: list[Client]):
 
 > **`typing.Tuple` vs. `tuple`**
 >
-> [https://stackoverflow.com/questions/39458193/using-list-tuple-etc-from-typing-vs-directly-referring-type-as-list-tuple-etc](https://stackoverflow.com/questions/39458193/using-list-tuple-etc-from-typing-vs-directly-referring-type-as-list-tuple-etc)
+> > 참고: <https://stackoverflow.com/questions/39458193/using-list-tuple-etc-from-typing-vs-directly-referring-type-as-list-tuple-etc>
+> 
+> - **Python 3.8**까지는 `tuple`과 `list`가 generic type으로 지원되지 않았으므로, 아직 Python 3.8 이하 버전을 지원하려면 `typing` generics(`typing.Tuple`, `typing.List`)를 이용해야 한다.
+> 
+> - **Python 3.9**부터는 standard collection을 이용한 type hinting이 지원된다.
 {: .prompt-info}
 
 파이썬 3.5부터는 **`typing` 모듈**이 도입되었으며, PEP-526, PEP-557의 도입 후부터는 **함수의 파라미터와 리턴 타입**뿐만 아니라 **변수에 직접 주석**을 달 수 있다. 
@@ -134,11 +144,13 @@ class Point:
 
 ---
 
-# 도구 설정
+## 도구 설정
 
 반복적인 확인 작업을 줄이기 위해 **코드 검사를 자동 실행**하는 도구를 설정할 수 있다. 이는 테스트/체크리스트의 일부가 되어 **지속적인 통합 빌드(CI, Continuous Integration)**의 하나가 되어야 하며, 검사에 실패하면 빌드도 실패해야 한다.
 
-## `mypy`, `pytype` - Type Consistency
+<br>
+
+### `mypy`, `pytype` - Type Consistency
 
 `mypy`는 파이썬에서 일반적으로 사용하는 정적 타입 검사 도구로, 프로젝트의 모든 파일을 검사하여 **타입 불일치를 검사**해준다. `mypy <파일명>`을 입력하면 타입 검사 결과를 제공해주며, 가끔 잘못된 탐지를 하는 경우, 다음과 같이 문장 끝에 주석을 추가하여 무시될 수 있도록 할 수 있다.
 
@@ -148,7 +160,9 @@ type_to_ignore = "something" # type: ignore
 
 발생 가능한 런타임 에러에 대해서도 리포트해주는 `pytype`이라는 도구도 사용할 수 있다.
 
-## `pylint`, `coala` - Generic Validation
+<br>
+
+### `pylint`, `coala` - Generic Validation
 
 `pycodestyle`, `flake8`, `pylint`는 **PEP-8을 준수했는지 여부**를 검사하는 도구이다. `pylint`는 그 중에서도 가장 완결성이 높고 엄격하며 설정 가능한 옵션이 많다. 이는 `.pylintrc` 파일을 통해 설정값을 바꿀 수 있으며, 다음과 같이 overrule을 통해 특정 restriction을 disable 할 수도 있다.
 
@@ -159,7 +173,9 @@ disable=missing-function-docstring
 
 뿐만 아니라 error를 사용자에게 알리고 자동으로 수정하는 기능도 지원해주는 `Coala`라는 도구도 있다. 이와 같은 도구들은 predefined rules외에도 own rules를 추가할 수 있다.
 
-## `black`, `yapf` - Automatic Formatting
+<br>
+
+### `black`, `yapf` - Automatic Formatting
 
 `black`은 **자동으로 코드를 포맷팅**하는 도구로, 문자열에 항상 쌍따옴표를 사용하는 등 항상 같은 방법으로 결과를 출력한다. 다음과 같이 line의 최대 길이를 설정할 수 있다.
 
@@ -176,7 +192,9 @@ _Clean Code in Python, Mariano Anaya (2nd Edition), p25_
 
 엄격한 `black`과 다르게 partial formatting을 지원하는 highly customizable한 `yapf` 라는 도구도 있다. 특히, legacy repository에 적용하는 경우에는 `yapf`가 더 적합할 수 있다. 이러한 도구들을 IDE나 `git pre-commit hook`에 설정하여 편리하게 사용할 수 있다.
 
-## `Makefile` - Automatic Checks
+<br>
+
+### `Makefile` - Automatic Checks
 
 `Makefile`은 Unix 개발환경에서 **해당 프로젝트 내에서 실행되어야 할 명령어들**(ex. compiling, running, …)을 설정하는 것을 돕는 도구이다. 이를 프로젝트 루트 디렉토리에 생성하면, 포맷팅 검사나 코딩 컨벤션 검사를 자동화할 수 있다.
 
@@ -214,7 +232,9 @@ clean:
 make checklist
 ```
 
-**`Makefile`의 장점**은 다음과 같다.
+<br>
+
+<span class="hl">Makefile의 장점</span>은 다음과 같다.
 
 1. 반복적인 작업을 자동화할 수 있는 쉬운 방법이다. 
     
