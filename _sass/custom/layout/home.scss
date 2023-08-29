@@ -9,4 +9,14 @@
             text-overflow: ellipsis;
         }
     }
+    .card .card-body {
+        padding: 1.75rem 1.75rem 1.75rem 1.75rem;
+    }
+    .card-text.post-content p {
+        line-height: 1.85 !important;
+        font-size: 0.98rem;
+    }
+    .post-meta {
+        word-spacing: 1px;
+    }
 }

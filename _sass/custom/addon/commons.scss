@@ -29,7 +29,7 @@ html {
             @include light-scheme;
         }
     }
-    font-size: 15.5px;
+    font-size: 15.5px; //15.5px;
 }
 
 body {
@@ -40,13 +40,14 @@ body {
 
 .access {
     .post-content {
-        font-size: 0.95rem;
+        font-size: 0.9rem;
     }
 }
 
 .post-content {
     font-size: 1.0rem;
-    line-height: 1.9;
+
+    color: var(--post-card-text-color) !important;
 }
 
 .post-tag {
@@ -57,8 +58,9 @@ body {
 
 #sidebar {
     .site-title {
-        font-size: 1.45rem;
+        font-size: 1.5rem;
         line-height: 3.5rem;
+        margin-bottom: 0;
     }
 
     .site-subtitle {
@@ -66,14 +68,20 @@ body {
     }
 
     .nav-link {
-        font-size: 0.9rem;
+        font-size: 0.95rem;
+        padding-top: 0.7rem !important;
+        padding-bottom: 0.7rem !important;
+        span {
+            letter-spacing: 1px !important;
+        }
+    }
+
+    ul li.nav-item a.nav-link:hover {
+        background-color: var(--sidebar-hover-bg);
     }
 }
 
 /* --- post --- */
-// .img-link{
-//     display: unset;
-// }
 .right {
     // float: right;
     justify-content: right;
@@ -86,18 +94,16 @@ body {
     // float: left;
     justify-content: left;
 }
-
 .post {
     p {
         >img[data-src],
-        >a.popup {
+        >a.popup.img-link {
             &:not(.normal):not(.left):not(.right) {
                 // @include align-center;
                 justify-content: center; // fix a problem that image doesn't locate in the middle
             }
         }
     }
-
     /* add highlighter w/ underline */
     .hlo {
         border-bottom: 2px solid var(--highlight-lcolor);
@@ -119,14 +125,21 @@ body {
             background: rgba(136, 136, 136, 0.106) !important;
         }
     }
+    line-height: 1.8rem;
 }
 
 /* tag button */
 #panel-wrapper {
-    .post-tag {
-        &:hover {
-            background-color: var(--button-hover-color);
-            border-color: var(--button-hover-color);
+    .btn-outline-primary {
+        --bs-btn-hover-color: var(--button-hover-color);
+        --bs-btn-hover-bg: var(--button-hover-color);
+        --bs-btn-hover-border-color: var(--button-hover-color);
+    }
+    /* Overwrite bootstrap outline button */
+    .btn.btn-outline-primary {
+        &:not(.disabled):hover {
+            border-color: var(--button-hover-color) !important;
+            color: var(--button-hover-lcolor) !important;
         }
     }
 }

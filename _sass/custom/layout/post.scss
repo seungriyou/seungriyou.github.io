@@ -1,7 +1,5 @@
 .preview-img {
-    img {
-        aspect-ratio: unset;
-    }
+    aspect-ratio: unset;
 }
 
 /* older / newer post navigate button */
@@ -10,6 +8,13 @@
         &:hover {
             background: var(--button-hover-color);
             border-color: var(--button-hover-color);
+        }
+    }
+    /* Overwrite bootstrap outline button */
+    .btn.btn-outline-primary {
+        &:not(.disabled):hover {
+            border-color: var(--button-hover-color) !important;
+            color: var(--button-hover-lcolor) !important;
         }
     }
 }

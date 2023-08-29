@@ -11,11 +11,6 @@
     font-family: 'Noto Sans KR', sans-serif;
 }
 
-// %link-hover {
-//     color: rgb(85, 125, 157) !important;
-//     border-bottom: 1px solid #4f728c;
-// }
-
 %img-caption {
     +em {
         font-size: 85%;
@@ -27,8 +22,29 @@
     border-bottom: 1px dashed var(--link-underline-color); 
 }
 
+// %link-hover {
+//     color: rgb(85, 125, 157) !important;
+//     border-bottom: 1px solid #4f728c;
+// }
 %link-hover {
     color: var(--link-color) !important;
     background: linear-gradient(180deg, #ffffff00 65%, var(--link-hover-bcolor) 35%);
     border-bottom: 2px dashed var(--link-hover-lcolor);    
+}
+
+/* post cards */
+.card-title {
+    line-height: initial;
+}
+
+/* tag hover effect */
+%tag-hover {
+    background: var(--tag-hover);
+    transition: background 0.35s ease-in-out;
+    border-bottom: none;
+}
+
+/* sidebar bottom buttons */
+#sidebar .sidebar-bottom {
+    justify-content: center;
 }

@@ -55,8 +55,12 @@ This work is published under [MIT][mit] License.
 - [ ] `a` tag area가 `img`를 벗어나는 문제
 - [ ] image에서 `.left` / `.right` / `.normal` 등이 먹지 않는 문제
 
+<br>
+
 ## How to Upgrade
 [https://chirpy.cotes.page/posts/getting-started/#upgrading](https://chirpy.cotes.page/posts/getting-started/#upgrading)
+
+<br>
 
 ## [Error] `jekyll`, `gem`
 ### `GemNotFound`
@@ -83,6 +87,8 @@ rbenv versions
 rbenv local
 rbenv local 3.1.0
 ```
+
+<br>
 
 ## Adding Custom CSS Settings
 - `_etc` 내부의 sass 파일들은 기존에 배포된 chirpy theme의 파일이다. 해당 파일들을 참고하면 된다.

@@ -4,6 +4,8 @@
 
     --sidebar-bg: #eaeef1;
     --sidebar-muted-color: #929292;
+    /* sidebar item hover */
+    --sidebar-hover-bg: rgb(217 225 233 / 64%);
 
     /* links */
     --link-color: #193e69;
@@ -23,7 +25,11 @@
 
     /* button hover color (ex. post-navigation, post-tag) */
     --button-hover-color: #262e41;
+    --button-hover-lcolor: #eef7ffd6;
 
     /* table of content */
     --toc-highlight: #193e69;
+
+    /* home post card */
+    --text-muted-color: #6c757d;
 }
