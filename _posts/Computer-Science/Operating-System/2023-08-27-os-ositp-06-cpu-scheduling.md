@@ -12,7 +12,7 @@ mermaid: true
 <br>
 
 > 단기 스케줄러 (short term scheduler) / CPU 스케줄러
-> {: .prompt-tip}
+{: .prompt-tip}
 
 <br>
 
