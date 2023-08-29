@@ -105,16 +105,26 @@ body {
         }
     }
     /* add highlighter w/ underline */
-    .hlo {
+    // (default) yellow highlighter
+    .hl {
+        font-weight: 500; // bolder;
         border-bottom: 2px solid var(--highlight-lcolor);
         padding: 0 0.2em;
         background: linear-gradient(180deg, #ffffff00 65%, var(--highlight-bcolor) 35%);
     }
-    .hl {
-        font-weight: bolder;
-        border-bottom: 2px solid var(--highlight-lcolor);
+    // purple highlighter
+    .hlp {
+        font-weight: 500; // bolder;
+        border-bottom: 2px solid var(--highlight-purple-lcolor);
         padding: 0 0.2em;
-        background: linear-gradient(180deg, #ffffff00 65%, var(--highlight-bcolor) 35%);
+        background: linear-gradient(180deg, #ffffff00 65%, var(--highlight-purple-bcolor) 35%);
+    }
+    // blue highlighter
+    .hlb {
+        font-weight: 500; // bolder;
+        border-bottom: 2px solid var(--highlight-blue-lcolor);
+        padding: 0 0.2em;
+        background: linear-gradient(180deg, #ffffff00 65%, var(--highlight-blue-bcolor) 35%);
     }
 }
 
