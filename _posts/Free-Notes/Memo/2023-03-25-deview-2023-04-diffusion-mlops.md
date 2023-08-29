@@ -36,7 +36,7 @@ mermaid: true
     
 <br>
 
-### <span class="hlo">최근 6개월 간 Diffusion Model의 발전 과정</span>
+### <span class="hl">최근 6개월 간 Diffusion Model의 발전 과정</span>
 
 ![Untitled](/assets/img/posts/Free-Notes/Memo/2023-03-25-04-03.png){: width="30%"}
 
@@ -109,7 +109,7 @@ _전체 정리_
     
 <br>
 
-### <span class="hlo">TensorRT</span>
+### <span class="hl">TensorRT</span>
 
 - **GPU 하드웨어 구조**
     - **SRAM**과 **HBM** 간 I/O는 느리다.
@@ -167,7 +167,7 @@ _전체 정리_
     
 <br>
 
-### <span class="hlo">Triton Inference Server (NVIDIA)</span>
+### <span class="hl">Triton Inference Server (NVIDIA)</span>
 
 > OpenAI의 컴파일러인 Triton과는 다른 것이다.
 
