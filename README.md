@@ -50,6 +50,8 @@ This work is published under [MIT][mit] License.
 
 <br>
 
+# Personal Notes
+
 ## TODO
 - [x] `_config.yml` - `google_site_verification`, `google_analytics`, `giscus` 정보 추가하기
 - [ ] `a` tag area가 `img`를 벗어나는 문제
@@ -58,11 +60,37 @@ This work is published under [MIT][mit] License.
 <br>
 
 ## How to Upgrade
-[https://chirpy.cotes.page/posts/getting-started/#upgrading](https://chirpy.cotes.page/posts/getting-started/#upgrading)
+> starter로 설치한 경우, 다음과 같이 하면 된다.
+
+If you are using the theme gem (there will be gem "jekyll-theme-chirpy" in the Gemfile), editing the Gemfile and update the version number of the theme gem, for example:
+
+```diff
+- gem "jekyll-theme-chirpy", "~> 3.2"
++ gem "jekyll-theme-chirpy", "~> 4.0"
+```
+And then execute the following command:
+```shell
+bundle update jekyll-theme-chirpy
+```
+As the version upgrades, the critical files (for details, see the startup template) and configuration options will change. We can use the GitHub API to get the file changes in the version upgrade.
+
+The URL format is as follows:
+```
+https://github.com/cotes2020/chirpy-starter/compare/<older_version>...<newer_version>
+```
+For instance, to upgrade from v4.0.0 to v5.0.0, visit:
+https://github.com/cotes2020/chirpy-starter/compare/v4.0.0...v5.0.0
+
+<br> 
+
+> references
+> - [https://github.com/cotes2020/jekyll-theme-chirpy/wiki/Upgrade-Guide](https://github.com/cotes2020/jekyll-theme-chirpy/wiki/Upgrade-Guide)
+> - [https://chirpy.cotes.page/posts/getting-started/#upgrading](https://chirpy.cotes.page/posts/getting-started/#upgrading)
+
 
 <br>
 
-## [Error] `jekyll`, `gem`
+## jekyll, gem 관련 이슈
 ### `GemNotFound`
 다음과 같은 에러가 발생할 때는 
 
@@ -79,6 +107,10 @@ bundler
 다음의 명령어로 실행한다.
 ```shell
 bundle exec jekyll s
+```
+(23.10.27 추가) 요즘은 다음과 같이 실행해도 된다...!
+```shell
+jekyll s
 ```
 
 ### `rbenv`
