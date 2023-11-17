@@ -126,6 +126,17 @@ body {
         padding: 0 0.1em;
         background: linear-gradient(180deg, #ffffff00 65%, var(--highlight-blue-bcolor) 35%);
     }
+
+    /* add colored text */
+    .red {
+        color: crimson;
+    }
+    .blue {
+        color: royalblue;
+    }
+    .pink {
+        color: mediumvioletred;
+    }
 }
 
 /* tags page */
