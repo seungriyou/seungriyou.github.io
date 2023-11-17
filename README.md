@@ -163,3 +163,33 @@ rbenv local 3.1.0
   ```
 
 - Jekyll liquid 문법에서 array를 생성하는 방법은 [Make array and add element in liquid](https://twpower.github.io/228-make-array-and-add-element-in-jekyll-liquid-en)를 참고했다.
+
+<br>
+
+## Small Tips for Posting
+### 1. 이미지 크기 설정
+```markdown
+![example-image](/assets/img/posts/category/subcategory/image.png){: style="max-width: 70%"}
+```
+
+### 2. 텍스트 색상 설정
+HTML color name은 [링크](https://htmlcolorcodes.com/color-names/)에서 확인하기!
+
+```markdown
+<span style="color: red">this is **red**</span>
+```
+
+### 3. Math: Curly Bracket
+> ref: <https://github.com/orgs/community/discussions/16993#discussioncomment-4056560>
+
+curly bracket을 표현하기 위해 `\{`, `\}`를 사용하면 출력이 안 된다. 대신, `\lbrace`와 `\rbrace`를 사용해야 한다.
+
+- `{}` 출력 안 되는 예시
+  ```markdown
+  $\mathbf s^0=\{s^0(j)\in [n]\}_{j \in [m]}$
+  ```
+
+- `{}` 출력 되는 예시
+  ```markdown
+  $\mathbf s^0=\lbrace s^0(j)\in [n]\rbrace_{j \in [m]}$
+  ```
