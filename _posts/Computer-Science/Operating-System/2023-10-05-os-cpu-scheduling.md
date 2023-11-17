@@ -57,7 +57,7 @@ image:
 
 | 프로세스 종류 | 설명 | 예시 | CPU burst의 양상 |
 | --- | --- | --- | --- |
-| **CPU Bound Process** | I/O 작업을 거의 수행하지 않아 <span class="hlb">CPU burst가<br>길게</span>나타나는 프로세스 | 계산 위주 프로그램 | **소수의 긴** CPU burst |
+| **CPU Bound Process** | I/O 작업을 거의 수행하지 않아 <span class="hlb">CPU burst가<br>길게</span> 나타나는 프로세스 | 계산 위주 프로그램 | **소수의 긴** CPU burst |
 | **I/O Bound Process** | I/O 요청이 빈번해 <span class="hlb">CPU burst가 짧게</span> 나타나는<br>프로세스 | 대화형 프로그램 | **다수의 짧은** CPU burst |
 
 <br>
@@ -201,8 +201,8 @@ image:
     
     | 구현 방식 | 스케줄링 알고리즘 이름 | 설명 |
     | --- | --- | --- |
-    | nonpreemptive | **SJF** (Shortest Job First) | 실행 중인 프로세스가 CPU를 자진 반납하기 전까지는 CPU를 빼앗지 않는다. |
-    | preemptive | **SRTF** (Shortest Remaining Time First) | 프로세스 실행 중에 CPU burst가 더 짧은 프로세스가 도착할 경우 CPU를 빼앗아 더 짧은 프로세스에게 부여한다. |
+    | nonpreemptive | **SJF** (Shortest Job First) | 실행 중인 프로세스가 CPU를 자진 반납하기 전까지는<br>CPU를 빼앗지 않는다. |
+    | preemptive | **SRTF** (Shortest Remaining Time First) | 프로세스 실행 중에 CPU burst가 더 짧은 프로세스가<br>도착할 경우 CPU를 빼앗아 더 짧은 프로세스에게 부여한다. |
     
     > **preemptive** 방식의 **SRTF**는 다음과 같은 특징을 가진다.
     >
