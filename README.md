@@ -131,3 +131,35 @@ rbenv local 3.1.0
   - 예외로, 포스팅 내 코드 블럭의 색상 팔레트 설정은 `_sass/colors`에 위치시켜 별다른 `@import` 작업 없이 & overriding 동작 없이 적용되도록 한다.
 
 - `@mixin`을 override 하기 위해 삽질을 오래했는데, `_sass/custom/addon/commons.scss`, `_sass/custom/addon/syntax.scss` 파일을 참고하여 사용하면 override 동작도 수행할 수 있다.
+
+<br>
+
+## Custom Ordering in Categories Tab
+- `_layouts/categories.html` 파일을 생성하여 <https://seungriyou.github.io/categories/> 탭에서의 **최상위 카테고리 정렬 순서**를 커스터마이징 했다.
+
+  > 원본 코드에서는 다음과 같이 카테고리 이름의 사전식 순서로 정렬하였다.
+  > 
+  > ```html
+  > {% assign sort_categories = site.categories | sort %}
+  > ```
+
+- 해당 html 파일의 원본 파일은 [jekyll-theme-chirpy의 원본 `categories.html` 파일](https://github.com/cotes2020/jekyll-theme-chirpy/blob/master/_layouts/categories.html)에서 확인할 수 있다.
+
+- post 작성 시 새로운 카테고리를 만들 것이라면, `_layouts/categories.html` 파일에 다음과 같이 `custom_order` 내에서 적절한 위치에 `, `와 함께 추가해주면 된다. 순서를 수정하고 싶을 때도 마찬가지로 `custom_order`를 수정한다.
+
+  ```html
+  <!-- [START] add custom order of categories in `CATEGORIES` tab -->
+  <!-- ref: https://twpower.github.io/228-make-array-and-add-element-in-jekyll-liquid-en -->
+  {% assign custom_order = 'Python, Dev-Log, MLOps, Problem Solving, Computer Science, Deep Learning, Experience, Daily-Log' | split: ', ' %}
+  {% assign sort_categories = '' | split: ',' %}
+  {% for co in custom_order %}
+    {% for category in site.categories %}
+      {% if category[0] == co %}
+        {% assign sort_categories = sort_categories | push: category %}
+      {% endif %}
+    {% endfor %}
+  {% endfor %}
+  <!-- [END] add custom order of categories in `CATEGORIES` tab -->
+  ```
+
+- Jekyll liquid 문법에서 array를 생성하는 방법은 [Make array and add element in liquid](https://twpower.github.io/228-make-array-and-add-element-in-jekyll-liquid-en)를 참고했다.
