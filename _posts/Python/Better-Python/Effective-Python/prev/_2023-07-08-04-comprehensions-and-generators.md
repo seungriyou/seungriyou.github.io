@@ -162,10 +162,10 @@ def index_words_it(text):
 ## Better Way 31: 인자에 대해 이터레이션할 때는 방어적이 돼라
 
 ```python
-def normalize(numbers): # -- numbers가 이터레이터인 경우,
-    total = sum(numbers) # -- (1) 이터레이터 동작 (→ 원소 소진)
+def normalize(numbers):     # -- numbers가 이터레이터인 경우,
+    total = sum(numbers)    # -- (1) 이터레이터 동작 (→ 원소 소진)
     result = []
-    for value in numbers: # -- (2) 이터레이터 동작 (→ 비어있음)
+    for value in numbers:   # -- (2) 이터레이터 동작 (→ 비어있음)
         percent = 100 * value / total
         result.append(percent)
     return result
