@@ -213,7 +213,9 @@ object detection은 **anchor-based detectors**에 의해 주도되어 왔으나,
 
 <br>
 
-> one-stage anchor-based detector와 center-based anchor-free detector의 essential difference: **"how to define positive and negative training samples"**
+> one-stage anchor-based detector와 center-based anchor-free detector의 essential difference:
+> 
+> **"how to define positive and negative training samples"**
 {: .prompt-warning}
 
 <br>
@@ -324,8 +326,8 @@ object detection은 **anchor-based detectors**에 의해 주도되어 왔으나,
     <br>
 
     | --- | --- |
-    | **두 버전의 공통점** | same candidates selected in the <span class="hl">spatial dimension</span> |
-    | **두 버전의 차이점** | different ways to select final positives from candidates along the <span class="hl">scale dimension</span> |
+    | **두 버전의 공통점** | same **candidates** selected in the <span class="hl">spatial dimension</span> |
+    | **두 버전의 차이점** | different ways to select **final positives from candidates** along the <span class="hl">scale dimension</span> |
 
 <br>
 
@@ -408,7 +410,7 @@ object detection은 **anchor-based detectors**에 의해 주도되어 왔으나,
 
 ## 5. Conclusion
 
-1. one-stage anchor-based와 center-based anchor-free detector의 essential difference는 <span class="hl">**positive / negative training samples를 정의하는 방법**</span>이다. 
+1. one-stage anchor-based와 center-based anchor-free detector의 essential difference는 **positive / negative training samples를 정의하는 방법**이다. 
     
 2. ATSS는 object의 **통계적 특징**을 이용하여 자동으로 **positive / negative training samples**를 나눈다.
     

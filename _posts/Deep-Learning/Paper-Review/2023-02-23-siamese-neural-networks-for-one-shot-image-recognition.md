@@ -2,15 +2,11 @@
 title: "[Paper] Siamese Neural Networks for One-shot Image Recognition"
 date: 2023-02-23 19:50:00 +0900
 categories: [Deep Learning, Paper Review]
-tags: [paper review, image retrieval, one shot]
+tags: [paper review, one shot, siamese]
 math: true
 ---
 
 > 📎 Paper: <https://www.cs.cmu.edu/~rsalakhu/papers/oneshot1.pdf>
-
-<br>
-
-image retrieval 태스크를 시작하며 읽었던 논문이다.
 
 <br>
 
@@ -198,7 +194,7 @@ _best validation checkpoint & threhsold 에서의 test accuracy_
 
 - Omniglot dataset으로 학습된 모델이 MNIST dataset에도 일반화가 잘 되는지 실험했다.
     
-    → 10-way one-shot classification task
+    **→ 10-way one-shot classification task**
     
 - 꽤나 잘 generalize 된다고 판단할 수 있다.
 
@@ -211,6 +207,8 @@ _best validation checkpoint & threhsold 에서의 test accuracy_
 - verification을 위한 deep convolutional siamese neural networks를 학습시킴으로써 one-shot classification을 수행하는 방법을 제시했다.
 - metric learning approach로 human-level accuracy를 달성할 수 있었으며, 다른 도메인의 one-shot learning task에도 적용될 수 있다.
 - 본 논문에서는 global affine transform을 이용한 distortions만을 추가로 고려했으나, individual stroke trajectories에 대한 local affine transformations를 수행 후 하나로 합치는 방법으로 확장한다면 variations에 더 적합한 feature를 학습할 수 있을 것이다.
+
+<br>
 
 ![Untitled](/assets/img/posts/Deep-Learning/Paper-Review/2023-02-23-9.png){: style="max-width: 60%"}
 

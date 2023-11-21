@@ -85,20 +85,20 @@ active learning에 대해 알아보며 읽었던 논문이다.
     
 - **notation**
     
-    | compact space | $\mathcal X$ |
     | --- | --- |
-    | label space | $\mathcal Y = \lbrace 1, ..., C\rbrace $<br>($C$ classes classification problem) |
-    | loss function | $l(\cdot,\cdot ; \mathbf w):\mathcal X \times \mathcal Y \rightarrow \mathcal R$ |
-    | query budget | $b$ (oracle에게 label을 요청할 data의 개수) |
-    | multiple rounds | $k$ (query를 위해 선택된 subset: $\mathbf s^k$) |
+    | **compact space** | $\mathcal X$ |
+    | **label space** | $\mathcal Y = \lbrace 1, ..., C\rbrace $<br>($C$ classes classification problem) |
+    | **loss function** | $l(\cdot,\cdot ; \mathbf w):\mathcal X \times \mathcal Y \rightarrow \mathcal R$ |
+    | **query budget** | $b$ (oracle에게 label을 요청할 data의 개수) |
+    | **multiple rounds** | $k$ (query를 위해 선택된 subset: $\mathbf s^k$) |
 
     > classical 방법에서는 $b=1$ 이지만, single point는 deep learning에서 의미있는 영향이 없기 때문에 batch setting을 사용한다.
     {: .prompt-info}
   
 - **label이 되어야 할 data points의 initial pool**은 **uniformly random 하게 선정**한다.
     
-    | $n$ | 전체 sample |
     | --- | --- |
+    | $n$ | 전체 sample |
     | $m$ | label $y$를 알고있는 sample |
     | $\lbrace\mathbf x_i\rbrace_{i \in [n]}$, $\lbrace y_{s(j)}\rbrace_{j \in [m]}$  | active learning algorithm이 access 할 수 있는 정보<br>(initial sub-sampled pool의 labels 만 볼 수 있다.) |
     | $\mathbf s^0=\lbrace s^0(j)\in [n]\rbrace_{j \in [m]}$ | initial labelled set |
