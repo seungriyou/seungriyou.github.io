@@ -193,3 +193,30 @@ curly bracket을 표현하기 위해 `\{`, `\}`를 사용하면 출력이 안 �
   ```markdown
   $\mathbf s^0=\lbrace s^0(j)\in [n]\rbrace_{j \in [m]}$
   ```
+
+### 4. Degree Symbol
+
+degree symbol을 나타내려면 `\degree`가 아닌 `^{\circ}`을 사용해야 한다.
+
+- `°` 출력 안 되는 예시
+  ```markdown
+  $70\degree$
+  ```
+
+- `°` 출력 되는 예시
+  ```markdown
+  $70^{\circ}$
+  ```
+
+### 5. Toggle
+
+```markdown
+<details>
+<summary>제목</summary>
+<div markdown="1">
+
+내용
+
+</div>
+</details>
+```
