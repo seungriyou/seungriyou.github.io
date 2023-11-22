@@ -1,6 +1,6 @@
 ---
 title: "[Effective Python] 모아보기"
-date: 2023-11-21 15:50:00 +0900
+date: 2023-11-22 13:50:00 +0900
 categories: [Python, Effective Python]
 tags: [python, effective python]
 math: true
@@ -82,5 +82,6 @@ math: true
 | 37 | 내장 타입을 여러 단계로 내포시키기보다는 클래스를 합성하라 | [LINK](/posts/effective-python-05-better-way-37) | ✅ |
 | 38 | 간단한 인터페이스의 경우 클래스 대신 함수를 받아라 | [LINK](/posts/effective-python-05-better-way-38) | ✅ |
 | 39 | 객체를 제너릭하게 구성하려면 `@classmethod`를 통한 다형성을 활용하라 | [LINK](/posts/effective-python-05-better-way-39) | ✅ |
+| 40 | `super`로 부모 클래스를 초기화하라 (+ MRO) | [LINK](/posts/effective-python-05-better-way-40) | ✅ |
 
 <br>
