@@ -1,12 +1,17 @@
 ---
 title: "[Effective Python] 모아보기"
-date: 2023-11-22 13:50:00 +0900
+date: 2023-11-23 13:00:00 +0900
 categories: [Python, Effective Python]
 tags: [python, effective python]
 math: true
 ---
 
 > 본문은 **"파이썬 코딩의 기술 (Effective Python, 2판)"**을 읽고 정리한 내용입니다.
+
+<br>
+
+> 어렵거나 생소한 내용은 ✅ 표시를 해두었다. 반복해서 읽고 체화해나가자!!
+{: .prompt-info}
 
 <br>
 
@@ -83,5 +88,6 @@ math: true
 | 38 | 간단한 인터페이스의 경우 클래스 대신 함수를 받아라 | [LINK](/posts/effective-python-05-better-way-38) | ✅ |
 | 39 | 객체를 제너릭하게 구성하려면 `@classmethod`를 통한 다형성을 활용하라 | [LINK](/posts/effective-python-05-better-way-39) | ✅ |
 | 40 | `super`로 부모 클래스를 초기화하라 (+ MRO) | [LINK](/posts/effective-python-05-better-way-40) | ✅ |
+| 41 | 기능을 합성할 때는 믹스인 클래스를 사용하라 | [LINK](/posts/effective-python-05-better-way-41) | ✅ |
 
 <br>

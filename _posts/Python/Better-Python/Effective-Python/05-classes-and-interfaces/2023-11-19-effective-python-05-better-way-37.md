@@ -2,7 +2,7 @@
 title: "[Better Way #37] 내장 타입을 여러 단계로 내포시키기보다는 클래스를 합성하라"
 date: 2023-11-19 22:50:00 +0900
 categories: [Python, Effective Python]
-tags: [python, effective python, ch00 classes and interfaces]
+tags: [python, effective python, ch05 classes and interfaces]
 math: true
 ---
 
