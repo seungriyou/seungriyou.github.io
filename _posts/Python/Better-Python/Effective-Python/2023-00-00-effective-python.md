@@ -1,6 +1,6 @@
 ---
 title: "[Effective Python] 모아보기"
-date: 2023-11-23 13:00:00 +0900
+date: 2023-11-24 11:00:00 +0900
 categories: [Python, Effective Python]
 tags: [python, effective python]
 math: true
@@ -89,5 +89,6 @@ math: true
 | 39 | 객체를 제너릭하게 구성하려면 `@classmethod`를 통한 다형성을 활용하라 | [LINK](/posts/effective-python-05-better-way-39) | ✅ |
 | 40 | `super`로 부모 클래스를 초기화하라 (+ MRO) | [LINK](/posts/effective-python-05-better-way-40) | ✅ |
 | 41 | 기능을 합성할 때는 믹스인 클래스를 사용하라 | [LINK](/posts/effective-python-05-better-way-41) | ✅ |
+| 42 | 비공개 애트리뷰트보다는 공개 애트리뷰트를 사용하라 | [LINK](/posts/effective-python-05-better-way-42) | ✅ |
 
 <br>

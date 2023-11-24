@@ -133,6 +133,11 @@ print(f"7 * (5 + 9) = 98이 나와야 하며, 실제 실행 결과도 {foo.value
 
 <br>
 
+> 그런데 `GoodWay`가 **<`TimesSevenCorrect`, `PlusNineCorrect`> 순서**로 상속받도록 하였는데, 실제 실행 결과를 살펴보면 `PlusNineCorrect`의 동작이 먼저 일어나 `+ 9`가 우선적으로 실행되게 된다. 그 이유는 **MRO** 때문이다!
+{: .prompt-warning}
+
+<br>
+
 ## MRO (Method Resolution Order)
 
 - <span class="hl">**상위 클래스를 초기화하는 순서를 정의**</span>하며, [**C3 linearization**](https://en.wikipedia.org/wiki/C3_linearization)이라는 알고리즘을 사용한다.
@@ -145,3 +150,23 @@ print(f"7 * (5 + 9) = 98이 나와야 하며, 실제 실행 결과도 {foo.value
   ```
   
   ![](/assets/img/posts/Python/Effective-Python/2023-11-22.png){: style="max-width: 70%"}
+
+- 참고로, `GoodWay`의 **상속 순서를 반대로** 하면 다음과 같은 결과가 나오게 된다.
+    
+  ```python
+  class GoodWay(PlusNineCorrect, TimesSevenCorrect):  # -- 상속 순서 반대
+      def __init__(self, value):
+          super().__init__(value)
+  ```
+  
+  ```python
+  foo = GoodWay(5)
+  print(f"순서가 바뀌어 (7 * 5) + 9 = 44이 나와야 하며, 실제 실행 결과도 {foo.value}")
+  # 순서가 바뀌어 (7 * 5) + 9 = 44이 나와야 하며, 실제 실행 결과도 44
+  ```
+  
+  ```python
+  for cls in GoodWay.mro():   # 클래스 메서드 mro()를 통해 MRO 순서를 살펴본다
+      print(repr(cls))
+  ```    
+  ![](/assets/img/posts/Python/Effective-Python/2023-11-22-02.png){: style="max-width: 70%"}
