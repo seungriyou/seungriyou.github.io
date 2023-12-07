@@ -1,6 +1,6 @@
 ---
 title: "[Effective Python] 모아보기"
-date: 2023-11-28 10:00:00 +0900
+date: 2023-12-07 14:00:00 +0900
 categories: [Python, Effective Python]
 tags: [python, effective python]
 math: true
@@ -93,3 +93,9 @@ math: true
 | 43 | 커스텀 컨테이너 타입은 `collections.abc`를 상속하라 | [LINK](/posts/effective-python-05-better-way-43) | |
 
 <br>
+
+## Chapter 06. Metaclasses and Attributes
+
+| # | Title | Post |  |
+| --- | --- | --- | --- |
+| 44 | 세터와 게터 메서드 대신 평범한 애트리뷰트를 사용하라 | [LINK](/posts/effective-python-06-better-way-44) | ✅ |
