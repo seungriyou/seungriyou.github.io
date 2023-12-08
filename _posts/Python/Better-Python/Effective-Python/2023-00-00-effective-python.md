@@ -1,6 +1,6 @@
 ---
 title: "[Effective Python] 모아보기"
-date: 2023-12-07 14:00:00 +0900
+date: 2023-12-08 14:00:00 +0900
 categories: [Python, Effective Python]
 tags: [python, effective python]
 math: true
@@ -99,3 +99,4 @@ math: true
 | # | Title | Post |  |
 | --- | --- | --- | --- |
 | 44 | 세터와 게터 메서드 대신 평범한 애트리뷰트를 사용하라 | [LINK](/posts/effective-python-06-better-way-44) | ✅ |
+| 45 | 애트리뷰트를 리팩터링하는 대신 `@property`를 사용하라 | [LINK](/posts/effective-python-06-better-way-45) | ✅ |
