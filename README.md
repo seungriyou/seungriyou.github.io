@@ -83,9 +83,9 @@ https://github.com/cotes2020/chirpy-starter/compare/v4.0.0...v5.0.0
 
 <br> 
 
-> references
-> - [https://github.com/cotes2020/jekyll-theme-chirpy/wiki/Upgrade-Guide](https://github.com/cotes2020/jekyll-theme-chirpy/wiki/Upgrade-Guide)
-> - [https://chirpy.cotes.page/posts/getting-started/#upgrading](https://chirpy.cotes.page/posts/getting-started/#upgrading)
+> ref:
+> - <https://github.com/cotes2020/jekyll-theme-chirpy/wiki/Upgrade-Guide>
+> - <https://chirpy.cotes.page/posts/getting-started/#upgrading>
 
 
 <br>
@@ -134,6 +134,12 @@ rbenv local 3.1.0
 
 <br>
 
+> version `6.2.0` 부터는 sass variables를 overwrite 하는 방법이 바뀐 듯하다. 추후 필요하면 참고하자!
+> 
+> <https://chirpy.cotes.page/posts/getting-started/#customizing-stylesheet>
+
+<br>
+
 ## Custom Ordering in Categories Tab
 - `_layouts/categories.html` 파일을 생성하여 <https://seungriyou.github.io/categories/> 탭에서의 **최상위 카테고리 정렬 순서**를 커스터마이징 했다.
 
@@ -167,19 +173,19 @@ rbenv local 3.1.0
 <br>
 
 ## Small Tips for Posting
-### 1. 이미지 크기 설정
+### (1) 이미지 크기 설정
 ```markdown
 ![example-image](/assets/img/posts/category/subcategory/image.png){: style="max-width: 70%"}
 ```
 
-### 2. 텍스트 색상 설정
+### (2) 텍스트 색상 설정
 HTML color name은 [링크](https://htmlcolorcodes.com/color-names/)에서 확인하기!
 
 ```markdown
 <span style="color: red">this is **red**</span>
 ```
 
-### 3. Math: Curly Bracket
+### (3) Math: Curly Bracket
 > ref: <https://github.com/orgs/community/discussions/16993#discussioncomment-4056560>
 
 curly bracket을 표현하기 위해 `\{`, `\}`를 사용하면 출력이 안 된다. 대신, `\lbrace`와 `\rbrace`를 사용해야 한다.
@@ -194,7 +200,7 @@ curly bracket을 표현하기 위해 `\{`, `\}`를 사용하면 출력이 안 �
   $\mathbf s^0=\lbrace s^0(j)\in [n]\rbrace_{j \in [m]}$
   ```
 
-### 4. Degree Symbol
+### (4) Math: Degree Symbol
 
 degree symbol을 나타내려면 `\degree`가 아닌 `^{\circ}`을 사용해야 한다.
 
@@ -208,7 +214,7 @@ degree symbol을 나타내려면 `\degree`가 아닌 `^{\circ}`을 사용해야 
   $70^{\circ}$
   ```
 
-### 5. Toggle
+### (5) Toggle
 
 ```markdown
 <details>
