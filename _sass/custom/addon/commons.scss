@@ -5,6 +5,9 @@
     "custom/colors/dark-typography.scss",
     "custom/colors/light-typography.scss";
 
+
+$post-content-font-size: 0.995rem; // 1.0rem;
+
 html {
     @media (prefers-color-scheme: light) {
 
@@ -29,13 +32,13 @@ html {
             @include light-scheme;
         }
     }
-    font-size: 15.5px; //15.5px;
+    font-size: 15.5px;
 }
 
 body {
     font-family: 'Noto Sans KR', sans-serif;
     font-weight: 400;
-    letter-spacing: -0.2px;
+    letter-spacing: -0.05px;
 }
 
 .access {
@@ -45,8 +48,7 @@ body {
 }
 
 .post-content {
-    font-size: 1.0rem;
-
+    font-size: $post-content-font-size; // font-size: 1.0rem;
     color: var(--post-card-text-color) !important;
 }
 
@@ -167,10 +169,11 @@ body {
 
 /* --- Typography --- */
 h1 {
-    font-size: 1.9rem;
+    font-size: 1.8rem;
+    line-height: 1.5;
 }
 h2 {
-    font-size: 1.5rem;
+    font-size: 1.55rem;
 }
 h3 {
     font-size: 1.3rem;
@@ -186,6 +189,6 @@ h5 {
 
 @media all and (min-width: 1200px) {
     .post-content {
-        font-size: 1.0rem;
+        font-size: $post-content-font-size; // font-size: 1.0rem;
     }
 }

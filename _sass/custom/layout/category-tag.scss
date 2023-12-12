@@ -1,7 +1,8 @@
-#page-category {
-    ul > li > a {
-            font-size: 1.05rem;
-    }
+#page-category ul>li>a, #page-tag ul>li>a {
+    font-size: 1.05rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 #page-category,
