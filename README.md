@@ -178,6 +178,15 @@ rbenv local 3.1.0
 ![example-image](/assets/img/posts/category/subcategory/image.png){: style="max-width: 70%"}
 ```
 
+혹은, 다음의 수치들에 대해서는 bootstrap 설정을 사용할 수도 있다.
+```markdown
+![example-image](/assets/img/posts/category/subcategory/image.png){: .w-25} (width 25%)
+![example-image](/assets/img/posts/category/subcategory/image.png){: .w-50} (width 50%)
+![example-image](/assets/img/posts/category/subcategory/image.png){: .w-75} (width 75%)
+![example-image](/assets/img/posts/category/subcategory/image.png){: .w-100} (width 100%)
+![example-image](/assets/img/posts/category/subcategory/image.png){: .w-auto} (default)
+```
+
 ### (2) 텍스트 색상 설정
 HTML color name은 [링크](https://htmlcolorcodes.com/color-names/)에서 확인하기!
 
