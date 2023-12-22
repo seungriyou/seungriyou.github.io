@@ -129,6 +129,17 @@ body {
         background: linear-gradient(180deg, #ffffff00 65%, var(--highlight-blue-bcolor) 35%);
     }
 
+    /* add simple highlight */
+    .shl{
+        background-color: var(--highlight-bcolor);
+    }
+    .shlp {
+        background-color: var(--highlight-purple-bcolor);
+    }
+    .shlb {
+        background-color: var(--highlight-blue-bcolor);
+    }
+
     /* add colored text */
     .red {
         color: crimson;
