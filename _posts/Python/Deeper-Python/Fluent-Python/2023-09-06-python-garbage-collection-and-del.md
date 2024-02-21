@@ -6,16 +6,12 @@ tags: [python, fluent python, garbage collection]
 math: true
 ---
 
-> 본문은 파이썬의 원리에 대해 **“Fluent Python (2nd Edition)”**을 참고하여 공부한 내용을 정리한 글입니다. (Ch06. Object References, Mutability, and Recycling)
-> 
-
-<br>
-
 ## TL;DR 📌
 
 1. `del`은 객체(objects)를 삭제하는 것이 아니라 **참조(references)를 삭제**한다.
 2. 파이썬에서 object는 명시적으로 제거되지 않으며, object가 **unreachable** 해지면 자동으로 **garbage-collected** 된다.
 3. CPython의 가비지 컬렉터(garbage collector)는 **reference counting** 기반으로 동작한다. 어떤 object의 **`refcount`가 0에 도달**하면 해당 object는 곧바로 제거된다.
+4. `weakref.finalize` 함수를 이용하여 object가 제거될 때 호출될 callback function을 등록할 수 있다. 이는 weak references를 이용한다.
 
 <br>
 
@@ -89,8 +85,8 @@ math: true
 
 ## `weakref.finalize`
 
-> 파이썬에서 object가 제거될 때 호출될 **callback function**을 등록하는 함수이다.
-> 
+> `weakref.finalize`는 객체가 제거될 때 호출될 **callback function**을 등록하는 함수이다. 이 함수는 어떤 원리로 동작할까?
+>
 
 ![](/assets/img/posts/Python/Fluent-Python/2023-09-06-02.png)
 
@@ -104,3 +100,9 @@ math: true
     {: .prompt-info}
 
 - `weakref` 모듈은 `WeakValueDictionary`, `WeakKeyDictionary`, `WeakSet` 등의 collection도 제공한다.
+
+<br>
+
+## References
+
+- “Fluent Python (2nd Edition)”, Ch06. Object References, Mutability, and Recycling

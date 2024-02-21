@@ -6,11 +6,6 @@ tags: [python, fluent python, equality, identity, variable]
 math: true
 ---
 
-> 본문은 파이썬의 원리에 대해 **“Fluent Python (2nd Edition)”**을 참고하여 공부한 내용을 정리한 글입니다. (Ch06. Object References, Mutability, and Recycling)
-> 
-
-<br>
-
 ## TL;DR 📌
 
 1. 파이썬에서 변수(variable)는 객체(attach)에 부여(attach, bind)된 라벨(label)일 뿐이며, 값을 담고 있는 상자(box)가 아니다.
@@ -108,3 +103,9 @@ b = a  # 가리키는 객체가 list라면, 변수 a와 b는 모두 동일한 li
 **사용자 정의 클래스**에서는 `__eq__` method를 override하여 `==`가 instance에서 의미하는 바를 결정할 수 있다.
 
 하지만 `__eq__` method를 override 하지 않는다면 **`object`에서 상속 받은 `__eq__` method(= comparing object IDs)가 실행**되므로, 모든 instances가 다르다고 판단될 수 있다.
+
+<br>
+
+## References
+
+- “Fluent Python (2nd Edition)”, Ch06. Object References, Mutability, and Recycling

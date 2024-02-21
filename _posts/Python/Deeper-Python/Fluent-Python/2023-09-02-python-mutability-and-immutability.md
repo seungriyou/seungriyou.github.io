@@ -6,11 +6,6 @@ tags: [python, fluent python, mutability, immutability, tuple]
 math: true
 ---
 
-> 본문은 파이썬의 원리에 대해 **“Fluent Python (2nd Edition)”**을 참고하여 공부한 내용을 정리한 글입니다. (Ch06. Object References, Mutability, and Recycling)
-> 
-
-<br>
-
 > 흔히 파이썬에서 “`tuple`은 불변이다” 라고 알려져 있다. 그런데, 과연 파이썬의 `tuple`은 어떠한 상황에서든 불변일까? 그리고 `tuple` 내에 변경 가능하다고 알려진 `list`가 들어있다면, 그 `list`는 변경 불가능할까?
 {: .prompt-warning}
 
@@ -147,3 +142,9 @@ math: true
 >
 > mutable objects는 thread를 이용한 프로그래밍이 어려운 주요 이유 중 하나이다. 적절한 **synchronization** 없이 threads가 object를 변경하면 corrupted data가 발생할 수 있다.
 {: .prompt-danger}
+
+<br>
+
+## References
+
+- “Fluent Python (2nd Edition)”, Ch06. Object References, Mutability, and Recycling

@@ -6,11 +6,6 @@ tags: [python, fluent python, copy, shallow copy, deep copy]
 math: true
 ---
 
-> 본문은 파이썬의 원리에 대해 **“Fluent Python (2nd Edition)”**을 참고하여 공부한 내용을 정리한 글입니다. (Ch06. Object References, Mutability, and Recycling)
-> 
-
-<br>
-
 ## TL;DR 📌
 
 깊은 복사(deep copy)는 참조로만 채워지는 얕은 복사(shallow copy)와는 다르게, 원본 컨테이너에서 가지고 있는 **실제 객체 자체가 복제**되는 것이다.
@@ -65,3 +60,9 @@ math: true
 
 > 만약 컨테이너 내 객체가 복제되어서는 안되는 외부 리소스나 싱글톤 객체를 참조한다면, `copy` 및 `deepcopy` 함수의 동작을 제어하기 위해 **`__copy__()`나 `__deepcopy()__` 특별 메서드**를 구현하면 된다.
 {: .prompt-tip}
+
+<br>
+
+## References
+
+- “Fluent Python (2nd Edition)”, Ch06. Object References, Mutability, and Recycling
