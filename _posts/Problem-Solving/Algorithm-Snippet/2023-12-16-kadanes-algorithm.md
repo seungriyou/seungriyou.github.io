@@ -4,6 +4,8 @@ date: 2023-12-16 19:50:00 +0900
 categories: [Problem Solving, Algorithm Snippet]
 tags: [algorithm, python, dp, optimization, subarray]
 math: true
+image: 
+  path: /assets/img/posts/Problem-Solving/Algorithm/thumbnail.png
 ---
 
 ## Maximum Subarray Problem

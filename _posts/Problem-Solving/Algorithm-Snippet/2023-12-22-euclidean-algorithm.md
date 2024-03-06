@@ -4,6 +4,8 @@ date: 2023-12-22 12:50:00 +0900
 categories: [Problem Solving, Algorithm Snippet]
 tags: [algorithm, python, math, gcd, lcm]
 math: true
+image: 
+  path: /assets/img/posts/Problem-Solving/Algorithm/thumbnail.png
 ---
 
 ## 유클리드 호제법(Euclidean Algorithm)

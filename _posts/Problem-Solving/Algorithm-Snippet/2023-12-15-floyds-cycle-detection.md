@@ -4,6 +4,8 @@ date: 2023-12-15 11:50:00 +0900
 categories: [Problem Solving, Algorithm Snippet]
 tags: [algorithm, python, linked list, cycle detection]
 math: true
+image: 
+  path: /assets/img/posts/Problem-Solving/Algorithm/thumbnail.png
 ---
 
 ## Floyd’s Cycle Detection이란?
