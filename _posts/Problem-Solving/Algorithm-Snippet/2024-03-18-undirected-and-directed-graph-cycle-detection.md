@@ -15,6 +15,9 @@ image:
 <br>
 
 ## 1. Undirected Graph의 Cycle Detection
+> 예제 문제: [**[LeetCode] 684. Redundant Connection**](https://leetcode.com/problems/redundant-connection/)
+{: .prompt-info}
+
 ### 1-1. Disjoint Set (Union-Find)
 <span class="shl">**서로소 집합**</span>을 이용하면 **무방향 그래프** 내에 사이클이 존재하는지 여부를 판단할 수 있다.
 
@@ -28,54 +31,67 @@ image:
 
 2. 그래프에 포함되어 있는 모든 간선에 대하여 1번 과정을 반복한다.
 
+```python
+class Solution:
+    def findRedundantConnection(self, edges: List[List[int]]) -> List[int]:
+        # 특정 원소가 속한 집합 찾기
+        def find_parent(parent, x):
+            if parent[x] != x:
+                parent[x] = find_parent(parent, parent[x])
+            return parent[x]
+
+        # 두 원소가 속한 집합 합치기
+        def union_parent(parent, a, b):
+            parent_a, parent_b = find_parent(parent, a), find_parent(parent, b)
+            if parent_a < parent_b:
+                parent[parent_b] = parent_a
+            else:
+                parent[parent_a] = parent_b
+
+        # node 개수 == edge 개수 (node: 1 ~ n번)
+        parent = [i for i in range(len(edges) + 1)]
+
+        for a, b in edges:
+            if find_parent(parent, a) == find_parent(parent, b):
+                # ** cycle detected! **
+                # n vertices and n edges, there can be only one cycle
+                return [a, b]
+            else:
+                union_parent(parent, a, b)
+```
+
 <br>
 
+### 1-2. DFS
+<span class="shl">**DFS**</span>를 통해서도 **무방향 그래프** 내에 사이클이 존재하는지 여부를 판단할 수 있다.
+
 ```python
-# 특정 원소가 속한 집합 찾기
-def find_parent(parent, x):
-    if parent[x] != x:
-        parent[x] = find_parent(parent, parent[x])
-    return parent[x]
+class Solution:
+    def findRedundantConnection(self, edges: List[List[int]]) -> List[int]:
+        graph = [[] for _ in range(len(edges) + 1)]
 
-# 두 원소가 속한 집합 합치기
-def union_parent(parent, a, b):
-    a = find_parent(parent, a)
-    b = find_parent(parent, b)
-    if a < b:
-        parent[b] = a
-    else:
-        parent[a] = b
+        def is_cyclic(u, v):
+            if u == v:
+                return True
+            
+            for nu in graph[u]:
+                if nu not in visited:
+                    visited.add(nu)
+                    if is_cyclic(nu, v):
+                        return True
+            
+            return False
+        
+        for u, v in edges:
+            visited = set()
 
-# 노드의 개수와 간선(union 연산)의 개수 입력 받기
-v, e = map(int, input().split())
-
-# 부모 테이블 상에서 부모를 자기 자신으로 초기화
-parent = [i for i in range(v + 1)]
-
-cycle = False # 사이클 발생 여부
-
-for i in range(e):
-    a, b = map(int, input().split())
-    # 사이클이 발생한 경우(= 루트 노드가 서로 같은 경우) 종료
-    if find_parent(parent, a) == find_parent(parent, b):
-        cycle = True
-        break
-    # 사이클이 발생하지 않은 경우, 합집합(union) 수행
-    else:
-        union_parent(parent, a, b)
-
-if cycle:
-    print("사이클이 발생했습니다.")
-else:
-    print("사이클이 발생하지 않았습니다.")
-```
-
-```
-3 3
-1 2
-1 3
-2 3
-사이클이 발생했습니다.
+            if is_cyclic(u, v):
+                # ** cycle detected! **
+                # n vertices and n edges, there can be only one cycle
+                return [u, v]
+            
+            graph[u].append(v)
+            graph[v].append(u)
 ```
 
 <br>
@@ -86,9 +102,6 @@ else:
 
 ### 2-1. Topological Sort (BFS)
 <span class="shl">**위상 정렬**</span>을 이용하여 모든 노드를 방향성에 어긋나지 않도록 순서대로 나열할 수 있으므로, **방향 그래프** 내에 사이클이 존재하는지 여부를 판단할 수 있다.
-
-> 위상 정렬이란, 순서가 정해져 있는 일련의 작업을 차례대로 수행해야 할 때 사용할 수 있는 알고리즘이다.
-{: .prompt-tip}
 
 <br>
 
@@ -104,42 +117,43 @@ else:
 
     > 사이클이 존재하는 경우, 사이클에 포함되어 있는 원소 중에서 어떠한 원소도 큐에 들어가지 못하기 때문이다. 따라서 기본적으로 위상 정렬 문제에서는 사이클이 발생하지 않는다고 명시하는 경우가 더 많다.
 
-<br>
+> 즉, 위상 정렬을 수행하며 **방문한 노드의 개수가 전체 노드의 개수와 같은지** 여부를 확인하면 된다.
+{: .prompt-tip}
 
 ```python
 from collections import deque
 
 # numCourses: 노드의 개수
+class Solution:
+    def canFinish(self, numCourses: int, prerequisites: List[List[int]]) -> bool:
+        graph = [[] for _ in range(numCourses)]
+        indegree = [0] * numCourses
 
-def canFinish(numCourses: int, prerequisites: List[List[int]]) -> bool:
-    graph = [[] for _ in range(numCourses)]
-    indegree = [0] * numCourses
+        for a, b in prerequisites:
+            graph[b].append(a)  # b -> a
+            indegree[a] += 1
 
-    for a, b in prerequisites:
-        graph[b].append(a)  # b -> a
-        indegree[a] += 1
+        def topo_sort():
+            cnt = 0
+            # indegree[i] == 0인 i부터 시작
+            q = deque(i for i, ind in enumerate(indegree) if ind == 0)
 
-    def topo_sort():
-        cnt = 0
-        # indegree[i] == 0인 i부터 시작
-        q = deque(i for i, ind in enumerate(indegree) if ind == 0)
+            while q:
+                pos = q.popleft()
+                cnt += 1
 
-        while q:
-            pos = q.popleft()
-            cnt += 1
+                for npos in graph[pos]:
+                    # npos의 indegree 감소
+                    indegree[npos] -= 1
+                    # npos의 indegree가 0이 되면 q에 넣기
+                    if indegree[npos] == 0:
+                        q.append(npos)
 
-            for npos in graph[pos]:
-                # npos의 indegree 감소
-                indegree[npos] -= 1
-                # npos의 indegree가 0이 되면 q에 넣기
-                if indegree[npos] == 0:
-                    q.append(npos)
+            return cnt
 
-        return cnt
+        cnt = topo_sort()
 
-    cnt = topo_sort()
-
-    return cnt == numCourses
+        return cnt == numCourses
 ```
 
 <br>
@@ -163,7 +177,7 @@ def canFinish(numCourses: int, prerequisites: List[List[int]]) -> bool:
     | `visited[i]` | Description | Meaning |
     | --- | --- | --- |
     | `0` | unvisited |  방문 가능 |
-    | `-1` | being visited this time (in current path) | <span class="red">**cycle 발생**</span> |
+    | `-1` | being visited this time (in current path) | 다시 마주친다면 <span class="red">**cycle 발생**</span> |
     | `1` | visited | 방문 후보에서 제외 |
 
 <br>
@@ -171,39 +185,41 @@ def canFinish(numCourses: int, prerequisites: List[List[int]]) -> bool:
 #### [1] `visited` 리스트를 이용한 코드
 
 ```python
-def canFinish(numCourses: int, prerequisites: List[List[int]]) -> bool:
-    graph = [[] for _ in range(numCourses)]
-    visited = [0] * numCourses
+class Solution:
+    def canFinish(self, numCourses: int, prerequisites: List[List[int]]) -> bool:
+        graph = [[] for _ in range(numCourses)]
+        visited = [0] * numCourses
 
-    for a, b in prerequisites:
-        graph[b].append(a)  # b -> a
+        for a, b in prerequisites:
+            graph[b].append(a)  # b -> a
 
 
-    def is_cyclic(pos):
-        # pos가 현재 보고 있는 경로에 포함된다면 cyclic
-        if visited[pos] == -1:
-            return True
-        
-        # pos를 이전에 이미 방문했다면 방문 X
-        if visited[pos] == 1:
-            return False
-        
-        visited[pos] = -1   # 현재 pos를 보고있다고 표시
-        for npos in graph[pos]:
-            if is_cyclic(npos):
+        def is_cyclic(pos):
+            # <1> pos가 현재 보고 있는 경로에 포함된다면 cyclic
+            if visited[pos] == -1:
                 return True
+            
+            # <2> pos를 이전에 이미 방문했다면 방문 X
+            if visited[pos] == 1:
+                return False
+            
+            # <3> pos 방문하기
+            visited[pos] = -1   # 현재 pos를 보고있다고 표시
+            for npos in graph[pos]:
+                if is_cyclic(npos):
+                    return True
 
-        visited[pos] = 1    # 현재 pos를 방문했다고 표시
+            visited[pos] = 1    # 현재 pos를 방문했다고 표시
 
-        return False
-
-
-    # 각 노드에서 출발
-    for i in range(numCourses):
-        if is_cyclic(i):
             return False
 
-    return True
+
+        # 각 노드에서 출발
+        for i in range(numCourses):
+            if is_cyclic(i):
+                return False
+
+        return True
 ```
 
 <br>
@@ -213,45 +229,41 @@ def canFinish(numCourses: int, prerequisites: List[List[int]]) -> bool:
 [1]번 코드에서 `visited[i] == -1`인 상황을 `current_path`에 기록하고, `visited[i] == 1`인 상황을 `visited`에 기록하며 찾을 수 있도록 변경한 코드이다. 이렇게 풀면 더 직관적인 네이밍을 사용할 수 있게 된다.
 
 ```python
-def canFinish(numCourses: int, prerequisites: List[List[int]]) -> bool:
-    graph = [[] for _ in range(numCourses)]
-    visited = set()
-    current_path = set()
+class Solution:
+    def canFinish(self, numCourses: int, prerequisites: List[List[int]]) -> bool:
+        graph = [[] for _ in range(numCourses)]
+        visited = set()
+        current_path = set()
 
-    for a, b in prerequisites:
-        graph[b].append(a)  # b -> a
-    
+        for a, b in prerequisites:
+            graph[b].append(a)  # b -> a
+        
 
-    def is_cyclic(pos):
-        # pos가 현재 보고 있는 경로에 포함된다면 cyclic
-        if pos in current_path:
-            return True
-        
-        # pos를 이전에 이미 방문했다면 방문 X
-        if pos in visited:
-            return False
-        
-        current_path.add(pos)       # 현재 pos를 보고있다고 표시
-        for npos in graph[pos]:
-            if is_cyclic(npos):
+        def is_cyclic(pos):
+            # <1> pos가 현재 보고 있는 경로에 포함된다면 cyclic
+            if pos in current_path:
                 return True
+            
+            # <2> pos를 이전에 이미 방문했다면 방문 X
+            if pos in visited:
+                return False
+            
+            # <3> pos 방문하기
+            current_path.add(pos)       # 현재 pos를 보고있다고 표시
+            for npos in graph[pos]:
+                if is_cyclic(npos):
+                    return True
 
-        current_path.remove(pos)    # 현재 pos를 보고있다고 표시한 것 취소
-        visited.add(pos)            # 현재 pos를 방문했다고 표시
+            current_path.remove(pos)    # 현재 pos를 보고있다고 표시한 것 취소
+            visited.add(pos)            # 현재 pos를 방문했다고 표시
 
-        return False
-
-
-    # 각 노드에서 출발
-    for i in range(numCourses):
-        if is_cyclic(i):
             return False
-    
-    return True
+
+
+        # 각 노드에서 출발
+        for i in range(numCourses):
+            if is_cyclic(i):
+                return False
+        
+        return True
 ```
-
-<br>
-
-### 2-3. Related Questions
-- <https://leetcode.com/problems/course-schedule/>
-- <https://leetcode.com/problems/course-schedule-ii/>
