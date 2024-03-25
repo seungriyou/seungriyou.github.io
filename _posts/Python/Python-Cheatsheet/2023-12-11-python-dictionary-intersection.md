@@ -4,6 +4,8 @@ date: 2023-12-11 19:50:00 +0900
 categories: [Python, Python Cheatsheet]
 tags: [cheatsheet, python, bitwise, dictionary]
 math: true
+image: 
+  path: /assets/img/posts/Python/thumbnail.png
 ---
 
 LeetCode의 [**383. Ransom Note**](https://leetcode.com/problems/ransom-note/)를 풀다가 여러 dictionary 간의 intersection을 구하는 방법을 찾아보게 되었다.

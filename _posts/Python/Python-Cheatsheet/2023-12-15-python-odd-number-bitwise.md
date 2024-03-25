@@ -4,6 +4,8 @@ date: 2023-12-15 15:50:00 +0900
 categories: [Python, Python Cheatsheet]
 tags: [cheatsheet, python, math, bitwise]
 math: true
+image: 
+  path: /assets/img/posts/Python/thumbnail.png
 ---
 
 홀수를 판단하는 기본적인 방법은 2로 나눈 나머지가 1인지 확인하는 것이다.

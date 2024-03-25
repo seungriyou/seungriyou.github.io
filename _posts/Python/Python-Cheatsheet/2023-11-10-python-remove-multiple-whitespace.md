@@ -4,6 +4,8 @@ date: 2023-11-10 19:50:00 +0900
 categories: [Python, Python Cheatsheet]
 tags: [cheatsheet, python, string]
 math: true
+image: 
+  path: /assets/img/posts/Python/thumbnail.png
 ---
 
 파이썬에서 문자열 내에 여러 개의 whitespace가 연달아 있는 부분을 **하나의 공백으로 줄이거나 제거**해야 하는 경우가 발생한다.
