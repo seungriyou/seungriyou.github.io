@@ -150,7 +150,7 @@ image:
 2. `await` 키워드를 통해 코루틴을 실행하면, 그로부터 반환되는 값을 받는 것이 쉽다.
 3. 안전하게 작업을 중단할 수 있고, exception을 처리하기 쉽다.
 
-하지만 코루틴이 비동기 프레임워크에 의해 시작되는 경우, 쓰레드와 프로세스처럼 monitor 하기 어렵다는 **단점**도 존재한다. 또한, **GIL**로 인해 <span class="blue">쓰레드와 코루틴은 CPU-intensive 작업에는 적합하지 않다</span>.
+하지만 코루틴이 비동기 프레임워크에 의해 시작되는 경우, 쓰레드와 프로세스처럼 monitor 하기 어렵다는 **단점**도 존재한다. 또한, **GIL**로 인해 <span class="blue">**쓰레드와 코루틴은 CPU-intensive 작업에는 적합하지 않다**</span>.
 
 <br>
 
@@ -359,7 +359,7 @@ def supervisor() -> int:
     done = Event()
 
     # Process의 사용법은 Thread와 유사하다.
-    **spinner = Process(target=spin, args=('thinking!', done))**
+    spinner = Process(target=spin, args=('thinking!', done))
 
     # <Process name='Process-1' parent=91303 initial>를 출력한다.
     # 이때, parent는 해당 코드를 실행하는 Python instance의 PID이다.
@@ -419,7 +419,7 @@ async def spin(msg: str) -> None:
             # time.sleep() 대신 await asyncio.sleep()을 사용한다.
             await asyncio.sleep(.1)
 
-        except **asyncio.CancelledError**:
+        except asyncio.CancelledError:
             # Task.cancel() method가 호출되면 CancelledError가 발생한다.
             break
 

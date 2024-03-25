@@ -287,7 +287,7 @@ asyncio.run(main())
 
 위의 코드를 실행한 결과는 다음과 같다.
 
-```python
+```
 <class '_asyncio.Task'>
 sleeping for 3 second(s)
 finished sleeping for 3 second(s)
