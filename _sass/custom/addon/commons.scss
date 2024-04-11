@@ -150,6 +150,16 @@ body {
     .pink {
         color: mediumvioletred;
     }
+
+    /* add underline */
+    .ulr {
+        text-decoration: rgba(orangered, 0.8) wavy underline;
+        text-underline-offset: 3.5px;
+    }
+    .ulg {
+        text-decoration: rgba(forestgreen, 0.8) wavy underline;
+        text-underline-offset: 3.5px;
+    }
 }
 
 /* tags page */
