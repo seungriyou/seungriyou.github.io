@@ -331,7 +331,7 @@ round( 4.5)	=   4  # <- ! ( 5가 아님)
      round_half_up(-0.50) = -1
      round_half_up(-0.49) = -0
      round_half_up( 0.49) =  0
-     round_half_up( 0.5-) =  1
+     round_half_up( 0.50) =  1
      round_half_up( 0.51) =  1
      ```
   
@@ -417,7 +417,7 @@ round( 4.5)	=   4  # <- ! ( 5가 아님)
    from decimal import *
 
    # <1> Decimal 타입: 십진 부동 소수점 연산
-   round(Decimal('0.70') * Decimal('1.05'), 2)
+   round(Decimal("0.70") * Decimal("1.05"), 2)
    # Decimal('0.74')
 
    # <2> float 타입: 이진 부동 소수점 연산
@@ -429,7 +429,7 @@ round( 4.5)	=   4  # <- ! ( 5가 아님)
 
     ```python
    # <1> Decimal 타입: 십진 부동 소수점 연산
-   Decimal('1.00') % Decimal('.10')
+   Decimal("1.00") % Decimal(".10")
    # Decimal('0.00')
 
    # <2> float 타입: 이진 부동 소수점 연산
@@ -439,7 +439,7 @@ round( 4.5)	=   4  # <- ! ( 5가 아님)
 
     ```python
    # <1> Decimal 타입: 십진 부동 소수점 연산
-   sum([Decimal('0.1')]*10) == Decimal('1.0')
+   sum([Decimal("0.1")] * 10) == Decimal("1.0")
    # True
 
    # <2> float 타입: 이진 부동 소수점 연산
@@ -453,10 +453,10 @@ round( 4.5)	=   4  # <- ! ( 5가 아님)
 간단하게 정리하면 `Decimal`을 통해 <span class="shl">**사람이 손으로 계산한 결과와 동일한 결과**</span>를 얻을 수 있으며, <span class="shl">**이진 부동 소수점이 십진수를 정확하게 표현할 수 없을 때**</span> 발생 가능한 문제를 예방할 수 있다.
 
 ```python
-Decimal('0.1') * 7 - Decimal('0.7')
+Decimal("0.1") * 7 - Decimal("0.7")
 # Decimal('0.0')
 
-Decimal('0.3') + Decimal('0.3') + Decimal('0.3') == Decimal('0.9')
+Decimal("0.3") + Decimal("0.3") + Decimal("0.3") == Decimal("0.9")
 # True
 ```
 
