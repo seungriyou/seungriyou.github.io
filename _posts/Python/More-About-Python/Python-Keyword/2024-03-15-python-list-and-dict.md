@@ -342,7 +342,7 @@ _ref: <https://www.cs.utexas.edu/~slaberge/docs/topics/amortized/dynamic_arrays/
 - <https://medium.com/@yasufumy/data-structure-dynamic-array-3370cd7088ec>
 - <https://stackoverflow.com/questions/52195579/what-is-the-resizing-factor-of-lists-in-python>
 - <https://engineerinsight.tistory.com/311>
-- <https://velog.io/@newdana01/CS자료구조-Dynamin-Array란]>
+- <https://velog.io/@newdana01/CS자료구조-Dynamin-Array란>
 - <https://stackoverflow.com/questions/114830/is-a-python-dictionary-an-example-of-a-hash-table>
 - <https://ko.wikipedia.org/wiki/해시_충돌>
 - <https://www.laurentluce.com/posts/python-dictionary-implementation/>

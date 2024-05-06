@@ -336,9 +336,9 @@ if __name__ == "__main__":
 
     # [2] Multi-Process
     s = time.time()
-    p1 = Process(target=work_cpu())
-    p2 = Process(target=work_cpu())
-    p3 = Process(target=work_cpu())
+    p1 = Process(target=work_cpu))
+    p2 = Process(target=work_cpu))
+    p3 = Process(target=work_cpu)
     p1.start()
     p2.start()
     p3.start()
@@ -352,8 +352,8 @@ if __name__ == "__main__":
 측정 결과, 멀티 프로세싱 시에 소요되는 시간이 더 적다는 것을 알 수 있다.
 
 ```
-[Multi-Thread] 18.110621s
-[Multi-Process] 12.317232s
+[Multi-Thread] 23.084413s
+[Multi-Process] 9.981085s
 ```
 
 <br>
