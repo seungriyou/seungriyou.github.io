@@ -294,7 +294,7 @@ async def set_A():
 async def set_B():
     context_var_data.set("CUTE")
     print(f"MBTI type of Student B: {context_var_data.get()}")
-    await execute("A")
+    await execute("B")
 
 async def main() -> None:
     await asyncio.gather(set_A(), set_B())
@@ -304,7 +304,7 @@ asyncio.run(main())
 # MBTI type of Student A: INFJ
 # MBTI type of Student B: CUTE
 # MBTI type of student A is INFJ <-- 값이 덮어씌워지지 않고 안전하게 유지됨
-# MBTI type of student A is CUTE
+# MBTI type of student B is CUTE
 ```
     
 
