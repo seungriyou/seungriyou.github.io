@@ -1,0 +1,9 @@
+{
+//   "markdown.extension.toc.slugifyMode": "bitbucket-cloud",
+//   "markdown.extension.list.indentationSize": "inherit",
+  "[markdown]": {
+    "editor.tabSize": 2,
+    "editor.insertSpaces": true,
+    "editor.detectIndentation":false
+  }
+}

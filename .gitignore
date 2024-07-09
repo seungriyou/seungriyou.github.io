@@ -1,5 +1,6 @@
 # hidden files
 .*
+!.vscode
 !.git*
 !.editorconfig
 !.nojekyll
