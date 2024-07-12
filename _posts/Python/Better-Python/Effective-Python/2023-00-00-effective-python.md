@@ -1,6 +1,6 @@
 ---
 title: "[Effective Python] 모아보기"
-date: 2023-12-13 10:00:00 +0900
+date: 2023-12-14 10:00:00 +0900
 categories: [Python, Effective Python]
 tags: [python, effective python]
 math: true
@@ -104,3 +104,4 @@ math: true
 | 47 | 지연 계산 애트리뷰트가 필요하면 `__getattr__`, `__getattribute__`, `__setattr__`을<br>사용하라 | [LINK](/posts/effective-python-06-better-way-47) | ✅ |
 | 48 | `__init_subclass__`를 사용해 하위 클래스를 검증하라 | [LINK](/posts/effective-python-06-better-way-48) | ✅ |
 | 49 | `__init_subclass__`를 사용해 클래스 확장을 등록하라 | [LINK](/posts/effective-python-06-better-way-49) | ✅ |
+| 50 | `__set_name__`으로 클래스 애트리뷰트를 표시하라 | [LINK](/posts/effective-python-06-better-way-50) | ✅ |
