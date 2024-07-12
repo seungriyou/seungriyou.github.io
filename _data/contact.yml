@@ -4,7 +4,7 @@
   icon: "fab fa-github"
 - type: blog
   icon: "fas fa-blog"
-  url: "https://keep-on-seungriing.tistory.com/"
+  url: "https://blog.naver.com/seungri0826" # "https://keep-on-seungriing.tistory.com/"
 - type: email
   icon: "fas fa-envelope"
   noblank: true # open link in current tab
