@@ -1,5 +1,5 @@
 ---
-title: "[Better Way #49] __set_name__으로 클래스 애트리뷰트를 표시하라"
+title: "[Better Way #50] __set_name__으로 클래스 애트리뷰트를 표시하라"
 date: 2023-12-14 09:50:00 +0900
 categories: [Python, Effective Python]
 tags: [python, effective python, ch06 metaclasses and attributes, descriptor, property, metaclass]
