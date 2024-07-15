@@ -1,6 +1,6 @@
 ---
 title: "[Effective Python] 모아보기"
-date: 2023-12-17 10:00:00 +0900
+date: 2023-12-28 10:00:00 +0900
 categories: [Python, Effective Python]
 tags: [python, effective python]
 math: true
@@ -106,3 +106,11 @@ math: true
 | 49 | `__init_subclass__`를 사용해 클래스 확장을 등록하라 | [LINK](/posts/effective-python-06-better-way-49) | ✅ |
 | 50 | `__set_name__`으로 클래스 애트리뷰트를 표시하라 | [LINK](/posts/effective-python-06-better-way-50) | ✅ |
 | 51 | 합성 가능한 클래스 확장이 필요하면 메타클래스보다는 클래스 데코레이터를 사용하라 | [LINK](/posts/effective-python-06-better-way-51) | ✅ |
+
+<br>
+
+## Chapter 07. Concurrency and Parallelism
+
+| #   | Title    | Post     |     |
+| --- | --- | --- | --- |
+| 52  | 자식 프로세스를 관리하기 위해 `subprocess`를 사용하라 | [LINK](/posts/effective-python-07-better-way-52) | ✅   |
