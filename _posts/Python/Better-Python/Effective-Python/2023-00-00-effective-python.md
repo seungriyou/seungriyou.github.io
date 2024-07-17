@@ -1,6 +1,6 @@
 ---
 title: "[Effective Python] 모아보기"
-date: 2023-12-29 10:00:00 +0900
+date: 2023-12-30 10:00:00 +0900
 categories: [Python, Effective Python]
 tags: [python, effective python]
 math: true
@@ -115,3 +115,4 @@ math: true
 | --- | --- | --- | --- |
 | 52  | 자식 프로세스를 관리하기 위해 `subprocess`를 사용하라 | [LINK](/posts/effective-python-07-better-way-52) | ✅   |
 | 53  | 블로킹 I/O의 경우 스레드를 사용하고 병렬성을 피하라 | [LINK](/posts/effective-python-07-better-way-53) | ✅   |
+| 54  | 스레드에서 데이터 경합을 피하기 위해 `Lock`을 사용하라 | [LINK](/posts/effective-python-07-better-way-54) | ✅   |
