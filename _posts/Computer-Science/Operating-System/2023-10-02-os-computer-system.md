@@ -5,8 +5,6 @@ categories: [Computer Science, Operating System]
 tags: [cs, os, 운영체제, os 총정리, 인터럽트, 입출력, dma, 캐시]     # TAG names should always be lowercase
 math: true
 mermaid: true
-image: 
-  path: /assets/img/posts/Computer-Science/Operating-System/thumbnail.png
 ---
 
 > 컴퓨터 시스템의 전반적인 구조부터 인터럽트와 입출력, 저장 장치, 그리고 보안에 대해서 다뤄보자.

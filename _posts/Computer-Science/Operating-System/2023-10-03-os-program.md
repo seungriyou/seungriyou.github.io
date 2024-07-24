@@ -5,8 +5,6 @@ categories: [Computer Science, Operating System]
 tags: [cs, os, 운영체제, os 총정리, 프로그램, 인터럽트, 시스템콜]     # TAG names should always be lowercase
 math: true
 mermaid: true
-image: 
-  path: /assets/img/posts/Computer-Science/Operating-System/thumbnail.png
 ---
 
 > 프로그램은 어떻게 실행되는지, 인터럽트와 시스템 콜은 무엇인지 알아보자.

@@ -4,8 +4,6 @@ date: 2024-04-29 19:50:00 +0900
 categories: [Python, More About Python]
 tags: [python, keyword, singleton]
 math: true
-image: 
-  path: /assets/img/posts/Python/thumbnail.png
 ---
 
 ## 1. Singleton Pattern

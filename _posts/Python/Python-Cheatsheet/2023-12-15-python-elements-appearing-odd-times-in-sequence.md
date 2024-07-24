@@ -4,8 +4,6 @@ date: 2023-12-15 16:50:00 +0900
 categories: [Python, Python Cheatsheet]
 tags: [cheatsheet, python, hash table, sequence]
 math: true
-image: 
-  path: /assets/img/posts/Python/thumbnail.png
 ---
 
 어떤 sequence에 대해 홀수 번 등장하는 원소를 구하거나, 각 원소의 등장 횟수가 홀수 번인지 짝수 번인지 판단해야 하는 경우가 있다.

@@ -4,8 +4,6 @@ date: 2024-05-15 19:50:00 +0900
 categories: [Python, More About Python]
 tags: [python, keyword, coroutine, thread]
 math: true
-image: 
-  path: /assets/img/posts/Python/thumbnail.png
 ---
 
 흔히 coroutine은 thread보다 가볍다(lightweight), 혹은 빠르다(fast)고 알려져 있다. 그 이유는 무엇일까?

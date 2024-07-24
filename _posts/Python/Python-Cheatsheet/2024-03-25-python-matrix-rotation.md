@@ -4,8 +4,6 @@ date: 2024-03-25 10:50:00 +0900
 categories: [Python, Python Cheatsheet]
 tags: [cheatsheet, python, matrix, zip, slicing]
 math: true
-image: 
-  path: /assets/img/posts/Python/thumbnail.png
 ---
 
 주어진 `matrix`의 row가 다음과 같이 구성되어 있다고 가정한다.

@@ -4,8 +4,6 @@ date: 2024-02-17 19:50:00 +0900
 categories: [Python, More About Python]
 tags: [python, keyword, poetry, packaging]
 math: true
-image: 
-  path: /assets/img/posts/Python/thumbnail.png
 ---
 
 의존성 관리를 위해 `poetry`를 사용하면 `pyproject.toml` 파일이 생성된다.

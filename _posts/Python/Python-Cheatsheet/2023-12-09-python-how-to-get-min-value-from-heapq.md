@@ -4,8 +4,6 @@ date: 2023-12-09 19:50:00 +0900
 categories: [Python, Python Cheatsheet]
 tags: [cheatsheet, python, heapq]
 math: true
-image: 
-  path: /assets/img/posts/Python/thumbnail.png
 ---
 
 `heapq` 우선순위 큐, 즉 최소힙에서 최솟값을 삭제하지 않고 얻으려면 <span class="shl">`[0]` 인덱스</span>를 통해 접근하면 된다.

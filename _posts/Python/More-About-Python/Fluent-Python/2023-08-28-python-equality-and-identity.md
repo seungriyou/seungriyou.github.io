@@ -4,8 +4,6 @@ date: 2023-08-28 19:50:00 +0900
 categories: [Python, More About Python]
 tags: [python, fluent python, equality, identity, variable]
 math: true
-image: 
-  path: /assets/img/posts/Python/thumbnail.png
 ---
 
 ## TL;DR 📌

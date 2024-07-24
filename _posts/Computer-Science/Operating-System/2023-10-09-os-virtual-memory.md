@@ -5,8 +5,6 @@ categories: [Computer Science, Operating System]
 tags: [cs, os, 운영체제, os 총정리, 가상 메모리, 요구 페이징, 페이지 교체, 스레싱, demand paging, page replacement, thrashing]     # TAG names should always be lowercase
 math: true
 mermaid: true
-image: 
-  path: /assets/img/posts/Computer-Science/Operating-System/thumbnail.png
 ---
 
 ## 1. 가상 메모리 (Virtual Memory)

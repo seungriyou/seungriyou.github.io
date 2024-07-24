@@ -4,8 +4,6 @@ date: 2023-09-01 19:50:00 +0900
 categories: [Python, More About Python]
 tags: [python, fluent python, copy, shallow copy, deep copy]
 math: true
-image: 
-  path: /assets/img/posts/Python/thumbnail.png
 ---
 
 ## TL;DR 📌

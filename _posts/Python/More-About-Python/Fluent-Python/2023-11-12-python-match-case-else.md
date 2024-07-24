@@ -4,8 +4,6 @@ date: 2023-11-12 19:50:00 +0900
 categories: [Python, More About Python]
 tags: [python, fluent python, match, case, else]
 math: true
-image: 
-  path: /assets/img/posts/Python/thumbnail.png
 ---
 
 ## 1. 패턴 매칭(Pattern Matching)

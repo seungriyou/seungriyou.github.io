@@ -5,8 +5,6 @@ categories: [Computer Science, Operating System]
 tags: [cs, os, 운영체제, os 총정리, 스케줄링, 세그멘테이션]     # TAG names should always be lowercase
 math: true
 mermaid: true
-image: 
-  path: /assets/img/posts/Computer-Science/Operating-System/thumbnail.png
 ---
 
 > 불연속 할당 방식의 세 가지 기법 중 **세그멘테이션 기법**과 **페이지드 세그멘테이션 기법**에 대해 알아보자.

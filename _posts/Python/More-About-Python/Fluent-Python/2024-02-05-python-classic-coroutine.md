@@ -4,8 +4,6 @@ date: 2024-02-05 19:50:00 +0900
 categories: [Python, More About Python]
 tags: [python, fluent python, coroutine, classic coroutine]
 math: true
-image: 
-  path: /assets/img/posts/Python/thumbnail.png
 ---
 
 ## 1. 코루틴(Coroutine)

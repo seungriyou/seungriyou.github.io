@@ -4,8 +4,6 @@ date: 2023-08-20 19:50:00 +0900
 categories: [Python, More About Python]
 tags: [python, fluent python, first class, higher order function, lambda, function, functional programming]
 math: true
-image: 
-  path: /assets/img/posts/Python/thumbnail.png
 ---
 
 ## TL;DR 📌

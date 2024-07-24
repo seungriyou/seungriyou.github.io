@@ -5,8 +5,6 @@ categories: [Computer Science, Operating System]
 tags: [cs, os, 운영체제, os 총정리, 프로세스, 스케줄링, 문맥교환, ipc]     # TAG names should always be lowercase
 math: true
 mermaid: true
-image: 
-  path: /assets/img/posts/Computer-Science/Operating-System/thumbnail.png
 ---
 
 > 프로세스에 관한 전반적인 내용을 다뤄보자.

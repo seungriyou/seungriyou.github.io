@@ -4,8 +4,6 @@ date: 2023-10-05 19:50:00 +0900
 categories: [Python, Python Cheatsheet]
 tags: [cheatsheet, python, sort, functools]
 math: true
-image: 
-  path: /assets/img/posts/Python/thumbnail.png
 ---
 
 LeetCode의 [**179. Largest Number**](https://leetcode.com/problems/largest-number/) 문제를 풀면서 파이썬에서 정렬 기준을 커스터마이징 하는 방법을 알아보았다.

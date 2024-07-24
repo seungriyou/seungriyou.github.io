@@ -4,8 +4,6 @@ date: 2024-01-30 19:50:00 +0900
 categories: [Python, More About Python]
 tags: [python, fluent python, concurrency, thread, process, coroutine]
 math: true
-image: 
-  path: /assets/img/posts/Python/thumbnail.png
 ---
 
 ## 1. 동시성(Concurrency) vs. 병렬성(Parallelism)

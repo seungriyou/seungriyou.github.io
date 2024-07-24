@@ -4,8 +4,6 @@ date: 2024-05-03 19:50:00 +0900
 categories: [Python, More About Python]
 tags: [python, keyword, thread-local, context-local, thread, coroutine]
 math: true
-image: 
-  path: /assets/img/posts/Python/thumbnail.png
 ---
 
 > 본문에서 다루는 예제 코드는 **[Python threading.local 와 ContextVar 비교](https://daco2020.tistory.com/799)** 포스팅을 참고했음을 밝힙니다.

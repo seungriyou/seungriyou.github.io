@@ -5,8 +5,6 @@ categories: [Computer Science, Operating System]
 tags: [cs, os, 운영체제, os 총정리, 스케줄링]     # TAG names should always be lowercase
 math: true
 mermaid: true
-image: 
-  path: /assets/img/posts/Computer-Science/Operating-System/thumbnail.png
 ---
 
 > 단기 스케줄러(short term scheduler, CPU 스케줄러)가 프로세스를 스케줄링 하는 방법에 대해 알아보자.

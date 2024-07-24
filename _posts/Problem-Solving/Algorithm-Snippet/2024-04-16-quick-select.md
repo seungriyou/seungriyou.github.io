@@ -4,8 +4,6 @@ date: 2024-04-16 09:50:00 +0900
 categories: [Problem Solving, Algorithm Snippet]
 tags: [algorithm, python, selection]
 math: true
-image: 
-  path: /assets/img/posts/Problem-Solving/Algorithm/thumbnail.png
 ---
 
 ## 1. Selection Algorithm

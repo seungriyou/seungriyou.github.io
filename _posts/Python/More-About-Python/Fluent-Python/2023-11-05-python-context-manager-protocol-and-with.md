@@ -4,8 +4,6 @@ date: 2023-11-05 19:50:00 +0900
 categories: [Python, More About Python]
 tags: [python, fluent python, context manager, with]
 math: true
-image: 
-  path: /assets/img/posts/Python/thumbnail.png
 ---
 
 ## 1. 컨텍스트 매니저와 `with` 블록

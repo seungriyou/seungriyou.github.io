@@ -4,8 +4,6 @@ date: 2024-04-23 19:50:00 +0900
 categories: [Python, More About Python]
 tags: [python, keyword, metaclass]
 math: true
-image: 
-  path: /assets/img/posts/Python/thumbnail.png
 ---
 
 > 본문은 참고한 블로그 및 자료를 제가 이해하기 쉽게 다시 정리한 글임을 밝힙니다.

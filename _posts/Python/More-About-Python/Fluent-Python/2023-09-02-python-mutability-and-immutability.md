@@ -4,8 +4,6 @@ date: 2023-09-02 19:50:00 +0900
 categories: [Python, More About Python]
 tags: [python, fluent python, mutability, immutability, tuple]
 math: true
-image: 
-  path: /assets/img/posts/Python/thumbnail.png
 ---
 
 > 흔히 파이썬에서 “`tuple`은 불변이다” 라고 알려져 있다. 그런데, 과연 파이썬의 `tuple`은 어떠한 상황에서든 불변일까? 그리고 `tuple` 내에 변경 가능하다고 알려진 `list`가 들어있다면, 그 `list`는 변경 불가능할까?

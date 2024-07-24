@@ -4,8 +4,6 @@ date: 2024-02-28 19:50:00 +0900
 categories: [Python, More About Python]
 tags: [python, asyncio]
 math: true
-image: 
-  path: /assets/img/posts/Python/thumbnail.png
 ---
 > 본문은 “Python Concurrency with Asyncio”를 읽고 재구성한 글임을 밝힙니다.
 > 

@@ -4,8 +4,6 @@ date: 2023-09-20 19:50:00 +0900
 categories: [Python, More About Python]
 tags: [python, fluent python, namedtuple, dataclass]
 math: true
-image: 
-  path: /assets/img/posts/Python/thumbnail.png
 ---
 
 ## Data Class Builder란?

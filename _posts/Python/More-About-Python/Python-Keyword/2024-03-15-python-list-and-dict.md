@@ -4,8 +4,6 @@ date: 2024-03-15 16:50:00 +0900
 categories: [Python, More About Python]
 tags: [python, list, dict, cpython, array, doubling, complexity, amortized, hash, hash table, rehashing, collision, open addressing]
 math: true
-image: 
-  path: /assets/img/posts/Python/thumbnail.png
 ---
 
 ## 1. 파이썬의 `list`

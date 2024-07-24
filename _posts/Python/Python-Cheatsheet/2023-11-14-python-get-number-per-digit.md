@@ -4,8 +4,6 @@ date: 2023-11-14 19:50:00 +0900
 categories: [Python, Python Cheatsheet]
 tags: [cheatsheet, python, math]
 math: true
-image: 
-  path: /assets/img/posts/Python/thumbnail.png
 ---
 
 주어진 정수 `num`에 대해 각 자릿수를 구하는 함수는 다음과 같다.

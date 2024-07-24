@@ -4,8 +4,6 @@ date: 2023-10-05 19:50:00 +0900
 categories: [Python, More About Python]
 tags: [python, fluent python, abc, abstract base class, collections, isinstance, issubclass]
 math: true
-image: 
-  path: /assets/img/posts/Python/thumbnail.png
 ---
 
 ## 1. `collections.abc` 모듈

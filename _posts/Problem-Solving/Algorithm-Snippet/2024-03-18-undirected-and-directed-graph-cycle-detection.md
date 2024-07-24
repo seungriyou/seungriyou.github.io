@@ -4,8 +4,6 @@ date: 2024-03-18 19:50:00 +0900
 categories: [Problem Solving, Algorithm Snippet]
 tags: [algorithm, python, graph, cycle detection, union find, topological sort, bfs, dfs]
 math: true
-image: 
-  path: /assets/img/posts/Problem-Solving/Algorithm/thumbnail.png
 ---
 
 주어진 그래프 내에 **사이클이 존재하는지 여부**를 판단하는 방법은 해당 그래프가 **무방향 그래프(undirected graph)인지 방향 그래프(directed graph)인지에 따라** 다르다.

@@ -4,8 +4,6 @@ date: 2024-03-27 19:50:00 +0900
 categories: [Python, More About Python]
 tags: [python, round, floating point, binary, decimal, float]
 math: true
-image: 
-  path: /assets/img/posts/Python/thumbnail.png
 ---
 
 파이썬의 내장 `round()` 함수는 우리가 흔히 사용하는 “사사오입” 방식의 반올림이 아닌, **“오사오입”** 방식의 반올림을 제공한다. 오사오입이란 무엇이며 왜 사용하는지, 더 나아가 부동 소수점의 문제점과 이를 해결하는 `decimal` 모듈까지 살펴보자.

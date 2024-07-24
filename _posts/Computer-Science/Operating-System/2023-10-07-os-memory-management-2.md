@@ -5,8 +5,6 @@ categories: [Computer Science, Operating System]
 tags: [cs, os, 운영체제, os 총정리, 메모리 관리, 주소, 페이징, paging]     # TAG names should always be lowercase
 math: true
 mermaid: true
-image: 
-  path: /assets/img/posts/Computer-Science/Operating-System/thumbnail.png
 ---
 
 > 불연속 할당 방식의 세 가지 기법 중 **페이징 기법**에 대해 알아보자.

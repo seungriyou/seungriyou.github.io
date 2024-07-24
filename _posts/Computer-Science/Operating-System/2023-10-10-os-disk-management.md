@@ -5,8 +5,6 @@ categories: [Computer Science, Operating System]
 tags: [cs, os, 운영체제, os 총정리, 디스크 스케줄링, 디스크]     # TAG names should always be lowercase
 math: true
 mermaid: true
-image: 
-  path: /assets/img/posts/Computer-Science/Operating-System/thumbnail.png
 ---
 
 > 디스크(disk)는 대표적인 2차 저장장치로, 컴퓨터에서 작업한 결과를 영구 보관하기 위해 사용한다.

@@ -4,8 +4,6 @@ date: 2023-12-09 19:50:00 +0900
 categories: [Python, More About Python]
 tags: [python, cpython, interpreter, compiler, byte code]
 math: true
-image: 
-  path: /assets/img/posts/Python/thumbnail.png
 ---
 
 ## 1. 인터프리터 언어 vs. 컴파일 언어

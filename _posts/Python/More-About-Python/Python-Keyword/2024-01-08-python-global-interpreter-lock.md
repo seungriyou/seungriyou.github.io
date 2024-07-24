@@ -4,8 +4,6 @@ date: 2024-01-08 19:50:00 +0900
 categories: [Python, More About Python]
 tags: [python, global interpreter lock, gil, cpython]
 math: true
-image: 
-  path: /assets/img/posts/Python/thumbnail.png
 ---
 
 > 본 포스팅의 내용은 파이썬의 공식 구현체인 CPython을 기준으로 작성되었음을 밝힙니다.
