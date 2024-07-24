@@ -277,7 +277,7 @@ list(iter(s3)) # -- rebuild the iterator!
 # ['Life', 'of', 'Brian']
 ```
 
-1. 이터레이터 `it`에서 `next(it)`로 아이템을 fetch 하다가 더이상 아이템이 없으면 `**StopIteration**`을 raise 한다. 이렇게 되면 해당 **“이터레이터가 exhausted 되었다”**고 표현하며, 이 상태의 이터레이터는 비어있다.
+1. 이터레이터 `it`에서 `next(it)`로 아이템을 fetch 하다가 더이상 아이템이 없으면 **`StopIteration`**을 raise 한다. 이렇게 되면 해당 **“이터레이터가 exhausted 되었다”**고 표현하며, 이 상태의 이터레이터는 비어있다.
 
 2. 다시 이터레이션을 수행하고 싶다면 `iter(iterable)`을 통해 **이터레이터를 rebuild** 해야 한다. (새로 rebuild 하지 않는 이상 reset은 불가능하다!)
     

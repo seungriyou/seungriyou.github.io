@@ -57,7 +57,7 @@ image:
 from collections import abc
 
 def double(x: abc.Sequence):
-		return x * 2
+    return x * 2
 ```
 
 위의 코드에서 `double` 함수의 파라미터 `x`의 타입은 `*` 연산을 지원하는, 즉 `__mul__` 메서드를 구현 및 상속 받은 타입(ex. numeric, sequence, N-dim numpy array 등)이어야 한다.

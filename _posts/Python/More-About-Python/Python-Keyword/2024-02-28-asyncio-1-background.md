@@ -135,22 +135,22 @@ _ref: <https://en.wikipedia.org/wiki/File:Parallel-concurrent.png>_
         
         > OS 스케줄러가 선점한다는 것은, 주기적으로 다른 프로세스가 실행될 수 있도록 한다는 것이다. 따라서 이론적으로, frozen 작업이 전체 시스템을 freeze 할 수는 없다.
         > 
-    - 멀티 **쓰레드** 혹은 멀티 **프로세스**를 번갈아 수행할 때에 해당한다.
+    - 멀티 <span class="red">**쓰레드**</span> 혹은 멀티 <span class="red">**프로세스**</span>를 번갈아 수행할 때에 해당한다.
 
 - <span class="shlp">**비선점형 멀티태스킹(cooperative multitasking)**</span>
     - 실행할 작업을 선택하는 것을 OS에게 맡기지 않고, 어플리케이션 코드에 **다른 작업을 수행할 시점을 명시적으로 나타냄**으로써 수행한다.
     - 어플리케이션에서 수행되는 작업들이 “여기에서 작업을 잠시 멈출테니 그 동안 다른 작업을 수행해도 됩니다” 라고 명시적으로 말하는 것과 비슷하다. 이러한 점에서 협력적(cooperative)이라 표현한다.
-    - 여러 **코루틴**을 수행할 때에 해당한다.
+    - 여러 <span class="red">**코루틴**</span>을 수행할 때에 해당한다.
 
 <br>
 
 `asyncio`는 동시성을 달성하기 위해 <span class="shl">**비선점형 멀티태스킹**</span>을 사용한다. 비선점형 멀티태스킹의 장점에는 다음과 같은 것들이 있다.
 
-1. **less resource intensive**
+1. <span class="ulr">**Less resource intensive**</span>
     
     선점형 멀티태스킹에서는 OS가 작업(쓰레드, 프로세스) 간에 switching을 수행하려면 **문맥 교환(context switch)**이 수반된다. 이때, OS는 진행 중이던 작업에 관한 정보를 저장 및 로드해야하므로 비용이 발생한다.
     
-2. **granularity**
+2. <span class="ulr">**Granularity**</span>
     
     선점형 멀티태스킹은 time slicing 기반이기 때문에, 작업이 switch 되는 시점이 **최적의 시점**이 아닐 수 있다. 반면, 비선점형 멀티태스킹에서는 작업을 중지할 시점을 명시적으로 표시할 수 있으므로 적절한 시점을 프로그래머가 직접 지정할 수 있다.
     

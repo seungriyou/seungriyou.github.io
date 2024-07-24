@@ -310,21 +310,21 @@ IGP에는 RIP, OSPF, EIGRP 등이 있으며, 다음의 두 가지가 핵심이�
 
 | 라우팅 프로토콜 | RIP                          | OSPF                    |
 | --------------- | ---------------------------- | ----------------------- |
-| 정식 명칭       | Routing Information Protocol | Open Shortest Path Fast |
-| 라우팅 알고리즘 | 디스턴스 벡터 타입           | 링크 스테이트 타입      |
-| 메트릭          | 홉 수 (경유하는 네트워크 수) | 비용                    |
-| 업데이트 간격   | 정기적                       | 구성이 변경되었을 때    |
-| 적용 규모       | 소규모                       | 중규모~대규모           |
+| **정식 명칭**       | Routing Information Protocol | Open Shortest Path First |
+| **라우팅 알고리즘** | 디스턴스 벡터 타입           | 링크 스테이트 타입      |
+| **메트릭**          | 홉 수 (경유하는 네트워크 수) | 비용                    |
+| **업데이트 간격**   | 정기적                       | 구성이 변경되었을 때    |
+| **적용 규모**       | 소규모                       | 중규모~대규모           |
 
-#### [1] <span class="ulr">RIP</span>(Routing Information Protocol)
+#### [1] <span class="shlp">RIP</span>(Routing Information Protocol)
 - **라우팅 테이블 자체를 정기적으로 교환**함으로써 라우팅 테이블을 만든다.
 - 대규모의 네트워크 환경에는 어울리지 않는다.
   - 라우팅 테이블이 커질수록 교환할 때 불필요한 네트워크 대역을 소비한다.
   - 수렴하는 데에 시간이 걸린다.
-- 메트릭으로 홉 수, 즉 경유하는 네트워크 수를 사용하는데, 이는 간단하지만 대역폭이 작은 곳이 있더라도 홉 수가 적은 경로를 최적 경로로 판단해버리는 문제가 있다.
+- 메트릭으로 홉 수, 즉 경유하는 네트워크 수를 사용하는데, 이는 간단하지만 **대역폭이 작은 곳이 있더라도 홉 수가 적은 경로**를 최적 경로로 판단해버리는 문제가 있다.
 - 현재는 거의 사용하지 않는다.
 
-#### [2] <span class="ulr">OSPF</span>(Open Shortest Path Fast)
+#### [2] <span class="shlp">OSPF</span>(Open Shortest Path First)
     
 > ref: <https://itwiki.kr/w/OSPF>
 
@@ -340,26 +340,29 @@ IGP에는 RIP, OSPF, EIGRP 등이 있으며, 다음의 두 가지가 핵심이�
 
 <br>
 
-### 5-2. EGP(Exterior Gateway Protocol): <span class="ulr">BGP</span>(Border Gateway Protocol)
+### 5-2. EGP(Exterior Gateway Protocol): <span class="shlp">BGP</span>(Border Gateway Protocol)
 
 AS와 AS를 연결하는 EGP로는 일반적으로 **BGP(Border Gateway Protocol)**를 사용한다. 인터넷은 BGP로 지구 전체의 AS를 그물 형태로 연결한 것이라 할 수 있다.
 
 > 각 AS 안에서는 IGP가 동작한다.
+{: .prompt-tip}
 
 <br>
 
 BGP의 핵심에는 **AS 번호, 라우팅 알고리즘, 최선 경로 선택 알고리즘**이 있다.
 
-1. **AS 번호**
+1. <span class="ulr">**AS 번호**</span>
     - 인터넷은 전 세계에 존재하는 AS를 BGP가 동작하는 라우터로 연결함으로써 성립하며, 이때 AS를 식별하는 번호를 AS 번호라고 한다.
-2. **라우팅 알고리즘**
+
+2. <span class="ulr">**라우팅 알고리즘**</span>
     - BGP는 **경로 벡터 타입**의 라우팅 알고리즘을 사용하며, 경로와 방향에 기반해 경로를 계산한다. 수신지까지 **얼마만큼의 AS를 경유하는지**가 최선 경로를 판단하는 기준 중 하나가 된다.
         - **경로** = 수신지까지 경유하는 AS의 번호들
         - **방향** = BGP 피어(경로 정보를 교환하는 상대)
     - BGP 라우터는 **BGP 피어와 1:1 TCP 커넥션**을 만들고, 그 과정에서 경로 정보를 교환한다. 이 정보를 통해 **BGP 테이블**을 만들고, 최선 경로 선택 알고리즘에 기반해 **최선 경로를 선택**한다. 그리고 **최선 경로만 라우팅 테이블에 추가**하는 동시에 **BGP 피어에게 전파**한다.
     - OSPF와 마찬가지로 **변경이 있을 때만** 라우팅 테이블을 업데이트 한다.
     - 보통 때에는 `KEEPALIVE` 메시지로 상대가 정상 동작하는지 판단하며, 업데이트 시에는 `UPDATE` 메시지를 사용한다.
-3. **최선 경로 선택 알고리즘**
+
+3. <span class="ulr">**최선 경로 선택 알고리즘**</span>
     - 어떤 경로를 최선 경로로 판단하는가에 관한 규칙을 나타낸다.
     - BGP 경로 제어에는 **어트리뷰트**를 사용하며, `UPDATE` 메시지 안에 `NEXT_HOP`이나 `LOCAL_PREF` 등 다양한 어트리뷰트를 가지고 있어 이를 포함하여 BGP 테이블에 기록한다.
     - 정해진 순서에 따라 우열을 가리며, 선택한 최선 경로를 **라우팅 테이블에 추가**하고 동시에 **BGP 피어에게 전파**한다.
