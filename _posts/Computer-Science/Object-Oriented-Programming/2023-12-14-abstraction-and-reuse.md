@@ -13,7 +13,7 @@ mermaid: true
 
 이전 글에서 다뤘던 <span class="shlb">**캡슐화**</span>란, **내부 구현의 유연함**을 달성하는 방법이었다. 
 
-> 캡슐화에 대한 내용은 [[**링크**](/posts/what-is-object-oriented-programming/#%EC%BA%A1%EC%8A%90%ED%99%94-encapsulation)]에서 확인 가능하다!
+> 캡슐화에 대한 내용은 [[**링크**](/posts/what-is-object-oriented-programming)]에서 확인 가능하다!
 {: .prompt-tip}
 
 <br>
