@@ -1,7 +1,7 @@
 ---
 title: "[Python] asyncio 파헤치기 - ① 배경 지식 정리"
 date: 2024-02-28 19:50:00 +0900
-categories: [Python, More About Python]
+categories: [Python, Concurrency in Python]
 tags: [python, asyncio]
 math: true
 ---

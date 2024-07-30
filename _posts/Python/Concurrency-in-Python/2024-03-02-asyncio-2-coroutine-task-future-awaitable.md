@@ -1,7 +1,7 @@
 ---
 title: "[Python] asyncio 파헤치기 - ② 코루틴, 태스크, 퓨처, Awaitable"
 date: 2024-03-02 19:50:00 +0900
-categories: [Python, More About Python]
+categories: [Python, Concurrency in Python]
 tags: [python, asyncio, coroutine, task, future, awaitable]
 math: true
 ---

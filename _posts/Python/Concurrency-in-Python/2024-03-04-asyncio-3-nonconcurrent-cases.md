@@ -1,7 +1,7 @@
 ---
 title: "[Python] asyncio 파헤치기 - ③ 동시성이 달성되지 않는 상황"
 date: 2024-03-04 19:50:00 +0900
-categories: [Python, More About Python]
+categories: [Python, Concurrency in Python]
 tags: [python, asyncio, nonconcurrent, blocking, cpu bound, io bound]
 math: true
 ---
