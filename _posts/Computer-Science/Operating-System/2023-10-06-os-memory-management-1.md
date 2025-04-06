@@ -17,10 +17,10 @@ mermaid: true
 
 컴퓨터 시스템은 주로 **32bit 혹은 64bit** 주소 체계를 사용한다.
 
-> ex) **32bit 주소 체계**를 사용할 경우, 이진수이므로  <span class="hl">$2^{32}$가지의 메모리 위치</span>를 구분할 수 있다. 컴퓨터는 byte 단위로 메모리 주소를 부여하므로, 이 경우 <span class="hl">$2^{32}$byte 만큼의 메모리 공간</span>에 서로 다른 주소를 할당할 수 있다.
+> ex) **32bit 주소 체계**를 사용할 경우, 이진수이므로  <span class="hl">$$2^{32}$$가지의 메모리 위치</span>를 구분할 수 있다. 컴퓨터는 byte 단위로 메모리 주소를 부여하므로, 이 경우 <span class="hl">$$2^{32}$$byte 만큼의 메모리 공간</span>에 서로 다른 주소를 할당할 수 있다.
 {: .prompt-info}
 
-일반적으로 이러한 메모리 공간을 <span class="hl">4KB(= $2^{12}$byte)</span> 크기의 <span class="hl">페이지(page)</span>라는 단위로 계층적으로 구역을 나누어 관리한다.
+일반적으로 이러한 메모리 공간을 <span class="hl">4KB(= $$2^{12}$$byte)</span> 크기의 <span class="hl">페이지(page)</span>라는 단위로 계층적으로 구역을 나누어 관리한다.
 
 이때, **페이지 내에서 byte 별 위치 구분**을 위해서는 **12bit**가 필요하다. 따라서 32bit 주소 중 하위 12bit를 페이지 내의 주소를 나타내는 데에 사용한다.
 
@@ -179,10 +179,10 @@ mermaid: true
 
 #### 주소 바인딩 방식에 따른 Swapping
 
-| 주소 바인딩 방식 | swapping 동작 |
-| --- | --- |
+| 주소 바인딩 방식                           | swapping 동작                                                             |
+| ------------------------------------------ | ------------------------------------------------------------------------- |
 | compile time binding,<br>load time binding | swap-out 된 프로세스는 원래 존재하던 메모리 위치로 다시 swap-in 되어야 함 |
-| run time binding | 추후 빈 메모리 영역 아무 곳에나 프로세스를 올릴 수 있음 |
+| run time binding                           | 추후 빈 메모리 영역 아무 곳에나 프로세스를 올릴 수 있음                   |
 
 <br>
 
@@ -220,9 +220,9 @@ mermaid: true
     3. external fragmentation과 internal fragmentation이 모두 발생할 수 있다.
         
         
-    | fragment 종류 | 크기 비교 | 설명 |
-    | ---- | ---- | ---- |
-    | **외부 단편화**<br>(external fragmentation)  | program > partition | - 어떠한 프로그램에게도 배정되지 않는 공간<br>- partition 크기보다 작은 크기의 프로그램이 도착한다면 적재 가능 |
+    | fragment 종류                               | 크기 비교           | 설명                                                                                                                                                   |
+    | ------------------------------------------- | ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
+    | **외부 단편화**<br>(external fragmentation) | program > partition | - 어떠한 프로그램에게도 배정되지 않는 공간<br>- partition 크기보다 작은 크기의 프로그램이 도착한다면 적재 가능                                         |
     | **내부 단편화**<br>(internal fragmentation) | program < partition | - 하나의 partition 내부에서 남는 공간<br>- 특정 프로그램에게 이미 배당된 공간<br>- fragmentation 크기보다 작은 프로그램이 있어도 공간을 활용할 수 없음 |
 
 #### ② 가변 분할 방식 (Variable Partition Allocation)

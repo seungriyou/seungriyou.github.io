@@ -92,7 +92,7 @@ _전체 정리_
     
     ![Untitled](/assets/img/posts/Free-Notes/Memo/2023-03-25-04-09.png){: width="80%"}
     
-- distillation으로 **모델 크기**도 줄일 수 있으나, **추론 step 수**를 절반씩 줄일 수 있다. ($2^n$씩)
+- distillation으로 **모델 크기**도 줄일 수 있으나, **추론 step 수**를 절반씩 줄일 수 있다. ($$2^n$$씩)
     
     ![Untitled](/assets/img/posts/Free-Notes/Memo/2023-03-25-04-10.png){: width="80%"}
     

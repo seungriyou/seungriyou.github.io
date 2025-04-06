@@ -110,7 +110,7 @@ mermaid: true
 
 이때, <span class="hl">**유효 접근 시간 (Effective Access Time)**</span>은 다음의 식으로 구할 수 있다.
 
-> $P$ = page fault rate ($0\le P \le1$)
+> $$P$$ = page fault rate ($$0\le P \le1$$)
 > 
 
 ```
@@ -187,10 +187,10 @@ mermaid: true
 
 - **page의 reference count를 계산하는 방식에 따른 구현 방식**
     
-    | 구현 방식 | reference count 계산 방법 |
-    | --- | --- |
+    | 구현 방식   | reference count 계산 방법                                                                                                        |
+    | ----------- | -------------------------------------------------------------------------------------------------------------------------------- |
     | incache-LFU | physical memory에 올라온 후부터의 reference count<br>(memory에서 쫓겨났다가 다시 들어온 경우, reference count는 다시 1부터 시작) |
-    | perfect-LFU | 해당 page의 과거 총 reference count |
+    | perfect-LFU | 해당 page의 과거 총 reference count                                                                                              |
 
 - **장점**: reference count를 통해 LRU 알고리즘보다 장기적인 시간 규모에서의 참조 기록을 반영할 수 있다.
 - **단점**: 시간에 따른 페이지 참조의 변화를 반영하지 못하고, LRU보다 구현이 복잡하다.
@@ -303,14 +303,14 @@ mermaid: true
     2. 그렇지 않다면, 프로세스에게 할당된 page frame을 모두 회수하고, **프로세스 주소 공간 전체를 swap out** 시킨다.    
 - **working-set에 포함된 page들은 메모리에 유지**, 그렇지 않은 page들은 swap out 된다.
     
-    > 즉, page가 참조된 시점부터 시간 $\Delta$ 동안은 메모리에 유지하고, 그 시점이 지나면 메모리에서 지운다.
+    > 즉, page가 참조된 시점부터 시간 $$\Delta$$ 동안은 메모리에 유지하고, 그 시점이 지나면 메모리에서 지운다.
     > 
 
 #### Working-set을 구하는 방법
     
-> working-set window 크기가 $\Delta$일 때, 시각 $t_i$에서의 working-set $WS(t_i)$
+> working-set window 크기가 $$\Delta$$일 때, 시각 $$t_i$$에서의 working-set $$WS(t_i)$$
 >
-> = 시간 간격 $[t_i-\Delta, t_i]$ 사이에 참조된 서로 다른 page의 집합
+> = 시간 간격 $$[t_i-\Delta, t_i]$$ 사이에 참조된 서로 다른 page의 집합
 {: .prompt-info}
 
 ![](/assets/img/posts/Computer-Science/Operating-System/2023-10-09-09.jpeg){: .w-75}

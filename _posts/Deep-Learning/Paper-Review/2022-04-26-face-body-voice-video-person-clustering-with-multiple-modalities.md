@@ -107,11 +107,11 @@ math: true
 
 ### 3-2. Notation
 
-- dataset은 **person-tracks** $x_i$와 **$C$개의 characters**로 이루어져 있다.
+- dataset은 **person-tracks** $$x_i$$와 **$$C$$개의 characters**로 이루어져 있다.
     
-    > 모든 $x_i$를 identity로 묶어 $C$개의 cluster로 만드는 것이 목표! ($C$는 unknown)
+    > 모든 $$x_i$$를 identity로 묶어 $$C$$개의 cluster로 만드는 것이 목표! ($$C$$는 unknown)
     > 
-- 각 **person-track $x_i$**는 multi-modality를 포함하는 하나의 feature vector로 나타낼 수 있다.
+- 각 **person-track $$x_i$$**는 multi-modality를 포함하는 하나의 feature vector로 나타낼 수 있다.
     
     $$
     x=\{x_f, x_v, x_b\}
@@ -119,16 +119,16 @@ math: true
     
     - 각각 face, voice, body에 관한 feature이다.
     - face/body가 visible 한지, 혹은 speaking 인지에 따라 종속적이다.
-- 하나의 modality에 대해 두 track features 간의 **distance**는 $d(x_i, x_j)$라고 한다.
-- NN은 nearest neighbor로, $n_{x_i}^1$은 **track $x_i$의 첫 번째 NN track**이다.
-- $x_i$가 존재하는 **video frame의 집합**을 $T_i$라고 한다.
-- 각 **cluster partition**은 $\Gamma$라고 한다.
+- 하나의 modality에 대해 두 track features 간의 **distance**는 $$d(x_i, x_j)$$라고 한다.
+- NN은 nearest neighbor로, $$n_{x_i}^1$$은 **track $$x_i$$의 첫 번째 NN track**이다.
+- $$x_i$$가 존재하는 **video frame의 집합**을 $$T_i$$라고 한다.
+- 각 **cluster partition**은 $$\Gamma$$라고 한다.
 
 <br>
 
 ### 3-3. Three stages
 
-1. <span class="shl">**single modality(= face)**를 이용해 **high-precision clusters**를 $K_1$개 생성한다.</span>
+1. <span class="shl">**single modality(= face)**를 이용해 **high-precision clusters**를 $$K_1$$개 생성한다.</span>
     - HAC을 여러 번 iterate 하여 **first nearest neighbour(NN)**를 공유하는 person-tracks 끼리 묶는다.
     - 다음의 **두 additional constaints**에 종속적이다. (= 다음을 만족해야 NN이 valid 하다.)
         - <span class="blue">**spatio-temporal cannot-link constraint**</span> for concurrent tracks
@@ -137,21 +137,21 @@ math: true
             > 
         - <span class="blue">**NN distance constraint**</span> (= conservative threshold in the maximum NN distances)
             
-            > <span class="shlp">$d_f<\tau_f^{tight}$</span>
+            > <span class="shlp">$$d_f<\tau_f^{tight}$$</span>
             > 
             > 
-            > ⇒ track과 첫번째 NN 간의 distance $d_f(x_i, n_{x_i}^1)$는 **$\tau_f^{tight}$ 보다 작아야 한다.**
+            > ⇒ track과 첫번째 NN 간의 distance $$d_f(x_i, n_{x_i}^1)$$는 **$$\tau_f^{tight}$$ 보다 작아야 한다.**
             > 
-    - 각 <span class="pink">**cluster parition** $\Gamma$</span>에서, 다음의 조건 중 하나를 만족하는 tracks를 merge하여 <span class="pink">**$K_\Gamma$ 개의 clusters**</span>를 생성한다. 이는 **adjancency matrix**로 나타낸다.
+    - 각 <span class="pink">**cluster parition** $$\Gamma$$</span>에서, 다음의 조건 중 하나를 만족하는 tracks를 merge하여 <span class="pink">**$$K_\Gamma$$ 개의 clusters**</span>를 생성한다. 이는 **adjancency matrix**로 나타낸다.
         1. 서로, 혹은 일방적으로 first NN인 경우
-        2. 공통의 NN $n_{x_i}^1$을 가지는 경우
+        2. 공통의 NN $$n_{x_i}^1$$을 가지는 경우
             
             ![](/assets/img/posts/Deep-Learning/Paper-Review/2022-04-26-02.png){: .w-75}
             
     - **stopping criteria**는 다음과 같다. (둘 중 하나 만족 시 stop)
-        1. 모든 clusters 간의 distance가 $\tau_f^{tight}$ 보다 큰 경우
+        1. 모든 clusters 간의 distance가 $$\tau_f^{tight}$$ 보다 큰 경우
         2. 모든 clusters가 cannot-link constraint로 분리된 경우
-    - <span class="pink">**$K_1$ 개의 high-precision clusters**</span>($K_1 \ge C$)가 생성된다.
+    - <span class="pink">**$$K_1$$ 개의 high-precision clusters**</span>($$K_1 \ge C$$)가 생성된다.
 
     <br>
 
@@ -159,9 +159,9 @@ math: true
     - **bridge** 역할을 하는 것이다.
     - face와 voice distance에 대한 새로운 threshold를 지정한다.
         
-        > <span class="shlp">$d_f<\tau_f^{loose}$</span> 이고 <span class="shlp">$d_v<\tau_v^{loose}$</span> 일 때 merge clusters!
+        > <span class="shlp">$$d_f<\tau_f^{loose}$$</span> 이고 <span class="shlp">$$d_v<\tau_v^{loose}$$</span> 일 때 merge clusters!
         > 
-    - <span class="pink">**$K_2$ 개의 high-precision clusters**</span>($K_2 \le K_1$)가 생성된다.
+    - <span class="pink">**$$K_2$$ 개의 high-precision clusters**</span>($$K_2 \le K_1$$)가 생성된다.
         
         ![](/assets/img/posts/Deep-Learning/Paper-Review/2022-04-26-03.png){: .w-75}
     
@@ -174,12 +174,12 @@ math: true
         - <span class="blue">**conservative threshold**</span> on **body features** (same person w/ same clothing)
     - **ratio-test**를 수행한다.
         1. 각 body-track에 대해 first & second NN distance를 구한다.
-        2. <span class="shlp">$d_{b,x_i}^2/d_{b, x_i}^1 > \rho$</span> 인 body-track은 ignore 한다. ($\rho$ = threshold)
+        2. <span class="shlp">$$d_{b,x_i}^2/d_{b, x_i}^1 > \rho$$</span> 인 body-track은 ignore 한다. ($$\rho$$ = threshold)
             
             > **back(뒷모습)**의 경우, cluster 되기 어려운 경우가 많다. 
-            따라서 새로운 threshold를 설정해 <span class="shlp">$d_b>\tau_b^{back}$</span>인 것들은 ignore 하는 방법을 사용한다.
+            따라서 새로운 threshold를 설정해 <span class="shlp">$$d_b>\tau_b^{back}$$</span>인 것들은 ignore 하는 방법을 사용한다.
             > 
-    - **Stage 3에서는 <span class="pink">cluster의 개수가 $K_2$</span>에서 변하지 않는다!**
+    - **Stage 3에서는 <span class="pink">cluster의 개수가 $$K_2$$</span>에서 변하지 않는다!**
 
 ![](/assets/img/posts/Deep-Learning/Paper-Review/2022-04-26-04.png){: .w-75}
 _Buffy_
@@ -191,11 +191,11 @@ _Sherlock_
 
 ### 3-4. Number of Clusters
 
-- <span class="pink">**최종 cluster 개수인 $K_2$**</span>를 $C$에 가깝게 만드는 것이 목표이다.
+- <span class="pink">**최종 cluster 개수인 $$K_2$$**</span>를 $$C$$에 가깝게 만드는 것이 목표이다.
 - **[Idea]** largest cluster 간에는 identity overlap이 잘 발생하지 않는다. 하지만 small cluster와 large cluster 간에는 overlap이 존재하기 쉽다.
     - large cluster는 해당 identity에 대해 충분한 정보를 담고 있다.
     - 만약 두 large clusters가 같은 identity를 포함한다면, merge 되었을 것이다.
-    - 즉, 반복적으로 smallest와 largest cluster를 merge 하여 $K_2$가 $C$에 가까워지도록 하자!
+    - 즉, 반복적으로 smallest와 largest cluster를 merge 하여 $$K_2$$가 $$C$$에 가까워지도록 하자!
 
 <br>
 
@@ -213,22 +213,22 @@ _Sherlock_
 > VPCD의 validation parition을 통해 학습한다. 여기에서는 constant 값으로 사용한다.
 > 
 
-- <span class="shl">**$\tau_f^{loose}$ (face modality와 관련)**</span>
+- <span class="shl">**$$\tau_f^{loose}$$ (face modality와 관련)**</span>
 
     - face feature가 대용량의 dataset에서 이미 학습되어 있기 때문에 discriminative 하고 universal 하다.
     
         > 일반화 good!
 
-- <span class="shl">**$\tau_v^{loose}$ (voice modality와 관련)**</span>
+- <span class="shl">**$$\tau_v^{loose}$$ (voice modality와 관련)**</span>
     - less universal 하므로, 하나의 값이 다른 program sets에 대해 잘 generalise 되지 않는다.
 
         > 따라서 각 program set에 대해 automatically 하게 학습한다.
         
-    - $\tau_v^{loose}$ 가 다른 사람의 **voices 간의 minimum distance보다 작은 값**을 가지도록 한다.
+    - $$\tau_v^{loose}$$ 가 다른 사람의 **voices 간의 minimum distance보다 작은 값**을 가지도록 한다.
 
-        > <span class="blue">**cannot-link speaking face-tracks**</span>와 <span class="blue">**Stage1의 clusters**</span>를 사용하여 example을 더 만들어서 distances를 구하고, 이 분포를 이용하여 $\tau_v^{loose}$를 구한다. 2개의 face-tracks가 same shot에서 말하는 경우는 거의 없기 때문이다.
+        > <span class="blue">**cannot-link speaking face-tracks**</span>와 <span class="blue">**Stage1의 clusters**</span>를 사용하여 example을 더 만들어서 distances를 구하고, 이 분포를 이용하여 $$\tau_v^{loose}$$를 구한다. 2개의 face-tracks가 same shot에서 말하는 경우는 거의 없기 때문이다.
         >
-        > 비슷한 목소리를 가진 character가 많은 program set의 경우, $\tau_v^{loose}$는 낮은 값을 가질 것이다.
+        > 비슷한 목소리를 가진 character가 많은 program set의 경우, $$\tau_v^{loose}$$는 낮은 값을 가질 것이다.
 
 <br>
 
@@ -286,7 +286,7 @@ _Sherlock_
 
 ### 5-1. Detail Settings
 
-- feature distance $d_f, d_b, d_v$는 모두 `1 - cosine similarity`로 계산한다.
+- feature distance $$d_f, d_b, d_v$$는 모두 `1 - cosine similarity`로 계산한다.
 - VPCD val. set에서 학습한 hyperparameters는 다음과 같다.
     
     $$

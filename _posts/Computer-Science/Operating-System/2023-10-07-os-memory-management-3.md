@@ -41,26 +41,26 @@ mermaid: true
 > <segment 번호, offset>
 > 
 
-| 구성 요소 | 의미 |
-| -------- | ------ |
-| segment 번호 $s$ | 프로세스 주소 공간 내에서 **몇 번째 segment**에 속하는지 |
-| offset $d$       | 그 segment 내에서 얼마만큼 떨어져 있는지 (**변위**)      |
+| 구성 요소          | 의미                                                     |
+| ------------------ | -------------------------------------------------------- |
+| segment 번호 $$s$$ | 프로세스 주소 공간 내에서 **몇 번째 segment**에 속하는지 |
+| offset $$d$$       | 그 segment 내에서 얼마만큼 떨어져 있는지 (**변위**)      |
 
 #### 세그멘트 테이블 (Segment Table)
 - **각 entry의 구성 요소**
     
-    | 구성 요소 | 의미 |
-    | --- | --- |
-    | base | physical memory에서 그 segment의 **시작 위치** |
-    | limit | 그 segment의 **길이**<br>(→ 페이징 기법과 다르게, segment의 길이가 균일하지 않으므로 길이 정보도 필요함) |
-    | protection bit | 해당 segment의 접근 권한 정보 (ex. R, W, X) |
-    | valid bit | 각 segment의 주소 변환 정보가 유효한지 여부<br>= 해당 segment가 현재 physical memory에 적재되어 있는지 여부 |
+    | 구성 요소      | 의미                                                                                                        |
+    | -------------- | ----------------------------------------------------------------------------------------------------------- |
+    | base           | physical memory에서 그 segment의 **시작 위치**                                                              |
+    | limit          | 그 segment의 **길이**<br>(→ 페이징 기법과 다르게, segment의 길이가 균일하지 않으므로 길이 정보도 필요함)    |
+    | protection bit | 해당 segment의 접근 권한 정보 (ex. R, W, X)                                                                 |
+    | valid bit      | 각 segment의 주소 변환 정보가 유효한지 여부<br>= 해당 segment가 현재 physical memory에 적재되어 있는지 여부 |
 
 - **관련 register**
     
-    | register 종류 | 저장하는 값 |
-    | --- | --- |
-    | segment table base register (STBR) | 현재 CPU에서 실행 중인 프로세스의 segment table의 memory 상 시작 주소 |
+    | register 종류                        | 저장하는 값                                                               |
+    | ------------------------------------ | ------------------------------------------------------------------------- |
+    | segment table base register (STBR)   | 현재 CPU에서 실행 중인 프로세스의 segment table의 memory 상 시작 주소     |
     | segment table length register (STLR) | 프로세스의 주소 공간이 총 몇 개의 segment로 구성되는지 (= segment의 개수) |
 
 #### <Logical Address → Physical Address> 변환 전 확인하는 사항

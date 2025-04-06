@@ -180,12 +180,12 @@ $$
 L_3=-\log \frac{e^{s\cos(\theta_{y_i}+m)}}{e^{s\cos(\theta_{y_i}+m)}+\sum_{j=1, j\ne y_i}^N e^{s\cos\theta_j}}
 $$
 
-- logit을 $W_j^Tx_i=\|W_j\|\|x_i\|\cos\theta_j$ 로 변경한다.
-    - $\theta_j$ = weight $W_j$와 feature $x_i$ 간의 각도
-    - $\|W_j\|=1$로 고정 (L2 normalization)
-    - $\|x_i\|$ = L2 normalization → re-scale to $s$ (= radius of hypersphere)
+- logit을 $$W_j^Tx_i=\|W_j\|\|x_i\|\cos\theta_j$$ 로 변경한다.
+    - $$\theta_j$$ = weight $$W_j$$와 feature $$x_i$$ 간의 각도
+    - $$\|W_j\|=1$$로 고정 (L2 normalization)
+    - $$\|x_i\|$$ = L2 normalization → re-scale to $$s$$ (= radius of hypersphere)
     - prediction이 feature와 weight 간의 각도에만 의존하도록 한다.
-- embedding feautres가 hypersphere 위의 각 feature center 주변에 분포하게 되므로, $x_i$와 $W_{y_i}$ 사이에 **additive angular margin penalty** $m$을 부여하여 intra-class compactness와 inter-class discrepancy를 향상시킨다.
+- embedding feautres가 hypersphere 위의 각 feature center 주변에 분포하게 되므로, $$x_i$$와 $$W_{y_i}$$ 사이에 **additive angular margin penalty** $$m$$을 부여하여 intra-class compactness와 inter-class discrepancy를 향상시킨다.
     
     > additive angular margin penalty
     > 
@@ -200,9 +200,9 @@ $$
 
 모든 method를 하나의 통합된 framework로 나타내면 다음과 같다.
 
-- **SphereFace** = multiplicative angular margin $m_1$
-- **ArcFace** = additive angular margin $m_2$
-- **CosFace** = additive cosine margin $m_3$
+- **SphereFace** = multiplicative angular margin $$m_1$$
+- **ArcFace** = additive angular margin $$m_2$$
+- **CosFace** = additive cosine margin $$m_3$$
 
 $$
 L_4=-\log \frac{e^{s\cos(m_1\theta_{y_i}+m_2)-m_3}}{e^{s\cos(m_1\theta_{y_i}+m_2)-m_3}+\sum_{j=1, j\ne y_i}^N e^{s\cos\theta_j}}
@@ -222,7 +222,7 @@ $$
 
 #### Other Intra and Inter Losses
 
-> $L_2$
+> $$L_2$$
 > 
 > 
 > $$
@@ -259,11 +259,11 @@ $$
 
 
 - 각 identity 마다 sub-class를 사용하여 noise에 robust 해지도록 한다.
-    - 각 identity에 대해 $K$ sub-centers를 설정한다.
-    - embedding features: $\mathbf x_i \in \mathbb R^{512}$
-    - all sub-centers: $W \in \mathbb R^{512\times N\times K}$
-    - subclass-wise similarity scores: $\mathcal S \in \mathbb R^{N\times K}$ (by matrix multiplication $W^T\mathbf x_i$)
-    - class-wise similarity score (by max pooling $\mathcal S$): $\mathcal S' \in \mathbb R^{N\times 1}$
+    - 각 identity에 대해 $$K$$ sub-centers를 설정한다.
+    - embedding features: $$\mathbf x_i \in \mathbb R^{512}$$
+    - all sub-centers: $$W \in \mathbb R^{512\times N\times K}$$
+    - subclass-wise similarity scores: $$\mathcal S \in \mathbb R^{N\times K}$$ (by matrix multiplication $$W^T\mathbf x_i$$)
+    - class-wise similarity score (by max pooling $$\mathcal S$$): $$\mathcal S' \in \mathbb R^{N\times 1}$$
 - Sub-center ArcFace loss
     
     $$
@@ -280,7 +280,7 @@ $$
 > 자동으로 faces를 cluster 하여 hard / noisy samples가 dominant clean samples로부터 분리되도록 할 수 있다.
 > 
 > - 일부 noisy samples는 그들의 centers로부터 멀리 떨어져 있다.
-> - hard threshold(ex. angle $\ge 77^{\circ}$ or cosine $\le 0.225$)를 주어 noisy tail를 제거할 수 있다.
+> - hard threshold(ex. angle $$\ge 77^{\circ}$$ or cosine $$\le 0.225$$)를 주어 noisy tail를 제거할 수 있다.
 {: .prompt-info}
 
 - samples의 4가지 분류
@@ -289,7 +289,7 @@ $$
     - **hard clean samples**: non-dominant sub-classes로부터 나온 samples
     - **easy noisy samples**: non-dominant sub-classes로부터 나온 samples
 - sub-center ArcFace를 통해 noise rate를 1/3 가량 감소시킬 수 있다. (38.47% → 12.40%)
-- Figure 7(b)와 7(d)를 통해 high-confident noisy samples를 drop 하기 위한 **constant angle threshold**($70^{\circ}$ 와 $80^{\circ}$ 사이)를 찾을 수 있다.
+- Figure 7(b)와 7(d)를 통해 high-confident noisy samples를 drop 하기 위한 **constant angle threshold**($$70^{\circ}$$ 와 $$80^{\circ}$$ 사이)를 찾을 수 있다.
 - 이처럼 high-confident noisy data를 drop한 이후, automatically cleaned dataset에서 ArcFace model을 **retrain from scratch** 한다.
 
 ![Untitled](/assets/img/posts/Deep-Learning/Paper-Review/2023-03-17-07.png){: style="max-width: 70%"}
@@ -308,12 +308,12 @@ pre-trained ArcFace model을 통해 identity preserved & visually plausible face
     L_8=\sum_{i=0}^L\|\tilde \mu_i^r-\mu_i\|_2+\|\tilde \sigma_i^r-\sigma\|_2^2
     $$
     
-    - $\mu_i^r/\sigma_i^r$: layer $i$에서의 분포에 대한 mean / standard deviation
-    - pre-trained ArcFace의 $i$-th BN layer에 각각에 대응되는 parameters가 저장되어 있다.
+    - $$\mu_i^r/\sigma_i^r$$: layer $$i$$에서의 분포에 대한 mean / standard deviation
+    - pre-trained ArcFace의 $$i$$-th BN layer에 각각에 대응되는 parameters가 저장되어 있다.
 
 #### Algorithm
 
-Algorithm 1에서처럼 $L_3+\lambda L_8, \lambda=0.05$ 를 $T$ steps에 걸쳐 optimize 한 후, pre-defined identity와 동일한 identity이며 original dataset의 statistical distribution과 비슷한 faces를 생성할 수 있다.
+Algorithm 1에서처럼 $$L_3+\lambda L_8, \lambda=0.05$$ 를 $$T$$ steps에 걸쳐 optimize 한 후, pre-defined identity와 동일한 identity이며 original dataset의 statistical distribution과 비슷한 faces를 생성할 수 있다.
 
 ![Untitled](/assets/img/posts/Deep-Learning/Paper-Review/2023-03-17-08.png){: style="max-width: 70%"}
 
@@ -347,12 +347,12 @@ embedding feature로부터 open-set face generation을 해결하기 위해 featu
 - **ArcFace**
     - RetinaFace를 통해 normalized face crops (112x112)를 생성한다.
     - embedding network로는 ResNet50, ResNet100(w/o bottleneck structure)을 사용하며, 최종적으로 512-D embedding feature를 얻는다.
-    - feature scale $s$  = 64, angular margin $m$ = 0.5
+    - feature scale $$s$$  = 64, angular margin $$m$$ = 0.5
     - 자세한 내용은 논문 참고
 - **Sub-center ArcFace**
     - first round model에 대해 다음을 drop 한다.
-        - non-dominant sub-centers ($K=3\downarrow 1$)
-        - high-confident noisy data ($> 75^{\circ}$)
+        - non-dominant sub-centers ($$K=3\downarrow 1$$)
+        - high-confident noisy data ($$> 75^{\circ}$$)
     - 그 후, cleaned data를 가지고 retrain from scratch 한다.
 
 <br>
@@ -372,10 +372,10 @@ noisy training dataset에 대해 sub-center ArcFace를 적용해보았다.
 ![Untitled](/assets/img/posts/Deep-Learning/Paper-Review/2023-03-17-11.png){: style="max-width: 70%"}
 
 - ArcFace는 noisy dataset에서 performance drop(96.50% → 90.27%)이 있는 반면, sub-center ArcFace는 더 robust(93.72%) 했다.
-- 너무 많은 sub-centers(= too large $K$)는 intra-class compactness를 약화시켜 accuracy를 크게 떨어뜨릴 수 있다. noise tolerance와 intra-class compactness 간 balance를 잘 유지해야 하며, 본 논문에서는 $K=3$을 선택했다.
+- 너무 많은 sub-centers(= too large $$K$$)는 intra-class compactness를 약화시켜 accuracy를 크게 떨어뜨릴 수 있다. noise tolerance와 intra-class compactness 간 balance를 잘 유지해야 하며, 본 논문에서는 $$K=3$$을 선택했다.
 - nearest sub-center assignment 시 max pooling을 사용할 때가 softmax pooling을 사용할 때보다 성능이 살짝 더 좋았다. (93.72% vs. 93.55%)
 - non-dominant sub-centers와 high-confident noisy samples를 drop 하는 것을 통해 regularization을 추가하는 것보다 더 좋은 성능을 낼 수 있다. (95.92% vs. 93.64%)
-- constant threshold에 크게 sensitive 하지 않으며(95.91% vs. 95.92% vs. 95.74%), 본 실험에서는 high-confident noisy samples를 drop 하기 위한 threshold로 $75^{\circ}$를 선택했다.
+- constant threshold에 크게 sensitive 하지 않으며(95.91% vs. 95.92% vs. 95.74%), 본 실험에서는 high-confident noisy samples를 drop 하기 위한 threshold로 $$75^{\circ}$$를 선택했다.
 - co-mining, re-weighting 등의 방법들보다 ArcFace가 automatic clean & noisy data isolation에 더 효과적이다.
 - noisy dataset에 대해 학습한 sub-center ArcFace는 manually cleaned dataset에 대해 학습한 ArcFace와 비슷한 수준의 성능을 보였다. (95.92% vs. 96.50%)
 

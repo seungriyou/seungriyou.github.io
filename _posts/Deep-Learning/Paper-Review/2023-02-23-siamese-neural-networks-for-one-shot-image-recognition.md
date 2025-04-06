@@ -70,7 +70,7 @@ math: true
 - 서로 다른 input을 입력으로 받지만, 최상단에 energy function으로 join 되어 있는 twin networks로 이루어져 있다.
     - twin network의 parameter는 tied 되어 있다. (= weight를 share 한다.)
     - twin network는 symmetric 하다. (= 두 input의 순서가 바뀌어도 top conjoining layer의 결과는 같다.)
-- twin feature vectors $\mathbf h_1$와 $\mathbf h_2$ 간의 **weighted L1 distance**를 이용한다.
+- twin feature vectors $$\mathbf h_1$$와 $$\mathbf h_2$$ 간의 **weighted L1 distance**를 이용한다.
     - sigmoid activation을 통해 interval [0, 1]으로 mapping 한다.
     - train 시에 cross-entropy objective를 사용한다.
 
@@ -78,12 +78,12 @@ math: true
 
 ### 2.2 Model
 
-- $L$ layers (각 layer 마다 $N_l$ units)
+- $$L$$ layers (각 layer 마다 $$N_l$$ units)
     
     | --- | --- |    
-    | **앞의 $L-2$ layers** |  ReLU unit 사용 |
+    | **앞의 $$L-2$$ layers** |  ReLU unit 사용 |
     | **나머지 layers** | sigmoidal unit 사용 |
-- 각 layer에서의 $k$ th filter map (ReLU → max-pool w/ filter size & stride 2)
+- 각 layer에서의 $$k$$ th filter map (ReLU → max-pool w/ filter size & stride 2)
     
     $$
     a_{1,m}^{(k)}=\text{max-pool}(\max(0, \mathbf W_{l-1,l}^{(k)}*\mathbf h_{1, (l-1)}+\mathbf b_l),2)
@@ -94,8 +94,8 @@ math: true
     $$
 
     | --- | --- |    
-    | $\mathbf W_{l-1,l}$ | layer $l$의 feature map을 나타내는 3-dim tensor |
-    | $\mathbf h_{1, l}$ | first twin의 layer $l$의 hidden vector |
+    | $$\mathbf W_{l-1,l}$$ | layer $$l$$의 feature map을 나타내는 3-dim tensor |
+    | $$\mathbf h_{1, l}$$ | first twin의 layer $$l$$의 hidden vector |
 - **전체 convolutional architecture**
     
     ![Untitled](/assets/img/posts/Deep-Learning/Paper-Review/2023-02-23-3.png)
@@ -103,11 +103,11 @@ math: true
     1. convolutional layers
     2. fully-connected layer (+ sigmoid)
         - 각 twin network에서 나오는 feature vector를 통해 L1 Norm을 구한다.
-        - prediction vector $\mathbf p = \sigma (\sum_j \alpha_j \vert\mathbf h_{1, L-1}^{(j)}-\mathbf h_{2, L-1}^{(j)}\vert)$
+        - prediction vector $$\mathbf p = \sigma (\sum_j \alpha_j \vert\mathbf h_{1, L-1}^{(j)}-\mathbf h_{2, L-1}^{(j)}\vert)$$
     3. a layer computing the induced distance metric (+ sigmoid)
         - (L-1)th hidden layer에서 학습된 feature space에서의 metric을 계산한다.
         - sigmoid 함수를 통해 two feature vectors 간의 similarity를 score 한다.
-        - $\alpha_j$ = component-wise distance의 importance를 weighting 하는 parameter (학습됨)
+        - $$\alpha_j$$ = component-wise distance의 importance를 weighting 하는 parameter (학습됨)
 
 <br>
 
@@ -168,11 +168,11 @@ _best validation checkpoint & threhsold 에서의 test accuracy_
 ### 3.3 One-shot Learning
 
 - siamese network를 verification task에 잘 동작하도록 학습했으므로, 학습된 features가 discriminative potential을 가졌다고 판단할 수 있다.
-- test 시 다음의 이미지를 입력하여, $\mathbf x$가 어떤 class와 가장 비슷한지 query 할 수 있다.
-    1. **test image $\mathbf x$ :** $C$ categories 중 하나로 분류하고 싶은 column vector
-    2. **some other images $\lbrace\mathbf x_c\rbrace_{c=1}^C$ :** 각 $C$ categories의 example을 나타내는 column vectors의 set
+- test 시 다음의 이미지를 입력하여, $$\mathbf x$$가 어떤 class와 가장 비슷한지 query 할 수 있다.
+    1. **test image $$\mathbf x$$ :** $$C$$ categories 중 하나로 분류하고 싶은 column vector
+    2. **some other images $$\lbrace\mathbf x_c\rbrace_{c=1}^C$$ :** 각 $$C$$ categories의 example을 나타내는 column vectors의 set
     
-    ⇒ **maximum similarity** $C^*= \arg\max_c \mathbf p^{(c)}$
+    ⇒ **maximum similarity** $$C^*= \arg\max_c \mathbf p^{(c)}$$
     
 
 #### Evaluate One-shot Learning Performance
@@ -183,8 +183,8 @@ _best validation checkpoint & threhsold 에서의 test accuracy_
     - evaluation set에서 사용할 alphabet의 종류를 고른다.
     - 해당 종류의 alphabet에서 20 characters를 고른다. (uniformly at random)
     - 20명의 drawers 중 2명을 선택하여 각각 20 characters를 그리게 한다.
-        - first drawer의 characters는 각 1개의 **test image** $\mathbf x$
-        - second drawer의 characters는 **some other images $\lbrace\mathbf x_c\rbrace_{c=1}^C$**
+        - first drawer의 characters는 각 1개의 **test image** $$\mathbf x$$
+        - second drawer의 characters는 **some other images $$\lbrace\mathbf x_c\rbrace_{c=1}^C$$**
     - 두 번 반복하여 40 one-shot learning trials가 생기며, 10 alphabet evaluation set이므로 총 400 one-shot learning trials가 생성된다.
 - 92%의 test accuracy를 달성했다.
 

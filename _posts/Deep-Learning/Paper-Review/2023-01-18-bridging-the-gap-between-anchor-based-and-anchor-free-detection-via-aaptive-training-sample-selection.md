@@ -103,12 +103,12 @@ object detection은 **anchor-based detectors**에 의해 주도되어 왔으나,
 
 **<span style="color: MediumVioletRed">anchor-free</span> FCOS**(MS COCO dataset 기준 37.1%)가 **<span style="color: RoyalBlue">anchor-based</span> RetinaNet**(32.5%)보다 성능이 높다.
 
-|  | RetinaNet | FCOS |
-| --- | --- | --- |
-| **Type** | one-stage <span style="color: MediumVioletRed">**anchor-based detector**</span> | center-based <span style="color: RoyalBlue">**anchor-free detector**</span> |
-| **Number of anchors<br>tiled per location** | <span style="color: MediumVioletRed">**several**</span> anchor boxes per location | <span style="color: RoyalBlue">**one**</span> anchor point per location<br>(* anchor point == center of an anchor box) |
-| **Definition of positive<br>and negative samples** | resorts to the <span style="color: MediumVioletRed">**IoU**</span>  | utilizes <span style="color: RoyalBlue">**spatial and scale constraints**</span><br>to select samples |
-| **Regression starting<br>status** | from the preset anchor <span style="color: MediumVioletRed">**box**</span> | from the anchor <span style="color: RoyalBlue">**point**</span> |
+|                                                    | RetinaNet                                                                         | FCOS                                                                                                                   |
+| -------------------------------------------------- | --------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
+| **Type**                                           | one-stage <span style="color: MediumVioletRed">**anchor-based detector**</span>   | center-based <span style="color: RoyalBlue">**anchor-free detector**</span>                                            |
+| **Number of anchors<br>tiled per location**        | <span style="color: MediumVioletRed">**several**</span> anchor boxes per location | <span style="color: RoyalBlue">**one**</span> anchor point per location<br>(* anchor point == center of an anchor box) |
+| **Definition of positive<br>and negative samples** | resorts to the <span style="color: MediumVioletRed">**IoU**</span>                | utilizes <span style="color: RoyalBlue">**spatial and scale constraints**</span><br>to select samples                  |
+| **Regression starting<br>status**                  | from the preset anchor <span style="color: MediumVioletRed">**box**</span>        | from the anchor <span style="color: RoyalBlue">**point**</span>                                                        |
 
 <br>
 
@@ -166,7 +166,7 @@ object detection은 **anchor-based detectors**에 의해 주도되어 왔으나,
         
         ⇒ <span class="hlp">final positives를 **spatial & scale dimension에서 동시**에 선택한다.</span>
         
-    - IoU가 특정 threshold ($\theta_p, \theta_n$)를 넘지 못하면 학습 단계에서 무시된다.
+    - IoU가 특정 threshold ($$\theta_p, \theta_n$$)를 넘지 못하면 학습 단계에서 무시된다.
 - <span style="color: RoyalBlue">**FCOS**</span>
     - different pyramid levels에서 뽑은 anchor points를 positive와 negative로 나누기 위해 <span style="color: RoyalBlue">**spatial & scale constraints**</span>를 사용한다.
     1. GT box 안에 있는 anchor points를 **candidate positive samples**로 고려한다.
@@ -255,21 +255,21 @@ object detection은 **anchor-based detectors**에 의해 주도되어 왔으나,
 
 ![Untitled](/assets/img/posts/Deep-Learning/Paper-Review/2023-01-18-6.png){: style="max-width: 70%"}
 
-1. image의 각 GT box $g$에 대해서, 그것의 **candidate positive samples**를 찾는다. 
+1. image의 각 GT box $$g$$에 대해서, 그것의 **candidate positive samples**를 찾는다. 
     
     → <span class="hlp">spatial dimension</span>
     
-    - 각 pyramid level에 대해서, **center of $g$**와 **center 간의 L2 distance**가 가장 가까운 <span style="color: crimson">$k$ anchor boxes</span>를 선택한다.
-    - $\mathcal L$ feature pyramid levels라면, GT box $g$는 <span style="color: crimson">$k \times \mathcal L$ candidate positive samples</span>를 가지게 된다.
+    - 각 pyramid level에 대해서, **center of $$g$$**와 **center 간의 L2 distance**가 가장 가까운 <span style="color: crimson">$$k$$ anchor boxes</span>를 선택한다.
+    - $$\mathcal L$$ feature pyramid levels라면, GT box $$g$$는 <span style="color: crimson">$$k \times \mathcal L$$ candidate positive samples</span>를 가지게 된다.
 
-2. 이러한 candidates와 GT $g$ 간의 IoU <span style="color: crimson">$\mathcal D_g$를 계산</span>한다.
-    - 이것의 mean은 $m_g$, standard deviation은 $v_g$ (⇒ statistics)
+2. 이러한 candidates와 GT $$g$$ 간의 IoU <span style="color: crimson">$$\mathcal D_g$$를 계산</span>한다.
+    - 이것의 mean은 $$m_g$$, standard deviation은 $$v_g$$ (⇒ statistics)
 
-3. candidates 중 IoU가 threshold $t_g$ 이상인 것들을 **final positive samples**로 선택한다. 
+3. candidates 중 IoU가 threshold $$t_g$$ 이상인 것들을 **final positive samples**로 선택한다. 
     
     → <span class="hlp">scale dimension</span>
     
-    - IoU threshold for this GT $g$는 <span style="color: crimson">$t_g=m_g+v_g$</span> 로 구한다.
+    - IoU threshold for this GT $$g$$는 <span style="color: crimson">$$t_g=m_g+v_g$$</span> 로 구한다.
     - positive samples의 center가 GT box 안에 있는 경우에만 선택한다.
     - 만약 anchor box가 multiple GT boxes에 assigned 되었다면, highest IoU를 가진 것이 선택된다.
 
@@ -285,20 +285,20 @@ object detection은 **anchor-based detectors**에 의해 주도되어 왔으나,
 
 ![Untitled](/assets/img/posts/Deep-Learning/Paper-Review/2023-01-18-7.png){: style="max-width: 70%"}
 
-- **IoU mean $m_g$ of an object** - a measure of suitability of th epreset anchors for this object
-    - **high** $m_g$: high-quality candidates / IoU threshold is supposed to be high
-    - **low $m_g$**: low-quality candidates / IoU threshold should be low
-- **IoU standard deviation $v_g$ of an object** - a measure of which layers are suitable to detect this object
-    - **high $v_g$**: 해당 object에 suitable한 pyramid level이 존재한다.
-        - $v_g+m_g$을 threshold로 사용한다는 것 = high threshold to select positives only from that level 을 나타낸다.
-    - **low $v_g$**: several pyramid levels suitable for this object
-        - $v_g+m_g$를 threshold로 사용한다는 것 = low threshold to select appropriate positives from these levels
-- 이처럼, sum of mean $m_g$과 standard deviation $v_g$를 IoU threshold $t_g$로 사용하는 것은 **object의 통계적 특성**에 따라 **적절한 pyramid levels에서 positives를 adaptively 하게 선택**할 수 있도록 하는 것이다.
+- **IoU mean $$m_g$$ of an object** - a measure of suitability of th epreset anchors for this object
+    - **high** $$m_g$$: high-quality candidates / IoU threshold is supposed to be high
+    - **low $$m_g$$**: low-quality candidates / IoU threshold should be low
+- **IoU standard deviation $$v_g$$ of an object** - a measure of which layers are suitable to detect this object
+    - **high $$v_g$$**: 해당 object에 suitable한 pyramid level이 존재한다.
+        - $$v_g+m_g$$을 threshold로 사용한다는 것 = high threshold to select positives only from that level 을 나타낸다.
+    - **low $$v_g$$**: several pyramid levels suitable for this object
+        - $$v_g+m_g$$를 threshold로 사용한다는 것 = low threshold to select appropriate positives from these levels
+- 이처럼, sum of mean $$m_g$$과 standard deviation $$v_g$$를 IoU threshold $$t_g$$로 사용하는 것은 **object의 통계적 특성**에 따라 **적절한 pyramid levels에서 positives를 adaptively 하게 선택**할 수 있도록 하는 것이다.
 
 #### [3] almost hyperparameter-free
 
-- 본 방법에 사용되는 hyperparameter는 **anchor box의 개수**인 $k$ 뿐이다.
-- 또한, $k$ 값에 대해 insensitive 하므로 almost hyperparameter-free라고 간주할 수 있다.
+- 본 방법에 사용되는 hyperparameter는 **anchor box의 개수**인 $$k$$ 뿐이다.
+- 또한, $$k$$ 값에 대해 insensitive 하므로 almost hyperparameter-free라고 간주할 수 있다.
 
 <br>
 
@@ -333,19 +333,19 @@ object detection은 **anchor-based detectors**에 의해 주도되어 왔으나,
 
 ### 4.4 Analysis
 
-> ATSS는 only involves on hyperparameter $k$와 one related setting of anchor boxes
+> ATSS는 only involves on hyperparameter $$k$$와 one related setting of anchor boxes
 > 
 
-#### Hyperparameter $k$
+#### Hyperparameter $$k$$
 
 > each pyramid level에서 candidate positive samples를 뽑을 때 사용
 > 
 
 ![Untitled](/assets/img/posts/Deep-Learning/Paper-Review/2023-01-18-9.png){: style="max-width: 70%"}
 
-- **too large $k$** ⇒ too many low-quality candidates
-- **too small $k$** ⇒ too few candidate positive samples → statistical instability
-- $k$가 7 ~ 17 인 경우, 성능이 꽤나 insensitive 하였다.
+- **too large $$k$$** ⇒ too many low-quality candidates
+- **too small $$k$$** ⇒ too few candidate positive samples → statistical instability
+- $$k$$가 7 ~ 17 인 경우, 성능이 꽤나 insensitive 하였다.
     - quite robustness & can be enarly regarded as hyperparameter-free
 
 #### Anchor Size
