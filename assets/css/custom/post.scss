@@ -1,0 +1,68 @@
+.content {
+  /* add highlighter w/ underline */
+  // (default) yellow highlighter
+  .hl {
+    font-weight: 500; // bolder;
+    border-bottom: 2px solid var(--highlight-lcolor);
+    padding: 0 0.1em;
+    background: linear-gradient(
+      180deg,
+      #ffffff00 65%,
+      var(--highlight-bcolor) 35%
+    );
+  }
+  // purple highlighter
+  .hlp {
+    font-weight: 500; // bolder;
+    border-bottom: 2px solid var(--highlight-purple-lcolor);
+    padding: 0 0.1em;
+    background: linear-gradient(
+      180deg,
+      #ffffff00 65%,
+      var(--highlight-purple-bcolor) 35%
+    );
+  }
+  // blue highlighter
+  .hlb {
+    font-weight: 500; // bolder;
+    border-bottom: 2px solid var(--highlight-blue-lcolor);
+    padding: 0 0.1em;
+    background: linear-gradient(
+      180deg,
+      #ffffff00 65%,
+      var(--highlight-blue-bcolor) 35%
+    );
+  }
+
+  /* add simple highlight */
+  .shl {
+    background-color: var(--highlight-bcolor);
+  }
+  .shlp {
+    background-color: var(--highlight-purple-bcolor);
+  }
+  .shlb {
+    background-color: var(--highlight-blue-bcolor);
+  }
+
+  /* add colored text */
+  .red {
+    color: rgba(220, 20, 60, 0.8);
+  }
+  .blue {
+    color: rgba(65, 105, 225, 0.8);
+  }
+  .pink {
+    color: rgba(206, 77, 159, 0.8);
+  }
+
+  /* add underline */
+  .ulr {
+    text-decoration: rgba(orangered, 0.6) wavy underline;
+    text-underline-offset: 3.5px;
+  }
+  .ulg {
+    text-decoration: rgba(forestgreen, 0.6) wavy underline;
+    text-underline-offset: 3.5px;
+  }
+}
