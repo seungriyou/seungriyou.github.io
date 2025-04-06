@@ -1,31 +1,31 @@
 ---
 ---
 
-/* load main */
-@import 'main
-{%- if jekyll.environment == ' production
-  ' -%}
-  .bundle
-{%- endif -%}
-';
-
-/* append your custom style below */
-@import 'custom/text';
-@import 'custom/buttons';
-@import 'custom/post';
-
-@import 'custom/base/base';
-
 // /* load main */
-// @use 'main
-// {%- if jekyll.environment == ' production ' -%}
+// @import 'main
+// {%- if jekyll.environment == ' production
+//   ' -%}
 //   .bundle
 // {%- endif -%}
 // ';
 
 // /* append your custom style below */
-// @use 'custom/text' as *;
-// @use 'custom/buttons' as *;
-// @use 'custom/post' as *;
+// @import 'custom/addon/post';
+// @import 'custom/addon/buttons';
+// @import 'custom/addon/text';
 
-// @use 'custom/base/base' as *;
+// @import 'custom/base/base';
+
+/* load main */
+@use 'main
+{%- if jekyll.environment == ' production ' -%}
+  .bundle
+{%- endif -%}
+';
+
+/* append your custom style below */
+@use 'custom/addon/post' as *;
+@use 'custom/addon/buttons' as *;
+@use 'custom/addon/text' as *;
+
+@use 'custom/base/base' as *;
