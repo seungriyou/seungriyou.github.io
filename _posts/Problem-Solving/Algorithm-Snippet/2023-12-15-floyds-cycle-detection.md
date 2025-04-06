@@ -8,7 +8,7 @@ math: true
 
 ## Floyd’s Cycle Detection이란?
 
-Floyd’s Cycle Detection 알고리즘은 속도가 다른 두 pointer를 이용하여 <span class="hl">$O(1)$의 space complexity</span>로 <span class="hl">linked list에 cycle 혹은 loop가 존재하는지 여부</span>를 검사하는 알고리즘이다.
+Floyd’s Cycle Detection 알고리즘은 속도가 다른 두 pointer를 이용하여 <span class="hl">$$O(1)$$의 space complexity</span>로 <span class="hl">linked list에 cycle 혹은 loop가 존재하는지 여부</span>를 검사하는 알고리즘이다.
 
 이때, <span class="hl">fast pointer는 slow pointer의 두 배 빠른 속도</span>로 이동하므로 Hare-Tortoise 알고리즘으로 불리기도 한다.
 
@@ -19,7 +19,7 @@ slow = slow.next       # -- 한 칸 이동
 
 <br>
 
-> cycle detection을 위해서는 hash table을 사용할 수도 있으나 space complexity가 $O(N)$ 이 된다. 따라서 $O(1)$ space complexity constraint 조건이 주어진다면 Floyd’s Cycle Detection을 사용하자.
+> cycle detection을 위해서는 hash table을 사용할 수도 있으나 space complexity가 $$O(N)$$ 이 된다. 따라서 $$O(1)$$ space complexity constraint 조건이 주어진다면 Floyd’s Cycle Detection을 사용하자.
 >
 > ```python
 > # hash table을 사용하는 방법 (O(N) space)
@@ -62,8 +62,8 @@ if fast == slow:
 ### Complexity
 
 | --- | --- |
-| **Time Complexity** | $O(N)$ |
-| **Space Complexity** | $O(1)$ (only for two pointers) |
+| **Time Complexity** | $$O(N)$$ |
+| **Space Complexity** | $$O(1)$$ (only for two pointers) |
 
 <br>
 

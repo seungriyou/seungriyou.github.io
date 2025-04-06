@@ -1,0 +1,26 @@
+@use '../themes/custom-light';
+@use '../themes/custom-dark';
+
+html {
+  @media (prefers-color-scheme: light) {
+    &:not([data-mode]),
+    &[data-mode='light'] {
+      @include custom-light.styles;
+    }
+
+    &[data-mode='dark'] {
+      @include custom-dark.styles;
+    }
+  }
+
+  @media (prefers-color-scheme: dark) {
+    &:not([data-mode]),
+    &[data-mode='dark'] {
+      @include custom-dark.styles;
+    }
+
+    &[data-mode='light'] {
+      @include custom-light.styles;
+    }
+  }
+}

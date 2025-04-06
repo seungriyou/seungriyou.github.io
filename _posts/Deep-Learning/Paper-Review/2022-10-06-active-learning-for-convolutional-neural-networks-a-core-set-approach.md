@@ -86,22 +86,22 @@ active learning에 대해 알아보며 읽었던 논문이다.
 - **notation**
     
     | --- | --- |
-    | **compact space** | $\mathcal X$ |
-    | **label space** | $\mathcal Y = \lbrace 1, ..., C\rbrace $<br>($C$ classes classification problem) |
-    | **loss function** | $l(\cdot,\cdot ; \mathbf w):\mathcal X \times \mathcal Y \rightarrow \mathcal R$ |
-    | **query budget** | $b$ (oracle에게 label을 요청할 data의 개수) |
-    | **multiple rounds** | $k$ (query를 위해 선택된 subset: $\mathbf s^k$) |
+    | **compact space** | $$\mathcal X$$ |
+    | **label space** | $$\mathcal Y = \lbrace 1, ..., C\rbrace $$<br>($$C$$ classes classification problem) |
+    | **loss function** | $$l(\cdot,\cdot ; \mathbf w):\mathcal X \times \mathcal Y \rightarrow \mathcal R$$ |
+    | **query budget** | $$b$$ (oracle에게 label을 요청할 data의 개수) |
+    | **multiple rounds** | $$k$$ (query를 위해 선택된 subset: $$\mathbf s^k$$) |
 
-    > classical 방법에서는 $b=1$ 이지만, single point는 deep learning에서 의미있는 영향이 없기 때문에 batch setting을 사용한다.
+    > classical 방법에서는 $$b=1$$ 이지만, single point는 deep learning에서 의미있는 영향이 없기 때문에 batch setting을 사용한다.
     {: .prompt-info}
   
 - **label이 되어야 할 data points의 initial pool**은 **uniformly random 하게 선정**한다.
     
     | --- | --- |
-    | $n$ | 전체 sample |
-    | $m$ | label $y$를 알고있는 sample |
-    | $\lbrace\mathbf x_i\rbrace_{i \in [n]}$, $\lbrace y_{s(j)}\rbrace_{j \in [m]}$  | active learning algorithm이 access 할 수 있는 정보<br>(initial sub-sampled pool의 labels 만 볼 수 있다.) |
-    | $\mathbf s^0=\lbrace s^0(j)\in [n]\rbrace_{j \in [m]}$ | initial labelled set |
+    | $$n$$ | 전체 sample |
+    | $$m$$ | label $$y$$를 알고있는 sample |
+    | $$\lbrace\mathbf x_i\rbrace_{i \in [n]}$$, $$\lbrace y_{s(j)}\rbrace_{j \in [m]}$$  | active learning algorithm이 access 할 수 있는 정보<br>(initial sub-sampled pool의 labels 만 볼 수 있다.) |
+    | $$\mathbf s^0=\lbrace s^0(j)\in [n]\rbrace_{j \in [m]}$$ | initial labelled set |
 
 - 따라서 문제 정의를 다음과 같이 할 수 있다. (**future expected loss를 minimize**)
     
@@ -149,13 +149,13 @@ active learning에 대해 알아보며 읽었던 논문이다.
     
     ![Untitled](/assets/img/posts/Deep-Learning/Paper-Review/2022-10-06-15.png)
     
-- **upper bound**는 **covering radius $\delta$**로 정의될 수 있다.
-    - **set $\mathbf s$의 각 원소가 중심**이고 **radius가 $\delta$**인 balls로 **entire set $s^*$을 cover** 할 수 있다.
+- **upper bound**는 **covering radius $$\delta$$**로 정의될 수 있다.
+    - **set $$\mathbf s$$의 각 원소가 중심**이고 **radius가 $$\delta$$**인 balls로 **entire set $$s^*$$을 cover** 할 수 있다.
     - labelled points의 개수의 영향을 받지 않는다.
     
     ![Untitled](/assets/img/posts/Deep-Learning/Paper-Review/2022-10-06-6.png)
     
-- 이 **upper bound를 minimize** 하자. ($\delta_s$와 관련)
+- 이 **upper bound를 minimize** 하자. ($$\delta_s$$와 관련)
     
     $$
     \min_{\mathbf s^1: |\mathbf s^1 \le b|} \delta_{\mathbf s^0 \cup \mathbf s^1}
@@ -169,7 +169,7 @@ active learning에 대해 알아보며 읽었던 논문이다.
 ![Untitled](/assets/img/posts/Deep-Learning/Paper-Review/2022-10-06-7.png){: style="max-width: 70%"}
 
 - loss function의 upper bound를 minimize 하는 것 == k-Center problem
-- **하나의 data point와 가장 가까운 center 사이의 최대 거리(== radius $\delta$)를 최소화**하는 $b$ 개의 center points를 고르는 문제이다. 결과적으로 모든 data point를 cover 해야 한다.
+- **하나의 data point와 가장 가까운 center 사이의 최대 거리(== radius $$\delta$$)를 최소화**하는 $$b$$ 개의 center points를 고르는 문제이다. 결과적으로 모든 data point를 cover 해야 한다.
 - NP-Hard 문제이지만 **greedy approach를 이용한 2-OPT solution**이 존재한다.
     
     ![Untitled](/assets/img/posts/Deep-Learning/Paper-Review/2022-10-06-8.png){: style="max-width: 60%"}
@@ -184,19 +184,19 @@ active learning에 대해 알아보며 읽었던 논문이다.
 ### [Algorithm 2] Robust K-Center
 
 - [Algorithm 1] k-Center-Greedy를 initialization으로 사용한 후, MIP의 feasibility를 반복적으로 확인하는 방법이다.
-    - $OPT \le \delta$ → **mixed integer program(MIP)**으로 정의한다.
-    - **outliers의 개수의 upper limit** $\Xi$(= cover 하지 않을 sample 수)을 도입하여 **robustness**를 개선한다.
-- $\delta$가 얼마가 되었을 때 제약식을 모두 만족시키는지 알 수 없으므로, **lower / upper bound를 설정 후 업데이트**를 계속 하면서 **그 두 값이 같아질 때**의 set이 optimal solution이라고 판단한다.
+    - $$OPT \le \delta$$ → **mixed integer program(MIP)**으로 정의한다.
+    - **outliers의 개수의 upper limit** $$\Xi$$(= cover 하지 않을 sample 수)을 도입하여 **robustness**를 개선한다.
+- $$\delta$$가 얼마가 되었을 때 제약식을 모두 만족시키는지 알 수 없으므로, **lower / upper bound를 설정 후 업데이트**를 계속 하면서 **그 두 값이 같아질 때**의 set이 optimal solution이라고 판단한다.
     
     ![Untitled](/assets/img/posts/Deep-Learning/Paper-Review/2022-10-06-9.png){: style="max-width: 80%"}
     
-    - $\delta$ 값을 계속 바꿔가면서 MIP가 **언제 feasible($\min_{\mathbf s^1}\max_{i}\min_{j\in \mathbf s^1 \cup \mathbf s^0}\Delta(\mathbf x_i, \mathbf x_j)\le\delta$) 한지 확인**한다.
+    - $$\delta$$ 값을 계속 바꿔가면서 MIP가 **언제 feasible($$\min_{\mathbf s^1}\max_{i}\min_{j\in \mathbf s^1 \cup \mathbf s^0}\Delta(\mathbf x_i, \mathbf x_j)\le\delta$$) 한지 확인**한다.
     - 다음의 값은 모두 0 또는 1이다.
         
         | --- | --- |
-        | $u_i$ | i-th data pointer가 center로 선택되면 1 |
-        | $\mathcal w_{i,j}$ | i-th point가 j-th point로 covered 되면 1 |
-        | $\xi_{i,j}$ | i-th point가 outlier이면서 $\delta$ constraint 없이 j-th point에 의해 covered 되면 1 |
+        | $$u_i$$ | i-th data pointer가 center로 선택되면 1 |
+        | $$\mathcal w_{i,j}$$ | i-th point가 j-th point로 covered 되면 1 |
+        | $$\xi_{i,j}$$ | i-th point가 outlier이면서 $$\delta$$ constraint 없이 j-th point에 의해 covered 되면 1 |
 
 ![Untitled](/assets/img/posts/Deep-Learning/Paper-Review/2022-10-06-10.png)
 
@@ -207,7 +207,7 @@ active learning에 대해 알아보며 읽었던 논문이다.
 | --- | --- |
 | **distance** | final fully-connected layer에서 나온 activations의 L2 distance |
 | **network** | (CNN) VGG-16<br>(weakly-supervised learning) Ladder networks |
-| **upper bound on outliers** $\Xi$ | 1e-4 * n<br>(n: unlabelled points의 개수) |
+| **upper bound on outliers** $$\Xi$$ | 1e-4 * n<br>(n: unlabelled points의 개수) |
 | **etc** | He initialization, RMSProp(lr=1e-3), Gurobi (MIP framework) |
 
 <br>

@@ -24,9 +24,9 @@ mermaid: true
 
 - **프로세스**와 **물리 메모리**를 각각 다음의 단위로 분할한다. 이때, <span class="hl">**두 단위의 크기는 동일**</span>하다.
     
-    | 분할 대상 | 단위 |
-    | ----- | ----- |
-    | 프로세스 (process)  | **페이지** (page)  |
+    | 분할 대상                     | 단위               |
+    | ----------------------------- | ------------------ |
+    | 프로세스 (process)            | **페이지** (page)  |
     | 물리 메모리 (physical memory) | **프레임** (frame) |
 - 물리 메모리에 **빈 frame이 있으면 어떤 위치이든 사용**될 수 있으므로, 연속 할당 방식에서 발생했던 동적 메모리 할당 문제가 발생하지 않는다.
     
@@ -52,12 +52,12 @@ mermaid: true
 
 ### Logical Address의 구조
 
-CPU가 사용하는 **logical address(virtual address)**는 페이지 번호($p$)와 페이지 오프셋($d$)으로 구성된다.
+CPU가 사용하는 **logical address(virtual address)**는 페이지 번호($$p$$)와 페이지 오프셋($$d$$)으로 구성된다.
 
-| 구성 | 용도 | 특징 |
-| --- | --- | --- |
-| $p$ (page **번호**) | - **page table** 접근 시 **index로** 사용<br>- **TLB** 접근 시 **참조 값**으로 사용 | page table의 entry에는 해당 page의 physical memory 상<br>**base address(= 시작 위치)**가 들어있다. |
-| $d$ (page **오프셋**) | 하나의 **page** 내에서의 **변위**로 사용 | base address 값에 **더하면** 대응되는 physical address를<br>구할 수 있다. |
+| 구성                    | 용도                                                                                | 특징                                                                                               |
+| ----------------------- | ----------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| $$p$$ (page **번호**)   | - **page table** 접근 시 **index로** 사용<br>- **TLB** 접근 시 **참조 값**으로 사용 | page table의 entry에는 해당 page의 physical memory 상<br>**base address(= 시작 위치)**가 들어있다. |
+| $$d$$ (page **오프셋**) | 하나의 **page** 내에서의 **변위**로 사용                                            | base address 값에 **더하면** 대응되는 physical address를<br>구할 수 있다.                          |
 
 ![Untitled](/assets/img/posts/Computer-Science/Operating-System/2023-10-07-02.jpeg){: .w-75}
 
@@ -124,8 +124,8 @@ CPU가 사용하는 **logical address(virtual address)**는 페이지 번호($p$
     
     | ----- | ----- |
     | 메모리 접근 시간 | 1 |
-    | associative register 접근 시간 | $\epsilon$ |
-    | 요청된 page에 대한 정보가 associative register에 존재할 확률 | $\alpha$   |
+    | associative register 접근 시간 | $$\epsilon$$ |
+    | 요청된 page에 대한 정보가 associative register에 존재할 확률 | $$\alpha$$   |
 
 <br>
 
@@ -149,17 +149,17 @@ _ref: <http://www.cs.rpi.edu/academics/courses/fall04/os/c12/index.html>_
 #### TLB vs. Cache
     
     
-| 구분  | 캐싱 된 값 | 참조하는 값 | 찾는 값 |
-| ----- | ----- | ----- | ----- |
+| 구분      | 캐싱 된 값                                                             | 참조하는 값 | 찾는 값                 |
+| --------- | ---------------------------------------------------------------------- | ----------- | ----------------------- |
 | **TLB**   | <span class="pink">**address translation 정보**</span>가 caching 된 것 | page 번호   | frame 번호 (= **`PA`**) |
-| **Cache** | <span class="blue">**실제 data**</span>가 caching 된 것 | `PA` | 실제 **data** |
+| **Cache** | <span class="blue">**실제 data**</span>가 caching 된 것                | `PA`        | 실제 **data**           |
 
 #### TLB, Page Table vs. Cache
     
-| 구분 | 목적 |
-| ----- | ----- |
-| **TLB, Page Table** | <span class="pink">**PA**</span>를 찾기 위함 (= **page 번호**에 대응되는 **frame 번호**를 찾기 위함) |
-| **Cache**  | 실제 <span class="blue">**data**</span>를 찾기 위함 (= **PA**에 대응되는 **caching된 data**를 찾기 위함) |
+| 구분                | 목적                                                                                                     |
+| ------------------- | -------------------------------------------------------------------------------------------------------- |
+| **TLB, Page Table** | <span class="pink">**PA**</span>를 찾기 위함 (= **page 번호**에 대응되는 **frame 번호**를 찾기 위함)     |
+| **Cache**           | 실제 <span class="blue">**data**</span>를 찾기 위함 (= **PA**에 대응되는 **caching된 data**를 찾기 위함) |
 
 #### MMU의 위치
 
@@ -192,7 +192,7 @@ _ref: <http://www.cs.rpi.edu/academics/courses/fall04/os/c12/index.html>_
 
 32bit 주소 체계를 사용하는 컴퓨터를 예로 들어보자.
 
-- **$2^{32}$byte(= 4GB)**의 주소 공간을 갖는 프로그램을 지원할 수 있다.
+- **$$2^{32}$$byte(= 4GB)**의 주소 공간을 갖는 프로그램을 지원할 수 있다.
 - **페이지의 크기**가 **4KB**라고 가정하면, **1M개**의 **page table entry**가 필요하다. (= 4GB/4KB)
 - 각 **page table entry**가 **4byte**(= 32bit, page 시작 주소)라면, **한 process 당 page table**을 위해 **4MB** 크기의 메모리가 필요하다. (= 1M*4byte)
 
@@ -231,15 +231,15 @@ _ref: <http://www.cs.rpi.edu/academics/courses/fall04/os/c12/index.html>_
     
 ![Untitled](/assets/img/posts/Computer-Science/Operating-System/2023-10-07-08.png){: .w-50}
 
-| 구성  | 크기  | 용도  | 찾는 정보  |
-| ----- | ----- | ----- | ----- |
-| $p_1$ | 10bit | top-level page table의 **index** | second-level page table의 address   |
-| $p_2$ | 10bit | second-level page table의 **index** | 요청된 page가 존재하는 frame 위치   |
-| $d$   | 12bit | 하나의 page 내 **변위** 값   | 실제 원하는 위치의 physical address |
+| 구성    | 크기  | 용도                                | 찾는 정보                           |
+| ------- | ----- | ----------------------------------- | ----------------------------------- |
+| $$p_1$$ | 10bit | top-level page table의 **index**    | second-level page table의 address   |
+| $$p_2$$ | 10bit | second-level page table의 **index** | 요청된 page가 존재하는 frame 위치   |
+| $$d$$   | 12bit | 하나의 page 내 **변위** 값          | 실제 원하는 위치의 physical address |
 
-- $d$: page 크기가 4KB(=$2^{12}$byte)이므로 12bit가 필요하다.
-- $p_2$: second-level page table이 하나의 frame에 저장되어야 하므로 크기는 4KB여야 한다. 따라서 **1K(=$2^{10}$=4KB/4btye) 개의 entry**를 가지므로 이를 구분하기 위해 10bit가 필요하다.
-- $p_1$: 32bit 주소 중 $d$와 $p_2$가 사용하고 남은 10bit를 사용한다.
+- $$d$$: page 크기가 4KB(=$$2^{12}$$byte)이므로 12bit가 필요하다.
+- $$p_2$$: second-level page table이 하나의 frame에 저장되어야 하므로 크기는 4KB여야 한다. 따라서 **1K(=$$2^{10}$$=4KB/4btye) 개의 entry**를 가지므로 이를 구분하기 위해 10bit가 필요하다.
+- $$p_1$$: 32bit 주소 중 $$d$$와 $$p_2$$가 사용하고 남은 10bit를 사용한다.
 
 #### Address Translation 과정
     
@@ -254,10 +254,10 @@ _ref: <http://www.cs.rpi.edu/academics/courses/fall04/os/c12/index.html>_
 
 ![Untitled](/assets/img/posts/Computer-Science/Operating-System/2023-10-07-10.jpeg){: .w-75}
 
-|    | 개수  | entry | 특징 |
-| ---- | ---- | ---- | ---- |
-| **page table** | **process 마다** 하나씩 존재 | <span class="red">**page**</span> 마다 entry 하나  | 모든 process의 모든 page에 대해 page table entry를<br>구성해야 하므로 메모리 공간의 낭비 발생 |
-| **inverted page table** | **전체 system**에 하나 존재  | <span class="red">**frame**</span> 마다 entry 하나 | page table에 사용하는 메모리 공간을 줄일 수 있음 |
+|                         | 개수                         | entry                                              | 특징                                                                                          |
+| ----------------------- | ---------------------------- | -------------------------------------------------- | --------------------------------------------------------------------------------------------- |
+| **page table**          | **process 마다** 하나씩 존재 | <span class="red">**page**</span> 마다 entry 하나  | 모든 process의 모든 page에 대해 page table entry를<br>구성해야 하므로 메모리 공간의 낭비 발생 |
+| **inverted page table** | **전체 system**에 하나 존재  | <span class="red">**frame**</span> 마다 entry 하나 | page table에 사용하는 메모리 공간을 줄일 수 있음                                              |
 
 - **각 frame**마다 어느 process의 어느 page가 저장되었는지에 관한 정보를 보관한다.
 - inverted page table의 entry는 **process 번호** (`pid`)와 **process 내 page 번호** (`p`)로 구성된다.
@@ -296,10 +296,10 @@ _ref: <http://www.cs.rpi.edu/academics/courses/fall04/os/c12/index.html>_
 - **유효-무효 비트 (valid-invalid bit)**: 해당 page의 내용이 유효한지 여부
     
     
-    | valid bit | 의미 | 접근 허용 여부 |
-    | --- | --- | --- |
-    | valid (`1`) | 해당 frame에 그 page가 존재함 | O |
-    | invalid (`0`) | process가 해당 frame을 사용하지 않거나, 해당 page가 backing store에 존재함 | X |
+    | valid bit     | 의미                                                                       | 접근 허용 여부 |
+    | ------------- | -------------------------------------------------------------------------- | -------------- |
+    | valid (`1`)   | 해당 frame에 그 page가 존재함                                              | O              |
+    | invalid (`0`) | process가 해당 frame을 사용하지 않거나, 해당 page가 backing store에 존재함 | X              |
 
 <br>
 

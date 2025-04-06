@@ -89,16 +89,16 @@ _node = object / edge = object relationship_
 
 ![Untitled](/assets/img/posts/Deep-Learning/Paper-Review/2022-11-16-4.png){: style="max-width: 70%"}
 
-- **Graph $G = (V, E, s)$**
-    - $v \in V$ (`node`) - region proposals
-    - $s$ (`scene`) - scene of the image
-    - $e \in E$ (`edge`) - relationship between each pair of object nodes
+- **Graph $$G = (V, E, s)$$**
+    - $$v \in V$$ (`node`) - region proposals
+    - $$s$$ (`scene`) - scene of the image
+    - $$e \in E$$ (`edge`) - relationship between each pair of object nodes
 - **흐름**
     1. Region Proposal Network(RPN)에서 object가 들어있을 법한 **region proposals**를 생성한다.
     2. Non-Maximum Suppression(NMS)을 통해 고정된 수의 **ROIs(Region of Interest)**를 얻는다.
-    3. 각 ROI $v_i$에 대해, ROI pooling layer 이후의 FC layer를 이용하여 **visual feature** $f_i^v$를 추출한다.
-    4. scene label에 대한 ground-truth label이 없으므로 **whole image visual feature $f^s$**를 scene representation으로 사용한다. (node와 같은 연산)
-    5. $v_i$에 대한 $v_j$의 influence를 나타내는 **directed edge $e_{j\rightarrow i}$** 를 spatial feature와 visual feature를 이용하여 구한다.
+    3. 각 ROI $$v_i$$에 대해, ROI pooling layer 이후의 FC layer를 이용하여 **visual feature** $$f_i^v$$를 추출한다.
+    4. scene label에 대한 ground-truth label이 없으므로 **whole image visual feature $$f^s$$**를 scene representation으로 사용한다. (node와 같은 연산)
+    5. $$v_i$$에 대한 $$v_j$$의 influence를 나타내는 **directed edge $$e_{j\rightarrow i}$$** 를 spatial feature와 visual feature를 이용하여 구한다.
 
 <br>
 
@@ -110,13 +110,13 @@ long-term information에 효과적인 memory machine 처럼 동작하는 RNN 중
 
 ![Untitled](/assets/img/posts/Deep-Learning/Paper-Review/2022-11-16-5.png){: style="max-width: 70%"}
 
-- reset gate $r$:
+- reset gate $$r$$:
 
     $$
     r = σ(W_r[x,h_t])
     $$
 
-- update gate $z$:
+- update gate $$z$$:
 
     $$
     z = σ(W_z[x,h_t]) 
@@ -137,11 +137,11 @@ long-term information에 효과적인 memory machine 처럼 동작하는 RNN 중
 > reset gate를 통해서 관련 없는 information은 drop 되며, update gate를 통해서 더 compact한 representation이 남게 된다.
 {: .prompt-info}
 
-|  | encoding message from <span style="color: RoyalBlue">**scene**</span> | encoding message from <span style="color: RoyalBlue">**other objects**</span> |
-| --- | --- | --- |
-| **initial state of GRU** | object details | object details |
-| **input** | message from scene | integrated message from other nodes |
-| **기타** | scene context와 관련 없는 부분은 ignore | object의 state가 update되면 objects 간의 relationship도 변화함 |
+|                          | encoding message from <span style="color: RoyalBlue">**scene**</span> | encoding message from <span style="color: RoyalBlue">**other objects**</span> |
+| ------------------------ | --------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| **initial state of GRU** | object details                                                        | object details                                                                |
+| **input**                | message from scene                                                    | integrated message from other nodes                                           |
+| **기타**                 | scene context와 관련 없는 부분은 ignore                               | object의 state가 update되면 objects 간의 relationship도 변화함                |
 
 <br>
 
@@ -151,12 +151,12 @@ long-term information에 효과적인 memory machine 처럼 동작하는 RNN 중
 {: .prompt-info}
 
 - **scene GRU**
-    - **initial hidden state** - node visual feature $f^v$
-    - **input** - scene message $m^s$ (= fixed scene context $f^s$)
+    - **initial hidden state** - node visual feature $$f^v$$
+    - **input** - scene message $$m^s$$ (= fixed scene context $$f^s$$)
 - **edge GRU**
-    - **integrated message $m_e$**를 미리 계산해야 한다.
-    - 한 node에 대해 여러 object들이 다르게 contribute 하므로, 모든 **object-object relationship $e_{j\rightarrow i}$** 을 **scalar weight**로 모델링 해야 한다. 이는 <span style="color: RoyalBlue">**relative object position**</span>과 <span style="color: MediumVioletRed">**visual clues**</span>를 토대로 결정된다.
-    - **node $v_i$로의 integrated message**는 다음과 같이 계산한다.
+    - **integrated message $$m_e$$**를 미리 계산해야 한다.
+    - 한 node에 대해 여러 object들이 다르게 contribute 하므로, 모든 **object-object relationship $$e_{j\rightarrow i}$$** 을 **scalar weight**로 모델링 해야 한다. 이는 <span style="color: RoyalBlue">**relative object position**</span>과 <span style="color: MediumVioletRed">**visual clues**</span>를 토대로 결정된다.
+    - **node $$v_i$$로의 integrated message**는 다음과 같이 계산한다.
         
         $$
         m_i^e=\max_{j\in V}pooling (e_{j\rightarrow i}*f_j^v), \newline e_{j\rightarrow i}=relu(W_pR_{j\rightarrow i}^p)*tanh(W_v[f_i^v, f_j^v])
@@ -170,13 +170,13 @@ long-term information에 효과적인 memory machine 처럼 동작하는 RNN 중
             
     - **input** - new object-object message
 
-node $v_i$는 scene과 다른 nodes로부터 messages를 받으므로, 이를 모두 이용하여 **node state $h_{t+1}$**를 구한다. 이는 GRU의 **다음 hidden state로 입력**된다.
+node $$v_i$$는 scene과 다른 nodes로부터 messages를 받으므로, 이를 모두 이용하여 **node state $$h_{t+1}$$**를 구한다. 이는 GRU의 **다음 hidden state로 입력**된다.
 
 $$
 h_{t+1}=\frac{h_{t+1}^s+h_{t+1}^e}{2}
 $$
 
-- $h_{t+1}^s$ = scene GRU의 결과 / $h_{t+1}^e$ = edge GRU의 결과
+- $$h_{t+1}^s$$ = scene GRU의 결과 / $$h_{t+1}^e$$ = edge GRU의 결과
 - mean-pooling이 가장 효율적이었다.
 - 이를 이용하여 object category와 bounding box offsets를 계산한다.
 
@@ -225,7 +225,7 @@ $$
 
 ![Untitled](/assets/img/posts/Deep-Learning/Paper-Review/2022-11-16-11.png){: style="max-width: 70%"}
 
-- **VOC 데이터셋**에서는 XS 크기의 bird, boad, cat category에서 성능 향상이 있었으며, **COCO 데이터셋**에서도 small object에 대한 성능인 $AP^S$가 향상되었다.
+- **VOC 데이터셋**에서는 XS 크기의 bird, boad, cat category에서 성능 향상이 있었으며, **COCO 데이터셋**에서도 small object에 대한 성능인 $$AP^S$$가 향상되었다.
 
 ![Untitled](/assets/img/posts/Deep-Learning/Paper-Review/2022-11-16-12.png){: style="max-width: 70%"}
 
@@ -253,7 +253,7 @@ $$
     
     ![Untitled](/assets/img/posts/Deep-Learning/Paper-Review/2022-11-16-15.png){: style="max-width: 70%"}
     
-- **object relationship이 잘 학습되었는지 maximum $e_{j\rightarrow i}$를 시각화 한 결과**
+- **object relationship이 잘 학습되었는지 maximum $$e_{j\rightarrow i}$$를 시각화 한 결과**
     
     ![Untitled](/assets/img/posts/Deep-Learning/Paper-Review/2022-11-16-16.png){: style="max-width: 70%"}
     
@@ -264,7 +264,7 @@ $$
 
 ![Untitled](/assets/img/posts/Deep-Learning/Paper-Review/2022-11-16-17.png){: style="max-width: 60%"}
 
-- scene module과 edge module의 hidden state $h^s$와 $h^e$를 **mean-pooling** 하여 fusion 하는 것이 성능이 가장 좋았다.
+- scene module과 edge module의 hidden state $$h^s$$와 $$h^e$$를 **mean-pooling** 하여 fusion 하는 것이 성능이 가장 좋았다.
 - 학습 시 **time steps가 2**일 때 성능이 가장 좋았다. (더 늘어나면 message communication의 close loop를 형성할 수도 있으므로)
 - baseline에 비해 **precision은 높고, recall은 비슷**했다.
     

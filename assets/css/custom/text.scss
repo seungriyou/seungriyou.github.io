@@ -1,0 +1,126 @@
+/* Font & Line Height */
+body *:not([aria-label='Sidebar'] *):not([aria-label='Sidebar']):not(i),
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Noto Sans KR', Lato, 'Source Sans Pro', sans-serif;
+}
+
+strong {
+  font-weight: 500;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 500;
+}
+
+h1 {
+  font-size: 1.72rem;
+  line-height: 1.5;
+}
+h2 {
+  font-size: 1.5rem;
+}
+h3 {
+  font-size: 1.32rem;
+}
+
+.content {
+  font-size: 0.98rem;
+  line-height: 1.85;
+}
+
+/* Code Snippet & Highlight */
+.highlight {
+  pre,
+  * {
+    font-family: 'Fira Code', 'Noto Sans KR', 'Source Sans Pro', monospace !important;
+    line-height: 1.65rem;
+  }
+
+  pre {
+    font-size: 0.9rem;
+  }
+  .lineno {
+    margin-left: 0.4rem;
+  }
+}
+
+code {
+  &.highlighter-rouge {
+    font-family: 'Fira Code', 'Noto Sans KR', 'Source Sans Pro', monospace !important;
+    font-size: 0.9em;
+    padding: 3px 4px;
+    border-radius: 4px;
+  }
+}
+
+/* Font of Components */
+#sidebar {
+  .site-subtitle {
+    font-size: 100%;
+  }
+
+  ul li.nav-item a.nav-link span {
+    font-size: 100%;
+  }
+}
+
+#archives {
+  .year {
+    font-size: 1.35rem;
+  }
+  ul li {
+    font-size: 1.05rem;
+  }
+}
+
+#page-category ul > li > a,
+#page-tag ul > li > a {
+  font-size: 1.02rem;
+}
+
+#post-list .card .card-body .card-title {
+  padding-bottom: 5px;
+}
+
+#search-results a {
+  font-family: 'Noto Sans KR', Lato, 'Source Sans Pro', sans-serif;
+  font-weight: 500;
+  font-size: 90%;
+}
+
+/* Math */
+mjx-container * {
+  font-family: 'Latin Modern Math', MJX_Math, MJX_Main, 'STIX Math', serif !important;
+}
+
+mjx-container[jax='CHTML'] {
+  overflow: visible;
+  line-height: 1.5;
+  margin-bottom: 1.7rem !important;
+}
+
+/* Markdown Component */
+blockquote {
+  border-left-width: 0.3rem;
+}
+
+/* Link */
+// %link-hover {
+//   color: var(--link-color) !important;
+//   background: linear-gradient(
+//     180deg,
+//     #ffffff00 65%,
+//     var(--link-hover-bcolor) 35%
+//   ) !important;
+//   border-bottom: 2px dashed var(--link-hover-lcolor) !important;
+// }

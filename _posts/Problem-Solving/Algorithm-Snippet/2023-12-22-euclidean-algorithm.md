@@ -16,11 +16,11 @@ math: true
 
 유클리드 호제법의 내용을 간단히 정리하면 다음과 같다.
 
-> 두 양의 정수 $a, b \space (a>b)$에 대하여 $a=b \cdot t+r$ $(0\le r<b)$, 즉 $r =a\mod b$ 라고 하자. 이때,
+> 두 양의 정수 $$a, b \space (a>b)$$에 대하여 $$a=b \cdot t+r$$ $$(0\le r<b)$$, 즉 $$r =a\mod b$$ 라고 하자. 이때,
 >
-> - $r=0$이라면, $\gcd (a, b)=b$이다.
+> - $$r=0$$이라면, $$\gcd (a, b)=b$$이다.
 > 
-> - 그렇지 않다면, $\gcd(a, b)=\gcd(b, r)$이다.
+> - 그렇지 않다면, $$\gcd(a, b)=\gcd(b, r)$$이다.
 {: .prompt-tip}
 
 <br>
@@ -31,23 +31,23 @@ math: true
 
 ### 증명
 
-<span class="shlb">$r=a \mod b$</span>이고 <span class="shlb">$a=b\cdot t +r$</span>일때, <span class="shl">$\gcd(a, b)=\gcd(b, r)$</span> 임을 증명해보자.
+<span class="shlb">$$r=a \mod b$$</span>이고 <span class="shlb">$$a=b\cdot t +r$$</span>일때, <span class="shl">$$\gcd(a, b)=\gcd(b, r)$$</span> 임을 증명해보자.
 
-1. 우선, $d=\gcd(a,b)$로 가정한다.
+1. 우선, $$d=\gcd(a,b)$$로 가정한다.
     
-    기본 정의에 의해 $a$와 $b$는 모두 $d$로 나누어떨어지는데, $a =b\cdot t+r$이므로 $r$ 또한 $d$로 나누어떨어지게 된다.
+    기본 정의에 의해 $$a$$와 $$b$$는 모두 $$d$$로 나누어떨어지는데, $$a =b\cdot t+r$$이므로 $$r$$ 또한 $$d$$로 나누어떨어지게 된다.
     
-    즉, $b$와 $r$이 모두 $d$로 나누어떨어지므로, $\gcd(b,r)$은 $\gcd(a, b)$(== $d$)로 나누어떨어진다.
+    즉, $$b$$와 $$r$$이 모두 $$d$$로 나누어떨어지므로, $$\gcd(b,r)$$은 $$\gcd(a, b)$$(== $$d$$)로 나누어떨어진다.
     
-2. 이어서 $c=\gcd(b, r)$로 가정한다.
+2. 이어서 $$c=\gcd(b, r)$$로 가정한다.
     
-    기본 정의에 의해 $b$와 $r$은 모두 $c$로 나누어떨어지는데, $a=b\cdot t+r$이므로 $a$ 또한 $c$로 나누어떨어지게 된다.
+    기본 정의에 의해 $$b$$와 $$r$$은 모두 $$c$$로 나누어떨어지는데, $$a=b\cdot t+r$$이므로 $$a$$ 또한 $$c$$로 나누어떨어지게 된다.
     
-    즉, $a$와 $b$가 모두 $c$로 나누어떨어지므로, $\gcd(a,b)$는 $\gcd(b,r)$(== $c$)로 나누어떨어진다.
+    즉, $$a$$와 $$b$$가 모두 $$c$$로 나누어떨어지므로, $$\gcd(a,b)$$는 $$\gcd(b,r)$$(== $$c$$)로 나누어떨어진다.
     
 <br>
 
-이를 모두 종합해보면 <span class="shlp">$\gcd(a,b)$와 $\gcd(b,r)$이 서로의 값으로 나누어떨어지기 때문</span>에, <span class="shl">$\gcd(a,b)=\gcd(b,r)$</span> 임을 확인할 수 있다.
+이를 모두 종합해보면 <span class="shlp">$$\gcd(a,b)$$와 $$\gcd(b,r)$$이 서로의 값으로 나누어떨어지기 때문</span>에, <span class="shl">$$\gcd(a,b)=\gcd(b,r)$$</span> 임을 확인할 수 있다.
 
 <br>
 
@@ -76,11 +76,11 @@ def gcd(a, b):
 
 <br>
 
-또한, 시간 복잡도는 <span class="hl">$O(\log(\min(a,b)))$</span>이다. 이에 대한 자세한 유도 과정은 **[링크1](https://www.baeldung.com/cs/euclid-time-complexity#ea-div-complexity)**, [**링크2**](https://www.geeksforgeeks.org/time-complexity-of-euclidean-algorithm/)를 참고한다.
+또한, 시간 복잡도는 <span class="hl">$$O(\log(\min(a,b)))$$</span>이다. 이에 대한 자세한 유도 과정은 **[링크1](https://www.baeldung.com/cs/euclid-time-complexity#ea-div-complexity)**, [**링크2**](https://www.geeksforgeeks.org/time-complexity-of-euclidean-algorithm/)를 참고한다.
 
 <br>
 
-> 이때, `gcd(a, b)` 함수에서 $a$와 $b$의 **입력 순서가 꼭 $a>b$일 필요는 없다**. 왜냐하면 $a <b$인 경우일지라도, 첫 나머지 $r$을 구하고 $b$와 $r$로 입력 값을 바꿈으로써 그 순서가 맞추어지게 되기 때문이다.
+> 이때, `gcd(a, b)` 함수에서 $$a$$와 $$b$$의 **입력 순서가 꼭 $$a>b$$일 필요는 없다**. 왜냐하면 $$a <b$$인 경우일지라도, 첫 나머지 $$r$$을 구하고 $$b$$와 $$r$$로 입력 값을 바꿈으로써 그 순서가 맞추어지게 되기 때문이다.
 >
 > 다음과 같이 입력 값의 순서를 바꾸어서 각 단계마다 값을 출력해보면 동작을 확인할 수 있다.
 >

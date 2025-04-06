@@ -32,12 +32,11 @@ order: 4
 <summary> 저에 대해 더 궁금하시다면 이 곳을 참고해주세요 👀</summary>
 <div markdown="1">
 
-| | |
-| --- | --- |
-| **Email** | seungri0826@gmail.com |
-| **GitHub** | <https://github.com/seungriyou> |
+|              |                                           |
+| ------------ | ----------------------------------------- |
+| **Email**    | seungri0826@gmail.com                     |
+| **GitHub**   | <https://github.com/seungriyou>           |
 | **LinkedIn** | <https://www.linkedin.com/in/seungri-you> |
-| **Personal Blog** | <https://blog.naver.com/seungri0826> |
 
 </div>
 </details>
