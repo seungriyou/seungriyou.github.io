@@ -1,5 +1,20 @@
-// ---
-// ---
+---
+---
+
+/* load main */
+@import 'main
+{%- if jekyll.environment == ' production
+  ' -%}
+  .bundle
+{%- endif -%}
+';
+
+/* append your custom style below */
+@import 'custom/text';
+@import 'custom/buttons';
+@import 'custom/post';
+
+@import 'custom/base/base';
 
 // /* load main */
 // @use 'main
