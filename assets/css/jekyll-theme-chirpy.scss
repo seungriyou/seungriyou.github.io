@@ -1,14 +1,14 @@
----
----
+// ---
+// ---
 
-/* load main */
-@use 'main
-{%- if jekyll.environment == ' production ' -%}
-  .bundle
-{%- endif -%}
-';
+// /* load main */
+// @use 'main
+// {%- if jekyll.environment == ' production ' -%}
+//   .bundle
+// {%- endif -%}
+// ';
 
-/* append your custom style below */
+// /* append your custom style below */
 // @use 'custom/text' as *;
 // @use 'custom/buttons' as *;
 // @use 'custom/post' as *;
