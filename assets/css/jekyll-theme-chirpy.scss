@@ -1,5 +1,5 @@
----
----
+// ---
+// ---
 
 // /* load main */
 // @import 'main
@@ -16,16 +16,16 @@
 
 // @import 'custom/base/base';
 
-/* load main */
-@use 'main
-{%- if jekyll.environment == ' production ' -%}
-  .bundle
-{%- endif -%}
-';
+// /* load main */
+// @use 'main
+// {%- if jekyll.environment == ' production ' -%}
+//   .bundle
+// {%- endif -%}
+// ';
 
-/* append your custom style below */
-@use 'custom/addon/post' as *;
-@use 'custom/addon/buttons' as *;
-@use 'custom/addon/text' as *;
+// /* append your custom style below */
+// @use 'custom/addon/post' as *;
+// @use 'custom/addon/buttons' as *;
+// @use 'custom/addon/text' as *;
 
-@use 'custom/base/base' as *;
+// @use 'custom/base/base' as *;
