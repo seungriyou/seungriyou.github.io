@@ -9,7 +9,7 @@ tags: [blog, troubleshooting]     # TAG names should always be lowercase
 
 <br>
 
-![](../../../assets/img/posts/Dev-Log/Blog/2022-10-12-error-1.png)
+![](/assets/img/posts/Dev-Log/Blog/2022-10-12-error-1.png)
 _GitHub Actions에서 발생한 오류_
 
 <br>
@@ -30,7 +30,7 @@ _GitHub Actions에서 발생한 오류_
 
 <br>
 
-![](../../../assets/img/posts/Dev-Log/Blog/2022-10-12-error-2.png)
+![](/assets/img/posts/Dev-Log/Blog/2022-10-12-error-2.png)
 _문제 해결 후 GitHub Actions의 실행 결과_
 
 <br>
